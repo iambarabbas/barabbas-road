@@ -56,8 +56,8 @@ export function SiteHeader() {
               key={item.href}
               href={item.href}
               style={{
-                fontFamily: "var(--font-semicond)",
-                fontWeight: 600,
+                fontFamily: "var(--font-display)",
+                fontWeight: 700,
                 fontSize: "13px",
                 letterSpacing: "0.06em",
                 textTransform: "uppercase",
@@ -100,8 +100,8 @@ export function SiteHeader() {
               style={{
                 display: "block",
                 padding: "12px var(--gutter)",
-                fontFamily: "var(--font-semicond)",
-                fontWeight: 600,
+                fontFamily: "var(--font-display)",
+                fontWeight: 700,
                 fontSize: "16px",
                 letterSpacing: "0.06em",
                 textTransform: "uppercase",

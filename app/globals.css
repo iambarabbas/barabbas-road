@@ -85,10 +85,10 @@
   --fs-display-2: clamp(2.4rem, 1.4rem + 4vw, 4.25rem);
   --fs-display-3: clamp(2rem, 1.4rem + 2.6vw, 3rem);
 
-  --fs-h1: 2.5rem;
-  --fs-h2: 1.95rem;
-  --fs-h3: 1.5rem;
-  --fs-h4: 1.2rem;
+  --fs-h1: 3.25rem;
+  --fs-h2: 2.5rem;
+  --fs-h3: 1.875rem;
+  --fs-h4: 1.5rem;
   --fs-eyebrow: 0.8125rem;
 
   --fs-lead: 1.25rem;
