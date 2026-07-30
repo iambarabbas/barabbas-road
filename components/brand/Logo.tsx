@@ -24,10 +24,11 @@ export function Logo({
   if (logolock) prefix = "logolock";
   else if (markOnly) prefix = "mark";
   const file = `${prefix}-${variant}.png`;
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={`/assets/${file}`}
+      src={`${basePath}/assets/${file}`}
       alt={alt}
       style={{ height, width: "auto", display: "block", ...style }}
     />
