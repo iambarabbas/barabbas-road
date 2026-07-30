@@ -41,7 +41,7 @@ function ServiceChips() {
         <Icon name="clock" size={17} /> Sundays · 10:00am
       </span>
       <span style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-        <Icon name="mapPin" size={17} /> Mission Valley, San Diego
+        <Icon name="mapPin" size={17} /> Clairemont, San Diego
       </span>
     </div>
   );

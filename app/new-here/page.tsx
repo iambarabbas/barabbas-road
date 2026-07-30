@@ -74,7 +74,7 @@ export default function NewHerePage() {
               </div>
               <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
                 <Icon name="mapPin" size={22} style={{ color: "var(--gold-600)", marginTop: "2px", flexShrink: 0 }} />
-                <div><strong>Mission Valley, San Diego</strong><br /><span style={{ color: "var(--text-muted)" }}>Free on-site parking</span></div>
+                <div><strong>7340 Miramar Rd, San Diego, 92126</strong><br /><span style={{ color: "var(--text-muted)" }}>Free on-site parking</span></div>
               </div>
               <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
                 <Icon name="phone" size={22} style={{ color: "var(--gold-600)", marginTop: "2px", flexShrink: 0 }} />

@@ -6,7 +6,7 @@ const MAP_SRC = "https://www.google.com/maps?q=Mission+Valley,+San+Diego,+CA&out
 
 const DETAILS = [
   { icon: "clock",    h: "Sunday Service",   l: "Every Sunday at 10:00am" },
-  { icon: "mapPin",   h: "Location",         l: "Mission Valley, San Diego, CA" },
+  { icon: "mapPin",   h: "Location",         l: "7340 Miramar Rd, San Diego, CA 92126" },
   { icon: "users",    h: "Kids & Youth",     l: "Programs for every age, all morning" },
   { icon: "phone",    h: "Get in Touch",     l: "619.289.8987" },
 ];

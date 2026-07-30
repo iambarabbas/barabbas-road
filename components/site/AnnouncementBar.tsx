@@ -13,7 +13,7 @@ export function AnnouncementBar() {
           </span>
           <span style={{ opacity: 0.4 }}>|</span>
           <span style={{ display: "flex", alignItems: "center", gap: "7px" }}>
-            <Icon name="mapPin" size={14} /> San Diego · Sundays @ 10am
+            <Icon name="mapPin" size={14} /> Clairemont, San Diego · Sundays @ 10am
           </span>
         </div>
         <div className="brc-announcement-extras" style={{ display: "flex", alignItems: "center", gap: "16px" }}>

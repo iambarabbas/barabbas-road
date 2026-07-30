@@ -16,6 +16,7 @@ const NAV = [
   { label: "Kids",       href: "/kids" },
   { label: "Youth",      href: "/youth" },
   { label: "Give",       href: "/give" },
+  { label: "Contact",    href: "/contact" },
 ];
 
 export function SiteHeader() {
