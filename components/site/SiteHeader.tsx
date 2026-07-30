@@ -55,6 +55,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
+              className={`brc-nav-link${pathname === item.href ? " brc-nav-link--active" : ""}`}
               style={{
                 fontFamily: "var(--font-display)",
                 fontWeight: 700,

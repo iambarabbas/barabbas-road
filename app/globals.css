@@ -298,6 +298,29 @@ img { max-width: 100%; display: block; }
   color: var(--text-body);
 }
 
+/* ---- Nav links ---- */
+.brc-nav-link {
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 3px;
+}
+.brc-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+.brc-nav-link:hover::after,
+.brc-nav-link--active::after {
+  transform: scaleX(1);
+}
+
 /* ---- Responsive ---- */
 
 /* Mobile nav toggle */
