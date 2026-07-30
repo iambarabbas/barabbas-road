@@ -1,9 +1,15 @@
+"use client";
+
+import { useState } from "react";
 import type { Metadata } from "next";
 import { Eyebrow } from "@/components/core/Eyebrow";
 import { Button } from "@/components/core/Button";
 import { Icon } from "@/components/Icon";
 
-export const metadata: Metadata = { title: "Contact" };
+// TODO: Replace with your Formspree endpoint — https://formspree.io/
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+
+// export const metadata: Metadata = { title: "Contact" }; // can't use with "use client"
 
 const MAP_SRC = "https://www.google.com/maps?q=7340+Miramar+Rd,+San+Diego,+CA+92126&output=embed";
 
@@ -131,59 +137,113 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* General contact form placeholder */}
-          <div style={{ background: "var(--surface-card)", borderRadius: "var(--radius-lg)", padding: "40px", boxShadow: "var(--shadow-card)", border: "1px solid var(--border-subtle)" }}>
-            <Eyebrow color="var(--gold-700)" withRule>General Inquiry</Eyebrow>
-            <h2 style={{ fontSize: "clamp(1.6rem,1.2rem+1.5vw,2.2rem)", margin: "16px 0 24px", lineHeight: 1 }}>Send Us a Message</h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-              {[
-                { label: "Name", type: "text",  placeholder: "Your name" },
-                { label: "Email", type: "email", placeholder: "your@email.com" },
-              ].map((f) => (
-                <div key={f.label}>
-                  <label style={{ display: "block", fontFamily: "var(--font-semicond)", fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: ".08em", color: "var(--text-muted)", marginBottom: "6px" }}>{f.label}</label>
-                  <input
-                    type={f.type}
-                    placeholder={f.placeholder}
-                    style={{
-                      width: "100%",
-                      height: "44px",
-                      padding: "0 14px",
-                      border: "1px solid var(--border-default)",
-                      borderRadius: "var(--radius-md)",
-                      fontFamily: "var(--font-sans)",
-                      fontSize: "15px",
-                      color: "var(--text-strong)",
-                      background: "var(--surface-page)",
-                      boxSizing: "border-box" as const,
-                    }}
-                  />
-                </div>
-              ))}
-              <div>
-                <label style={{ display: "block", fontFamily: "var(--font-semicond)", fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: ".08em", color: "var(--text-muted)", marginBottom: "6px" }}>Message</label>
-                <textarea
-                  placeholder="How can we help?"
-                  rows={5}
-                  style={{
-                    width: "100%",
-                    padding: "12px 14px",
-                    border: "1px solid var(--border-default)",
-                    borderRadius: "var(--radius-md)",
-                    fontFamily: "var(--font-sans)",
-                    fontSize: "15px",
-                    color: "var(--text-strong)",
-                    background: "var(--surface-page)",
-                    resize: "vertical" as const,
-                    boxSizing: "border-box" as const,
-                  }}
-                />
-              </div>
-              <Button variant="primary" size="lg" fullWidth>Send Message</Button>
-            </div>
-          </div>
+          {/* Formspree contact form */}
+          <ContactForm />
         </div>
       </section>
+    </div>
+  );
+}
+
+// ── Formspree contact form ────────────────────────────────────────────────────
+
+function ContactForm() {
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+      if (res.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  const inputStyle: React.CSSProperties = {
+    width: "100%",
+    height: "44px",
+    padding: "0 14px",
+    border: "1px solid var(--border-default)",
+    borderRadius: "var(--radius-md)",
+    fontFamily: "var(--font-sans)",
+    fontSize: "15px",
+    color: "var(--text-strong)",
+    background: "var(--surface-page)",
+    boxSizing: "border-box",
+    outline: "none",
+  };
+  const labelStyle: React.CSSProperties = {
+    display: "block",
+    fontFamily: "var(--font-semicond)",
+    fontWeight: 700,
+    fontSize: "13px",
+    textTransform: "uppercase",
+    letterSpacing: ".08em",
+    color: "var(--text-muted)",
+    marginBottom: "6px",
+  };
+
+  return (
+    <div style={{ background: "var(--surface-card)", borderRadius: "var(--radius-lg)", padding: "40px", boxShadow: "var(--shadow-card)", border: "1px solid var(--border-subtle)" }}>
+      <Eyebrow color="var(--gold-700)" withRule>General Inquiry</Eyebrow>
+      <h2 style={{ fontSize: "clamp(1.6rem,1.2rem+1.5vw,2.2rem)", margin: "16px 0 24px", lineHeight: 1 }}>Send Us a Message</h2>
+
+      {status === "success" ? (
+        <div style={{ background: "var(--success-100)", color: "var(--success-600)", borderRadius: "var(--radius-md)", padding: "20px 24px", fontFamily: "var(--font-semicond)", fontWeight: 600, fontSize: "16px" }}>
+          ✓ Message sent! We&apos;ll be in touch soon.
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div>
+            <label style={labelStyle}>Name *</label>
+            <input name="name" type="text" required placeholder="Your name" style={inputStyle} />
+          </div>
+          <div>
+            <label style={labelStyle}>Email *</label>
+            <input name="email" type="email" required placeholder="your@email.com" style={inputStyle} />
+          </div>
+          <div>
+            <label style={labelStyle}>Phone</label>
+            <input name="phone" type="tel" placeholder="Optional" style={inputStyle} />
+          </div>
+          <div>
+            <label style={labelStyle}>Message *</label>
+            <textarea
+              name="message"
+              required
+              placeholder="How can we help?"
+              rows={5}
+              style={{
+                ...inputStyle,
+                height: "auto",
+                padding: "12px 14px",
+                resize: "vertical",
+              }}
+            />
+          </div>
+          {status === "error" && (
+            <div style={{ color: "var(--danger-600)", fontSize: "14px" }}>
+              Something went wrong. Please try again or email us at info@barabbas.com.
+            </div>
+          )}
+          <Button variant="primary" size="lg" fullWidth disabled={status === "sending"}>
+            {status === "sending" ? "Sending…" : "Send Message"}
+          </Button>
+        </form>
+      )}
     </div>
   );
 }
