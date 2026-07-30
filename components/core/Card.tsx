@@ -31,7 +31,7 @@ export function Card({
         background: "var(--surface-card)",
         borderRadius: "var(--radius-lg)",
         boxShadow: hover ? "var(--shadow-lg)" : "var(--shadow-card)",
-        border: "1px solid var(--border-subtle)",
+        border: hover ? "1px solid var(--gold-700)" : "1px solid var(--border-subtle)",
         overflow: "hidden",
         transition:
           "box-shadow var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out)",
