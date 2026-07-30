@@ -11,19 +11,16 @@ const PILLARS = [
     n: "01", icon: "headphones", t: "Sermons", verb: "Hear", rest: "the Truth.",
     d: "Verse-by-verse teaching through God's Word, every Sunday and on demand.",
     cta: "Watch Now", href: "/sermons",
-    img: "https://images.unsplash.com/photo-1490127252417-7c393f993ee4?w=900&q=80",
   },
   {
     n: "02", icon: "users", t: "Life Groups", verb: "Live", rest: "the Truth.",
     d: "Do life together in homes across San Diego — study, pray, and grow.",
     cta: "Find a Group", href: "/life-groups",
-    img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900&q=80",
   },
   {
     n: "03", icon: "bookOpen", t: "Classes", verb: "Defend", rest: "the Truth.",
     d: "Equipping classes to know what you believe and why it matters.",
     cta: "View Schedule", href: "/classes",
-    img: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=900&q=80",
   },
 ];
 
@@ -40,7 +37,7 @@ export function Pillars() {
         <div className="brc-pillars" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px" }}>
           {PILLARS.map((p) => (
             <Link key={p.t} href={p.href} style={{ textDecoration: "none", display: "flex" }}>
-              <Card media={p.img} mediaHeight={200} interactive style={{ height: "100%", width: "100%" }}>
+              <Card interactive style={{ height: "100%", width: "100%" }}>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                   <span
                     style={{
