@@ -1,0 +1,343 @@
+/* ============================================================
+   Barabbas Road Church — Design System Tokens + Global Styles
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Barlow+Condensed:wght@500;600;700&family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+
+/* ---- Color tokens ---- */
+:root {
+  --gold-50:  #fbf6ea;
+  --gold-100: #f4e8cc;
+  --gold-200: #ead2a0;
+  --gold-300: #ddb877;
+  --gold-400: #d3ab64;
+  --gold-500: #c39a4f;
+  --gold-600: #b8903b;
+  --gold-700: #9a7530;
+  --gold-800: #7a5d27;
+
+  --ink-950: #141311;
+  --ink-900: #1e1d1b;
+  --ink-800: #2b2925;
+  --ink-700: #3c3933;
+  --ink-600: #524e46;
+  --ink-500: #6c675c;
+  --ink-400: #8a8477;
+  --ink-300: #b3ad9f;
+  --ink-200: #d6d0c3;
+  --ink-150: #e4dfd4;
+  --ink-100: #ece8de;
+  --ink-50:  #f6f3ec;
+  --paper:   #faf8f2;
+  --white:   #ffffff;
+
+  --success-600: #4f7a4a;
+  --success-100: #e4efe1;
+  --danger-600:  #b04a3a;
+  --danger-100:  #f4e1dc;
+  --info-600:    #46708a;
+  --info-100:    #dde9f0;
+
+  --text-strong:   var(--ink-900);
+  --text-body:     var(--ink-700);
+  --text-muted:    var(--ink-500);
+  --text-subtle:   var(--ink-400);
+  --text-inverse:  var(--white);
+  --text-on-dark:  #efece4;
+  --text-accent:   var(--gold-700);
+
+  --surface-page:    var(--paper);
+  --surface-card:    var(--white);
+  --surface-sunken:  var(--ink-50);
+  --surface-tint:    var(--gold-50);
+  --surface-dark:    var(--ink-900);
+  --surface-darker:  var(--ink-950);
+
+  --border-subtle:  var(--ink-150);
+  --border-default: var(--ink-200);
+  --border-strong:  var(--ink-300);
+  --border-on-dark: rgba(255,255,255,0.14);
+
+  --accent:          var(--gold-400);
+  --accent-hover:    var(--gold-600);
+  --accent-pressed:  var(--gold-700);
+  --accent-contrast: var(--ink-900);
+  --focus-ring:      var(--gold-600);
+
+  --scrim-strong: rgba(20,19,17,0.72);
+  --scrim:        rgba(20,19,17,0.55);
+  --scrim-soft:   rgba(20,19,17,0.32);
+}
+
+/* ---- Typography tokens ---- */
+:root {
+  --font-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+  --font-sans:    "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-semicond:"Barlow Semi Condensed", "Barlow", system-ui, sans-serif;
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semibold:600;
+  --fw-bold:    700;
+
+  --fs-display-1: clamp(3rem, 1.6rem + 6vw, 6.5rem);
+  --fs-display-2: clamp(2.4rem, 1.4rem + 4vw, 4.25rem);
+  --fs-display-3: clamp(2rem, 1.4rem + 2.6vw, 3rem);
+
+  --fs-h1: 2.5rem;
+  --fs-h2: 1.95rem;
+  --fs-h3: 1.5rem;
+  --fs-h4: 1.2rem;
+  --fs-eyebrow: 0.8125rem;
+
+  --fs-lead: 1.25rem;
+  --fs-body: 1.0625rem;
+  --fs-sm:   0.9375rem;
+  --fs-xs:   0.8125rem;
+
+  --lh-tight:  1.02;
+  --lh-snug:   1.18;
+  --lh-normal: 1.5;
+  --lh-relaxed:1.65;
+
+  --ls-display: -0.01em;
+  --ls-tight:  -0.015em;
+  --ls-normal:  0;
+  --ls-label:   0.08em;
+  --ls-wide:    0.16em;
+}
+
+/* ---- Spacing, radius, shadow, motion tokens ---- */
+:root {
+  --space-0:  0;
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.5rem;
+  --space-6:  2rem;
+  --space-7:  3rem;
+  --space-8:  4rem;
+  --space-9:  6rem;
+  --space-10: 8rem;
+
+  --section-y: clamp(4rem, 2.5rem + 6vw, 8rem);
+  --gutter:    clamp(1.25rem, 0.5rem + 3vw, 4rem);
+  --maxw:      1240px;
+  --maxw-prose:68ch;
+
+  --radius-none: 0;
+  --radius-sm:   3px;
+  --radius-md:   6px;
+  --radius-lg:   10px;
+  --radius-xl:   16px;
+  --radius-pill: 999px;
+
+  --border-hairline: 1px;
+  --border-thick:    2px;
+
+  --shadow-xs:   0 1px 2px rgba(30,29,27,0.06);
+  --shadow-sm:   0 2px 6px rgba(30,29,27,0.08);
+  --shadow-md:   0 6px 18px rgba(30,29,27,0.10);
+  --shadow-lg:   0 18px 40px rgba(30,29,27,0.14);
+  --shadow-card: 0 1px 2px rgba(30,29,27,0.05), 0 8px 24px rgba(30,29,27,0.07);
+
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:   140ms;
+  --dur-base:   220ms;
+  --dur-slow:   420ms;
+
+  --z-header:  100;
+  --z-overlay: 500;
+  --z-modal:   600;
+  --z-toast:   700;
+}
+
+/* ---- Base resets ---- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--surface-page);
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  font-weight: var(--fw-regular);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-display);
+  line-height: var(--lh-snug);
+  color: var(--text-strong);
+  margin: 0 0 0.5em;
+}
+h1 { font-size: var(--fs-h1); line-height: var(--lh-tight); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+h4 { font-size: var(--fs-h4); }
+
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+
+a {
+  color: var(--text-accent);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+a:hover { color: var(--accent-hover); }
+
+strong, b { font-weight: var(--fw-semibold); color: var(--text-strong); }
+
+hr {
+  border: 0;
+  border-top: var(--border-hairline) solid var(--border-subtle);
+  margin: var(--space-6) 0;
+}
+
+::selection { background: var(--gold-200); color: var(--ink-900); }
+
+:focus-visible {
+  outline: var(--border-thick) solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+img { max-width: 100%; display: block; }
+
+/* ---- Button hover/press states ---- */
+.brc-btn--primary:hover {
+  background: var(--accent-hover) !important;
+  border-color: var(--accent-hover) !important;
+  box-shadow: 0 6px 22px -4px rgba(211, 171, 100, 0.6);
+}
+.brc-btn--primary:active {
+  background: var(--accent-pressed) !important;
+  border-color: var(--accent-pressed) !important;
+  box-shadow: 0 2px 10px -3px rgba(211, 171, 100, 0.5);
+}
+.brc-btn--secondary:hover {
+  background: var(--ink-800) !important;
+  border-color: var(--ink-800) !important;
+  box-shadow: 0 6px 22px -4px rgba(30, 29, 27, 0.45);
+}
+.brc-btn--outline:hover {
+  background: var(--gold-50) !important;
+  border-color: var(--accent-hover) !important;
+  color: var(--accent-hover) !important;
+  box-shadow: 0 6px 22px -6px rgba(211, 171, 100, 0.5);
+}
+.brc-btn--outline:active {
+  background: var(--gold-100) !important;
+  border-color: var(--accent-pressed) !important;
+  color: var(--accent-pressed) !important;
+}
+.brc-btn--outline-light:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: #fff !important;
+  box-shadow: 0 6px 22px -6px rgba(255, 255, 255, 0.35);
+}
+.brc-btn--ghost:hover {
+  background: var(--gold-100) !important;
+  color: var(--accent-hover) !important;
+}
+
+/* ---- Layout helper ---- */
+.brc-container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ---- Type utility classes ---- */
+.brc-display {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-display);
+  text-transform: uppercase;
+}
+.brc-eyebrow {
+  font-family: var(--font-semicond);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--text-accent);
+}
+.brc-lead {
+  font-family: var(--font-sans);
+  font-size: var(--fs-lead);
+  line-height: var(--lh-relaxed);
+  color: var(--text-body);
+}
+
+/* ---- Responsive ---- */
+
+/* Mobile nav toggle */
+@media (max-width: 900px) {
+  .brc-desktop-nav { display: none !important; }
+  .brc-menu-btn   { display: flex !important; }
+  .brc-announcement-extras { display: none !important; }
+}
+
+/* Pillar grid → 1 col */
+@media (max-width: 768px) {
+  .brc-pillars { grid-template-columns: 1fr !important; gap: 32px !important; }
+}
+
+/* Welcome section → stack */
+@media (max-width: 860px) {
+  .brc-welcome { grid-template-columns: 1fr !important; }
+  .brc-welcome-badge { right: 0 !important; bottom: -16px !important; }
+}
+
+/* Events grid → 1 col */
+@media (max-width: 860px) {
+  .brc-events-grid { grid-template-columns: 1fr !important; }
+}
+
+/* Blog grid → 1 col */
+@media (max-width: 768px) {
+  .brc-blog-grid { grid-template-columns: 1fr !important; }
+}
+@media (min-width: 769px) and (max-width: 1100px) {
+  .brc-blog-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* Times grid → stack */
+@media (max-width: 860px) {
+  .brc-times-grid { grid-template-columns: 1fr !important; }
+}
+
+/* Footer links → stack */
+@media (max-width: 640px) {
+  .brc-footer-links { flex-direction: column !important; gap: 32px !important; }
+}
+
+/* Sermon grid */
+@media (max-width: 768px) {
+  .brc-sermon-grid { grid-template-columns: 1fr !important; }
+}
+@media (min-width: 769px) and (max-width: 1100px) {
+  .brc-sermon-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* Featured sermon player */
+@media (max-width: 860px) {
+  .brc-featured { grid-template-columns: 1fr !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    transition-duration: .001ms !important;
+  }
+}
