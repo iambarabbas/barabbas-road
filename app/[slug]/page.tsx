@@ -152,14 +152,19 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           className="brc-container"
           style={{ maxWidth: "720px" }}
         >
-          {paragraphs.length > 0 ? (
+          {content.includes("<p") ? (
+            <div
+              className="post-body"
+              dangerouslySetInnerHTML={{ __html: content }}
+            />
+          ) : paragraphs.length > 0 ? (
             paragraphs.map((para, i) => (
               <p
                 key={i}
                 style={{
                   fontSize: "var(--fs-lead)",
                   lineHeight: "var(--lh-relaxed)",
-                  color: i === 0 ? "var(--text-body)" : "var(--text-body)",
+                  color: "var(--text-body)",
                   marginBottom: "1.5em",
                 }}
               >

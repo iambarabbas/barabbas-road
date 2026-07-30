@@ -212,6 +212,12 @@ hr {
 
 img { max-width: 100%; display: block; }
 
+/* ---- Post body HTML content ---- */
+.post-body p { font-size: var(--fs-lead); line-height: var(--lh-relaxed); color: var(--text-body); margin-bottom: 1.5em; }
+.post-body p:last-child { margin-bottom: 0; }
+.post-body a { color: var(--text-accent); text-decoration: underline; text-underline-offset: 3px; }
+.post-body a:hover { color: var(--accent-hover); }
+
 /* ---- Button hover/press states ---- */
 .brc-btn--primary:hover {
   background: var(--accent-hover) !important;
