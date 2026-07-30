@@ -1,10 +1,12 @@
 import React from "react";
 
 type LogoVariant = "black" | "white" | "gold";
+type LogoType = "logolock" | "logo" | "mark";
 
 interface LogoProps {
   variant?: LogoVariant;
   markOnly?: boolean;
+  logolock?: boolean;
   height?: number;
   style?: React.CSSProperties;
   alt?: string;
@@ -13,11 +15,15 @@ interface LogoProps {
 export function Logo({
   variant = "black",
   markOnly = false,
+  logolock = false,
   height = 44,
   style = {},
   alt = "Barabbas Road Church",
 }: LogoProps) {
-  const file = markOnly ? `mark-${variant}.png` : `logo-${variant}.png`;
+  let prefix: LogoType = "logo";
+  if (logolock) prefix = "logolock";
+  else if (markOnly) prefix = "mark";
+  const file = `${prefix}-${variant}.png`;
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
