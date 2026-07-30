@@ -15,7 +15,7 @@ export function SiteFooter() {
         <div style={{ display: "flex", flexWrap: "wrap", gap: "48px", justifyContent: "space-between" }}>
           {/* Brand */}
           <div style={{ maxWidth: "320px" }}>
-            <Logo variant="white" logolock height={44} />
+            <Logo variant="white" logolock height={60} />
             <p style={{ marginTop: "20px", color: "rgba(255,255,255,.6)", fontSize: "15px", lineHeight: 1.6 }}>
               A church in San Diego that exists to know Jesus and make Him known. Hear the Truth. Live the Truth. Defend the Truth.
             </p>
