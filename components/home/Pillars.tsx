@@ -1,118 +1,31 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { Eyebrow } from "@/components/core/Eyebrow";
+import { Card } from "@/components/core/Card";
+import { Badge } from "@/components/core/Badge";
 import { Icon } from "@/components/Icon";
 
 const PILLARS = [
   {
-    n: "01", icon: "headphones", t: "Sermons",    verb: "Hear",   rest: "the Truth.",
+    n: "01", icon: "headphones", t: "Sermons", verb: "Hear", rest: "the Truth.",
     d: "Verse-by-verse teaching through God's Word, every Sunday and on demand.",
     cta: "Watch Now", href: "/sermons",
+    img: "https://images.unsplash.com/photo-1490127252417-7c393f993ee4?w=900&q=80",
   },
   {
-    n: "02", icon: "users",      t: "Life Groups", verb: "Live",   rest: "the Truth.",
+    n: "02", icon: "users", t: "Life Groups", verb: "Live", rest: "the Truth.",
     d: "Do life together in homes across San Diego — study, pray, and grow.",
     cta: "Find a Group", href: "/life-groups",
+    img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900&q=80",
   },
   {
-    n: "03", icon: "bookOpen",   t: "Classes",     verb: "Defend", rest: "the Truth.",
+    n: "03", icon: "bookOpen", t: "Classes", verb: "Defend", rest: "the Truth.",
     d: "Equipping classes to know what you believe and why it matters.",
     cta: "View Schedule", href: "/classes",
+    img: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=900&q=80",
   },
 ];
-
-function PillarCard({ p }: { p: typeof PILLARS[number] }) {
-  const [hover, setHover] = useState(false);
-  return (
-    <Link
-      href={p.href}
-      style={{ textDecoration: "none" }}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-    >
-      <div
-        style={{
-          paddingTop: "26px",
-          display: "flex",
-          flexDirection: "column",
-          height: "100%",
-          borderTop: "3px solid " + (hover ? "var(--gold-400)" : "var(--ink-200)"),
-          transition: "border-color var(--dur-base) var(--ease-out)",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "18px" }}>
-          <span
-            style={{
-              fontFamily: "var(--font-display)",
-              fontWeight: 800,
-              fontSize: "22px",
-              letterSpacing: ".05em",
-              color: hover ? "var(--gold-600)" : "var(--ink-300)",
-              transition: "color var(--dur-base) var(--ease-out)",
-            }}
-          >
-            {p.n}
-          </span>
-          <span style={{ color: hover ? "var(--gold-600)" : "var(--ink-400)", transition: "color var(--dur-base) var(--ease-out)" }}>
-            <Icon name={p.icon} size={26} strokeWidth={1.8} />
-          </span>
-        </div>
-        <h2
-          style={{
-            fontSize: "clamp(2rem, 1.4rem + 1.6vw, 2.85rem)",
-            lineHeight: 0.98,
-            margin: "0 0 6px",
-          }}
-        >
-          <span style={{ color: "var(--gold-500)" }}>{p.verb}</span>{" "}
-          <span style={{ color: "var(--text-strong)" }}>{p.rest}</span>
-        </h2>
-        <div
-          style={{
-            fontFamily: "var(--font-semicond)",
-            fontWeight: 700,
-            textTransform: "uppercase",
-            letterSpacing: ".1em",
-            fontSize: "13px",
-            color: "var(--text-accent)",
-            marginBottom: "14px",
-          }}
-        >
-          {p.t}
-        </div>
-        <p style={{ color: "var(--text-muted)", margin: "0 0 22px", maxWidth: "32ch" }}>{p.d}</p>
-        <span
-          style={{
-            marginTop: "auto",
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "9px",
-            fontFamily: "var(--font-semicond)",
-            fontWeight: 700,
-            textTransform: "uppercase",
-            letterSpacing: ".06em",
-            fontSize: "14px",
-            color: "var(--text-strong)",
-          }}
-        >
-          {p.cta}
-          <span
-            style={{
-              display: "inline-flex",
-              transform: hover ? "translateX(4px)" : "none",
-              color: "var(--gold-600)",
-              transition: "transform var(--dur-base) var(--ease-out)",
-            }}
-          >
-            <Icon name="arrowRight" size={17} />
-          </span>
-        </span>
-      </div>
-    </Link>
-  );
-}
 
 export function Pillars() {
   return (
@@ -124,9 +37,55 @@ export function Pillars() {
             Three Truths. One Family.
           </h2>
         </div>
-        <div className="brc-pillars" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "40px" }}>
+        <div className="brc-pillars" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px" }}>
           {PILLARS.map((p) => (
-            <PillarCard key={p.t} p={p} />
+            <Link key={p.t} href={p.href} style={{ textDecoration: "none", display: "flex" }}>
+              <Card media={p.img} mediaHeight={200} interactive style={{ height: "100%", width: "100%" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <span
+                    style={{
+                      fontFamily: "var(--font-display)",
+                      fontWeight: 800,
+                      fontSize: "18px",
+                      letterSpacing: ".05em",
+                      color: "var(--ink-300)",
+                    }}
+                  >
+                    {p.n}
+                  </span>
+                  <span style={{ color: "var(--ink-400)" }}>
+                    <Icon name={p.icon} size={22} strokeWidth={1.8} />
+                  </span>
+                </div>
+                <h3
+                  style={{
+                    fontSize: "clamp(1.6rem, 1rem + 1.4vw, 2.15rem)",
+                    lineHeight: 0.98,
+                    margin: "4px 0 0",
+                  }}
+                >
+                  <span style={{ color: "var(--gold-500)" }}>{p.verb}</span>{" "}
+                  <span style={{ color: "var(--text-strong)" }}>{p.rest}</span>
+                </h3>
+                <Badge tone="gold">{p.t}</Badge>
+                <p style={{ color: "var(--text-muted)", fontSize: "15px", margin: 0 }}>{p.d}</p>
+                <div
+                  style={{
+                    marginTop: "auto",
+                    paddingTop: "10px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "flex-end",
+                    color: "var(--text-accent)",
+                    fontWeight: 600,
+                    fontSize: "13px",
+                    gap: "5px",
+                  }}
+                >
+                  {p.cta} <Icon name="arrowRight" size={14} />
+                </div>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>
