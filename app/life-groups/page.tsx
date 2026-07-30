@@ -65,7 +65,7 @@ export default function LifeGroupsPage() {
       {/* Scripture callout */}
       <section style={{ background: "var(--gold-400)", padding: "24px 0" }}>
         <div className="brc-container" style={{ textAlign: "center" }}>
-          <p style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(1rem,.9rem+.8vw,1.35rem)", textTransform: "uppercase", letterSpacing: "0.04em", color: "var(--ink-900)", margin: 0 }}>
+          <p style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(1rem,.9rem+.8vw,1.35rem)", textTransform: "uppercase", letterSpacing: "0.04em", color: "var(--ink-900)", margin: 0 }}>
             &ldquo;They devoted themselves to the apostles&apos; teaching and to fellowship, to the breaking of bread and to prayer.&rdquo; — Acts 2:42
           </p>
         </div>
@@ -101,7 +101,7 @@ export default function LifeGroupsPage() {
                       <Icon name={g.icon} size={26} strokeWidth={1.8} />
                     </div>
                     <div>
-                      <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "13px", letterSpacing: ".06em", color: "var(--ink-300)" }}>{g.number}</div>
+                      <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "13px", letterSpacing: ".06em", color: "var(--ink-300)" }}>{g.number}</div>
                       <h2 style={{ fontSize: "clamp(1.8rem,1.4rem+1.5vw,2.5rem)", margin: 0, lineHeight: 1 }}>{g.name}</h2>
                     </div>
                   </div>

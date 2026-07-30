@@ -16,7 +16,7 @@ function Tagline() {
     <h1
       style={{
         fontFamily: "var(--font-display)",
-        fontWeight: 700,
+        fontWeight: 800,
         textTransform: "uppercase",
         letterSpacing: "-0.01em",
         lineHeight: 0.94,

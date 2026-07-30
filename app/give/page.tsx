@@ -80,7 +80,7 @@ export default function GivePage() {
 
           {/* Giving stat card */}
           <div style={{ background: "var(--ink-900)", borderRadius: "var(--radius-lg)", padding: "48px 40px", color: "var(--white)" }}>
-            <blockquote style={{ margin: 0, padding: 0, fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(1.2rem,1rem+1.2vw,1.6rem)", textTransform: "uppercase", letterSpacing: ".02em", lineHeight: 1.3, color: "var(--white)" }}>
+            <blockquote style={{ margin: 0, padding: 0, fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(1.2rem,1rem+1.2vw,1.6rem)", textTransform: "uppercase", letterSpacing: ".02em", lineHeight: 1.3, color: "var(--white)" }}>
               &ldquo;Each one must give as he has decided in his heart, not reluctantly or under compulsion, for God loves a cheerful giver.&rdquo;
             </blockquote>
             <div style={{ marginTop: "20px", color: "var(--gold-400)", fontFamily: "var(--font-semicond)", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".1em", fontSize: "14px" }}>

@@ -46,7 +46,7 @@ export default function AboutPage() {
       {/* Scripture banner */}
       <section style={{ background: "var(--gold-400)", padding: "28px 0" }}>
         <div className="brc-container" style={{ textAlign: "center" }}>
-          <p style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(1.1rem,1rem+1vw,1.5rem)", textTransform: "uppercase", letterSpacing: "0.04em", color: "var(--ink-900)", margin: 0, lineHeight: 1.3 }}>
+          <p style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(1.1rem,1rem+1vw,1.5rem)", textTransform: "uppercase", letterSpacing: "0.04em", color: "var(--ink-900)", margin: 0, lineHeight: 1.3 }}>
             &ldquo;All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness.&rdquo; — 2 Timothy 3:16–17
           </p>
         </div>
@@ -98,7 +98,7 @@ export default function AboutPage() {
           <div className="brc-pillars" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "40px" }}>
             {BELIEFS.map((b, i) => (
               <div key={b.h} style={{ paddingTop: "24px", borderTop: "3px solid var(--gold-400)" }}>
-                <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "13px", letterSpacing: ".06em", color: "var(--ink-300)", marginBottom: "10px" }}>0{i + 1}</div>
+                <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "13px", letterSpacing: ".06em", color: "var(--ink-300)", marginBottom: "10px" }}>0{i + 1}</div>
                 <h3 style={{ fontSize: "clamp(1.5rem,1.2rem+1vw,1.9rem)", margin: "0 0 12px" }}>{b.h}</h3>
                 <p style={{ color: "var(--text-muted)", margin: 0, lineHeight: 1.65 }}>{b.b}</p>
               </div>
@@ -125,7 +125,7 @@ export default function AboutPage() {
             </ul>
           </div>
           <div style={{ background: "var(--ink-900)", borderRadius: "var(--radius-lg)", padding: "40px", color: "var(--white)" }}>
-            <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "72px", lineHeight: 1, color: "var(--gold-400)", marginBottom: "8px" }}>2007</div>
+            <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "72px", lineHeight: 1, color: "var(--gold-400)", marginBottom: "8px" }}>2007</div>
             <div style={{ fontSize: "16px", color: "rgba(255,255,255,.6)", marginBottom: "28px" }}>Planted in San Diego to make disciples of Jesus.</div>
             <div style={{ borderTop: "1px solid rgba(255,255,255,.15)", paddingTop: "24px", display: "flex", flexDirection: "column", gap: "10px" }}>
               <div style={{ fontSize: "14px", color: "rgba(255,255,255,.5)", textTransform: "uppercase", letterSpacing: ".1em", fontFamily: "var(--font-semicond)", fontWeight: 700 }}>Find Us</div>

@@ -58,7 +58,7 @@ export function SiteHeader() {
               style={{
                 fontFamily: "var(--font-semicond)",
                 fontWeight: 600,
-                fontSize: "14.5px",
+                fontSize: "13px",
                 letterSpacing: "0.06em",
                 textTransform: "uppercase",
                 color: pathname === item.href ? "var(--gold-700)" : "var(--text-strong)",

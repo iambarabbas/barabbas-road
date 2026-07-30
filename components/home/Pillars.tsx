@@ -46,7 +46,7 @@ function PillarCard({ p }: { p: typeof PILLARS[number] }) {
           <span
             style={{
               fontFamily: "var(--font-display)",
-              fontWeight: 700,
+              fontWeight: 800,
               fontSize: "22px",
               letterSpacing: ".05em",
               color: hover ? "var(--gold-600)" : "var(--ink-300)",
