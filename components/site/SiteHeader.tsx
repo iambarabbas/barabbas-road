@@ -22,7 +22,8 @@ const NAV = [
 export function SiteHeader() {
   const [scrolled, setScrolled]   = useState(false);
   const [menuOpen, setMenuOpen]   = useState(false);
-  const pathname = usePathname();
+  const rawPathname = usePathname();
+  const pathname = rawPathname.replace(/\/$/, "") || "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
