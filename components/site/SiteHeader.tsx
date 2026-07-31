@@ -74,13 +74,15 @@ export function SiteHeader() {
         </nav>
 
         <div style={{ display: "flex", alignItems: "center", gap: "12px", flexShrink: 0 }}>
-          <Button
-            size="sm"
-            variant="primary"
-            iconLeft={<Icon name="play" size={13} fill="currentColor" />}
-          >
-            Livestream
-          </Button>
+          <Link href="/livestream" style={{ textDecoration: "none" }}>
+            <Button
+              size="sm"
+              variant="primary"
+              iconLeft={<Icon name="play" size={13} fill="currentColor" />}
+            >
+              Livestream
+            </Button>
+          </Link>
           <button
             className="brc-menu-btn"
             onClick={() => setMenuOpen((v) => !v)}
