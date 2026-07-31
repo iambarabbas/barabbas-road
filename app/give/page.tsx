@@ -36,6 +36,18 @@ function GivingEmbed() {
 const WAYS_TO_GIVE = [
   {
     icon: "heart" as const,
+    h: "Give Stock",
+    b: "Transfer appreciated stock or securities directly to Barabbas Road Church.",
+    href: "https://platform.engiven.com/give/16126/widget/29625",
+  },
+  {
+    icon: "heart" as const,
+    h: "Give Crypto",
+    b: "Donate Bitcoin, Ethereum, and other cryptocurrencies through Engiven.",
+    href: "https://platform.engiven.com/give/16126/widget/29624",
+  },
+  {
+    icon: "heart" as const,
     h: "Online",
     b: "Give one-time or set up recurring giving through Subsplash — secure, simple, takes 2 minutes.",
     href: null,
@@ -51,18 +63,6 @@ const WAYS_TO_GIVE = [
     h: "Mail a Check",
     b: "Barabbas Road Church · 7340 Miramar Rd, Suite #106 · San Diego, CA 92126",
     href: null,
-  },
-  {
-    icon: "trendingUp" as const,
-    h: "Give Stock",
-    b: "Transfer appreciated stock or securities directly to Barabbas Road Church.",
-    href: "https://platform.engiven.com/give/16126/widget/29625",
-  },
-  {
-    icon: "zap" as const,
-    h: "Give Crypto",
-    b: "Donate Bitcoin, Ethereum, and other cryptocurrencies through Engiven.",
-    href: "https://platform.engiven.com/give/16126/widget/29624",
   },
 ];
 
