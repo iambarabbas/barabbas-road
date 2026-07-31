@@ -11,13 +11,11 @@ const NAV = [
   { label: "I'm New",    href: "/new-here" },
   { label: "About",      href: "/about" },
   { label: "Sermons",    href: "/sermons" },
-  { label: "Livestream", href: "/livestream" },
   { label: "Life Groups",href: "/life-groups" },
   { label: "Classes",    href: "/classes" },
   { label: "Kids",       href: "/kids" },
   { label: "Youth",      href: "/youth" },
   { label: "Give",       href: "/give" },
-  { label: "Contact",    href: "/contact" },
 ];
 
 export function SiteHeader() {
