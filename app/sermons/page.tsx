@@ -60,12 +60,12 @@ export default function SermonsPage() {
   const [active, setActive] = useState<TabId>("recent");
 
   useSubsplash(
-    "subsplash-embed-5nwrbjy",
-    "+495b/lb/li/+vx6yh4b?embed&branding&1785455918290",
+    "subsplash-embed-2wgzx8q",
+    "+495b/lb/li/+vx6yh4b?embed&branding&1785456228870",
     active === "recent"
   );
   useSubsplash(
-    "subsplash-embed-2wgzx8q",
+    "subsplash-embed-5nwrbjy",
     "+495b/lb/li/+ydr7897?embed&branding&1785454398796",
     active === "by-book"
   );
@@ -118,10 +118,10 @@ export default function SermonsPage() {
 
           {/* Embeds — both in DOM, only active one visible */}
           <div style={{ display: active === "recent" ? "block" : "none" }}>
-            <div id="subsplash-embed-5nwrbjy" />
+            <div id="subsplash-embed-2wgzx8q" />
           </div>
           <div style={{ display: active === "by-book" ? "block" : "none" }}>
-            <div id="subsplash-embed-2wgzx8q" />
+            <div id="subsplash-embed-5nwrbjy" />
           </div>
 
         </div>
