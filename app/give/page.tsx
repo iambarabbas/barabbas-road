@@ -1,16 +1,59 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+"use client";
+
+import { useEffect } from "react";
 import { Eyebrow } from "@/components/core/Eyebrow";
-import { Button } from "@/components/core/Button";
 import { Icon } from "@/components/Icon";
 
-export const metadata: Metadata = { title: "Give" };
+// ── Subsplash giving form ─────────────────────────────────────────────────────
+
+function GivingEmbed() {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const target = document.getElementById("subsplash-embed-495b");
+      if (!target || target.dataset.loaded) return;
+      target.dataset.loaded = "1";
+      const script = document.createElement("script");
+      script.type = "text/javascript";
+      script.onload = function () {
+        (window as any).subsplashEmbed(
+          "u/-Z9H3R5/give?&embed=true",
+          "https://subsplash.com/",
+          "subsplash-embed-495b"
+        );
+      };
+      script.src =
+        "https://dashboard.static.subsplash.com/production/web-client/external/embed-1.1.0.js";
+      target.parentElement!.insertBefore(script, target);
+    }, 50);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return <div id="subsplash-embed-495b" />;
+}
+
+// ── Data ─────────────────────────────────────────────────────────────────────
 
 const WAYS_TO_GIVE = [
-  { icon: "heart",    h: "Online",      b: "Give one-time or set up recurring giving through Subsplash — secure, simple, takes 2 minutes." },
-  { icon: "users",    h: "Text Giving", b: "Text an amount to our giving number. Fast and easy from your phone — no app required." },
-  { icon: "mapPin",   h: "In Person",   b: "Drop your gift in the offering during Sunday service. Checks made payable to Barabbas Road Church." },
-  { icon: "calendar", h: "Mail a Check",b: "Barabbas Road Church · 7340 Miramar Rd, Suite #106 · San Diego, CA 92126" },
+  {
+    icon: "heart" as const,
+    h: "Online",
+    b: "Give one-time or set up recurring giving through Subsplash — secure, simple, takes 2 minutes.",
+  },
+  {
+    icon: "users" as const,
+    h: "Text Giving",
+    b: "Text an amount to our giving number. Fast and easy from your phone — no app required.",
+  },
+  {
+    icon: "mapPin" as const,
+    h: "In Person",
+    b: "Drop your gift in the offering during Sunday service. Checks made payable to Barabbas Road Church.",
+  },
+  {
+    icon: "calendar" as const,
+    h: "Mail a Check",
+    b: "Barabbas Road Church · 7340 Miramar Rd, Suite #106 · San Diego, CA 92126",
+  },
 ];
 
 const FAQ = [
@@ -40,87 +83,186 @@ const FAQ = [
   },
 ];
 
+// ── Page ─────────────────────────────────────────────────────────────────────
+
 export default function GivePage() {
   return (
     <div>
+
       {/* Header */}
       <section style={{ background: "var(--ink-900)", padding: "64px 0 56px" }}>
         <div className="brc-container">
           <Eyebrow color="var(--gold-400)" withRule>Generosity</Eyebrow>
-          <h1 style={{ color: "var(--white)", fontSize: "clamp(2.6rem,1.6rem+4vw,4.5rem)", margin: "16px 0 12px", lineHeight: 0.98 }}>
+          <h1
+            style={{
+              color: "var(--white)",
+              fontSize: "clamp(2.6rem,1.6rem+4vw,4.5rem)",
+              margin: "16px 0 12px",
+              lineHeight: 0.98,
+            }}
+          >
             Give
           </h1>
-          <p style={{ color: "rgba(255,255,255,.65)", fontSize: "18px", maxWidth: "54ch", lineHeight: 1.6 }}>
-            Giving is an act of worship. Every gift supports the mission of Barabbas Road Church — making disciple-making disciples in San Diego and beyond.
+          <p
+            style={{
+              color: "rgba(255,255,255,.65)",
+              fontSize: "18px",
+              maxWidth: "54ch",
+              lineHeight: 1.6,
+            }}
+          >
+            Giving is an act of worship. Every gift supports the mission of
+            Barabbas Road Church — making disciple-making disciples in San Diego
+            and beyond.
           </p>
         </div>
       </section>
 
-      {/* Primary CTA */}
+      {/* Giving form + sidebar */}
       <section style={{ padding: "var(--section-y) 0", background: "var(--surface-page)" }}>
-        <div className="brc-container brc-welcome" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(2rem,5vw,5rem)", alignItems: "center" }}>
-          <div>
-            <Eyebrow color="var(--gold-700)" withRule>Give Online</Eyebrow>
-            <h2 style={{ fontSize: "clamp(2rem,1.4rem+2.4vw,3rem)", margin: "16px 0 18px", lineHeight: 1 }}>
-              Secure &amp; Simple
-            </h2>
-            <p style={{ fontSize: "17px", lineHeight: 1.65, color: "var(--text-body)", marginBottom: "16px" }}>
-              We use <strong>Subsplash</strong> for secure online giving. Set up a one-time gift or schedule recurring giving in just a few clicks.
-            </p>
-            <p style={{ color: "var(--text-muted)", marginBottom: "32px", lineHeight: 1.6 }}>
-              Your giving supports Sunday services, Life Groups, Kids Church, youth programs, and missions through the Cooperative Program.
-            </p>
-            <div style={{ display: "flex", gap: "14px", flexWrap: "wrap" }}>
-              <a href="https://subsplash.com/barabbasroadchurch/give" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
-                <Button variant="primary" size="lg">Give Now</Button>
-              </a>
-              <Button variant="outline" size="lg">Text to Give</Button>
-            </div>
-          </div>
-
-          {/* Giving stat card */}
-          <div style={{ background: "var(--ink-900)", borderRadius: "var(--radius-lg)", padding: "48px 40px", color: "var(--white)" }}>
-            <blockquote style={{ margin: 0, padding: 0, fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(1.2rem,1rem+1.2vw,1.6rem)", textTransform: "uppercase", letterSpacing: ".02em", lineHeight: 1.3, color: "var(--white)" }}>
-              &ldquo;Each one must give as he has decided in his heart, not reluctantly or under compulsion, for God loves a cheerful giver.&rdquo;
-            </blockquote>
-            <div style={{ marginTop: "20px", color: "var(--gold-400)", fontFamily: "var(--font-semicond)", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".1em", fontSize: "14px" }}>
-              2 Corinthians 9:7
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Ways to give */}
-      <section style={{ padding: "var(--section-y) 0", background: "var(--surface-card)" }}>
         <div className="brc-container">
-          <div style={{ maxWidth: "600px", marginBottom: "52px" }}>
-            <Eyebrow color="var(--gold-700)" withRule>Options</Eyebrow>
-            <h2 style={{ fontSize: "clamp(2.2rem,1.4rem+2.4vw,3rem)", margin: "16px 0 0", lineHeight: 1 }}>Ways to Give</h2>
-          </div>
-          <div className="brc-pillars" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "32px" }}>
-            {WAYS_TO_GIVE.map((w) => (
-              <div key={w.h} style={{ display: "flex", gap: "20px", alignItems: "flex-start" }}>
-                <div style={{ flexShrink: 0, width: "52px", height: "52px", borderRadius: "var(--radius-md)", background: "var(--gold-100)", color: "var(--gold-700)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <Icon name={w.icon} size={24} strokeWidth={1.8} />
-                </div>
-                <div>
-                  <h3 style={{ fontSize: "22px", margin: "0 0 8px" }}>{w.h}</h3>
-                  <p style={{ color: "var(--text-muted)", margin: 0, lineHeight: 1.6 }}>{w.b}</p>
+          <div
+            className="brc-give-grid"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr",
+              gap: "48px",
+              alignItems: "start",
+            }}
+          >
+            {/* Form */}
+            <div>
+              <GivingEmbed />
+            </div>
+
+            {/* Sidebar */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
+
+              {/* Scripture */}
+              <div
+                style={{
+                  background: "var(--ink-900)",
+                  borderRadius: "var(--radius-lg)",
+                  padding: "32px",
+                  color: "var(--white)",
+                }}
+              >
+                <blockquote
+                  style={{
+                    margin: 0,
+                    padding: 0,
+                    fontFamily: "var(--font-serif)",
+                    fontStyle: "italic",
+                    fontSize: "18px",
+                    lineHeight: 1.6,
+                    color: "rgba(255,255,255,.9)",
+                  }}
+                >
+                  &ldquo;Each one must give as he has decided in his heart, not
+                  reluctantly or under compulsion, for God loves a cheerful
+                  giver.&rdquo;
+                </blockquote>
+                <div
+                  style={{
+                    marginTop: "16px",
+                    color: "var(--gold-400)",
+                    fontFamily: "var(--font-semicond)",
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: ".1em",
+                    fontSize: "13px",
+                  }}
+                >
+                  2 Corinthians 9:7
                 </div>
               </div>
-            ))}
+
+              {/* Ways to give */}
+              <div>
+                <h2
+                  style={{
+                    fontFamily: "var(--font-cond)",
+                    fontSize: "22px",
+                    margin: "0 0 20px",
+                  }}
+                >
+                  Other Ways to Give
+                </h2>
+                <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+                  {WAYS_TO_GIVE.map((w) => (
+                    <div
+                      key={w.h}
+                      style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}
+                    >
+                      <div
+                        style={{
+                          flexShrink: 0,
+                          width: "40px",
+                          height: "40px",
+                          borderRadius: "var(--radius-md)",
+                          background: "var(--gold-100)",
+                          color: "var(--gold-700)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <Icon name={w.icon} size={18} strokeWidth={1.8} />
+                      </div>
+                      <div>
+                        <div
+                          style={{
+                            fontWeight: 700,
+                            fontSize: "16px",
+                            marginBottom: "2px",
+                            color: "var(--text-heading)",
+                          }}
+                        >
+                          {w.h}
+                        </div>
+                        <p
+                          style={{
+                            color: "var(--text-muted)",
+                            margin: 0,
+                            fontSize: "14px",
+                            lineHeight: 1.55,
+                          }}
+                        >
+                          {w.b}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section style={{ padding: "var(--section-y) 0", background: "var(--surface-page)" }}>
+      <section style={{ padding: "var(--section-y) 0", background: "var(--surface-card)" }}>
         <div className="brc-container">
           <div style={{ maxWidth: "600px", marginBottom: "52px" }}>
             <Eyebrow color="var(--gold-700)" withRule>Giving FAQ</Eyebrow>
-            <h2 style={{ fontSize: "clamp(2.2rem,1.4rem+2.4vw,3rem)", margin: "16px 0 0", lineHeight: 1 }}>Common Questions</h2>
+            <h2
+              style={{
+                fontSize: "clamp(2.2rem,1.4rem+2.4vw,3rem)",
+                margin: "16px 0 0",
+                lineHeight: 1,
+              }}
+            >
+              Common Questions
+            </h2>
           </div>
-          <div style={{ maxWidth: "760px", display: "flex", flexDirection: "column", gap: "0" }}>
+          <div
+            style={{
+              maxWidth: "760px",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
             {FAQ.map((item, i) => (
               <div
                 key={item.q}
@@ -129,13 +271,34 @@ export default function GivePage() {
                   borderTop: i === 0 ? "none" : "1px solid var(--border-subtle)",
                 }}
               >
-                <h3 style={{ fontSize: "20px", margin: "0 0 10px", lineHeight: 1.2 }}>{item.q}</h3>
-                <p style={{ color: "var(--text-muted)", margin: 0, lineHeight: 1.65, fontSize: "16px" }}>{item.a}</p>
+                <h3 style={{ fontSize: "20px", margin: "0 0 10px", lineHeight: 1.2 }}>
+                  {item.q}
+                </h3>
+                <p
+                  style={{
+                    color: "var(--text-muted)",
+                    margin: 0,
+                    lineHeight: 1.65,
+                    fontSize: "16px",
+                  }}
+                >
+                  {item.a}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Responsive grid */}
+      <style>{`
+        @media (min-width: 900px) {
+          .brc-give-grid {
+            grid-template-columns: 1fr 340px !important;
+          }
+        }
+      `}</style>
+
     </div>
   );
 }
