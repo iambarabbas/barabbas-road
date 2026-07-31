@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Eyebrow } from "@/components/core/Eyebrow";
 import { Button } from "@/components/core/Button";
+import { AboutSubNav } from "@/components/about/AboutSubNav";
 
 export const metadata: Metadata = { title: "About" };
 
@@ -41,6 +42,7 @@ export default function AboutPage() {
             Barabbas Road Church is located in Clairemont, San Diego. We are unashamedly committed to the supremacy and sufficiency of the Bible — proclaiming its unchanging message to an ever-changing world.
           </p>
         </div>
+        <AboutSubNav />
       </section>
 
       {/* Scripture banner */}
