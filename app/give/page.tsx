@@ -56,7 +56,7 @@ const WAYS_TO_GIVE = [
     icon: "trendingUp" as const,
     h: "Give Stock",
     b: "Transfer appreciated stock or securities directly to Barabbas Road Church.",
-    href: "https://www.barabbas.com/give/#:~:text=stocks%20or%20cryptocurrency.-,Give%20Stock,-Give%20Crypto",
+    href: "https://platform.engiven.com/give/16126/widget/29625",
   },
   {
     icon: "zap" as const,
