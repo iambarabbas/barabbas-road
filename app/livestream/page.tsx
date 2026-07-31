@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import Link from "next/link";
 import { Eyebrow } from "@/components/core/Eyebrow";
 import { Button } from "@/components/core/Button";
@@ -9,28 +8,30 @@ import { Icon } from "@/components/Icon";
 // ── Subsplash player ────────────────────────────────────────────────────────
 
 function LivestreamEmbed() {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const target = document.getElementById("subsplash-embed-livestream");
-      if (!target || target.dataset.loaded) return;
-      target.dataset.loaded = "1";
-      const script = document.createElement("script");
-      script.type = "text/javascript";
-      script.onload = function () {
-        (window as any).subsplashEmbed(
-          "+495b/lb/li/+vx6yh4b?embed&branding&1785455918290",
-          "https://subsplash.com/",
-          "subsplash-embed-livestream"
-        );
-      };
-      script.src =
-        "https://dashboard.static.subsplash.com/production/web-client/external/embed-1.1.0.js";
-      target.parentElement!.insertBefore(script, target);
-    }, 50);
-    return () => clearTimeout(timer);
-  }, []);
-
-  return <div id="subsplash-embed-livestream" />;
+  return (
+    <div
+      style={{
+        position: "relative",
+        width: "100%",
+        height: 0,
+        paddingTop: "56.25%",
+      }}
+    >
+      <iframe
+        src="https://subsplash.com/u/barabbasroadchurch/media/embed/d/*next-live"
+        frameBorder={0}
+        allowFullScreen
+        allow="clipboard-read; clipboard-write"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+        }}
+      />
+    </div>
+  );
 }
 
 // ── Schedule + info ─────────────────────────────────────────────────────────
