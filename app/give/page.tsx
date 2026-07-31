@@ -38,21 +38,31 @@ const WAYS_TO_GIVE = [
     icon: "heart" as const,
     h: "Online",
     b: "Give one-time or set up recurring giving through Subsplash — secure, simple, takes 2 minutes.",
-  },
-  {
-    icon: "users" as const,
-    h: "Text Giving",
-    b: "Text an amount to our giving number. Fast and easy from your phone — no app required.",
+    href: null,
   },
   {
     icon: "mapPin" as const,
     h: "In Person",
     b: "Drop your gift in the offering during Sunday service. Checks made payable to Barabbas Road Church.",
+    href: null,
   },
   {
     icon: "calendar" as const,
     h: "Mail a Check",
     b: "Barabbas Road Church · 7340 Miramar Rd, Suite #106 · San Diego, CA 92126",
+    href: null,
+  },
+  {
+    icon: "trendingUp" as const,
+    h: "Give Stock",
+    b: "Transfer appreciated stock or securities directly to Barabbas Road Church.",
+    href: "https://www.barabbas.com/give/#:~:text=stocks%20or%20cryptocurrency.-,Give%20Stock,-Give%20Crypto",
+  },
+  {
+    icon: "zap" as const,
+    h: "Give Crypto",
+    b: "Donate Bitcoin, Ethereum, and other cryptocurrencies through Engiven.",
+    href: "https://platform.engiven.com/give/16126/widget/29624",
   },
 ];
 
@@ -189,50 +199,58 @@ export default function GivePage() {
                   Other Ways to Give
                 </h2>
                 <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-                  {WAYS_TO_GIVE.map((w) => (
-                    <div
-                      key={w.h}
-                      style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}
-                    >
-                      <div
-                        style={{
-                          flexShrink: 0,
-                          width: "40px",
-                          height: "40px",
-                          borderRadius: "var(--radius-md)",
-                          background: "var(--gold-100)",
-                          color: "var(--gold-700)",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                        }}
-                      >
-                        <Icon name={w.icon} size={18} strokeWidth={1.8} />
-                      </div>
-                      <div>
+                  {WAYS_TO_GIVE.map((w) => {
+                    const inner = (
+                      <>
                         <div
                           style={{
-                            fontWeight: 700,
-                            fontSize: "16px",
-                            marginBottom: "2px",
-                            color: "var(--text-heading)",
+                            flexShrink: 0,
+                            width: "40px",
+                            height: "40px",
+                            borderRadius: "var(--radius-md)",
+                            background: "var(--gold-100)",
+                            color: "var(--gold-700)",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
                           }}
                         >
-                          {w.h}
+                          <Icon name={w.icon} size={18} strokeWidth={1.8} />
                         </div>
-                        <p
-                          style={{
-                            color: "var(--text-muted)",
-                            margin: 0,
-                            fontSize: "14px",
-                            lineHeight: 1.55,
-                          }}
-                        >
-                          {w.b}
-                        </p>
+                        <div>
+                          <div
+                            style={{
+                              fontWeight: 700,
+                              fontSize: "16px",
+                              marginBottom: "2px",
+                              color: w.href ? "var(--gold-700)" : "var(--text-heading)",
+                              textDecoration: w.href ? "underline" : "none",
+                            }}
+                          >
+                            {w.h} {w.href && <span style={{ fontSize: "12px", opacity: 0.7 }}>↗</span>}
+                          </div>
+                          <p style={{ color: "var(--text-muted)", margin: 0, fontSize: "14px", lineHeight: 1.55 }}>
+                            {w.b}
+                          </p>
+                        </div>
+                      </>
+                    );
+                    return w.href ? (
+                      <a
+                        key={w.h}
+                        href={w.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ display: "flex", gap: "16px", alignItems: "flex-start", textDecoration: "none" }}
+                      >
+                        {inner}
+                      </a>
+                    ) : (
+                      <div key={w.h} style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
+                        {inner}
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
 
