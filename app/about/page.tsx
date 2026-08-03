@@ -62,7 +62,7 @@ export default function AboutPage() {
           {/* Video */}
           <div style={{ position: "relative", width: "100%", paddingBottom: "56.25%", borderRadius: "var(--radius-lg)", overflow: "hidden", boxShadow: "var(--shadow-md)" }}>
             <iframe
-              src="https://player.vimeo.com/video/133682953"
+              src="https://player.vimeo.com/video/1011540228"
               title="About Barabbas Road Church"
               allow="autoplay; fullscreen; picture-in-picture"
               allowFullScreen

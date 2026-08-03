@@ -88,7 +88,7 @@ export default function NewHerePage() {
           {/* Welcome video */}
           <div style={{ position: "relative", width: "100%", paddingBottom: "56.25%", borderRadius: "var(--radius-lg)", overflow: "hidden", boxShadow: "0 12px 40px rgba(0,0,0,.5)" }}>
             <iframe
-              src="https://player.vimeo.com/video/487426166"
+              src="https://player.vimeo.com/video/1011540228"
               title="Welcome to Barabbas Road Church"
               allow="autoplay; fullscreen; picture-in-picture"
               allowFullScreen
