@@ -33,7 +33,7 @@ export default function AboutPage() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={PHOTO_WORSHIP} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.28 }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(20,19,17,.88) 0%, rgba(20,19,17,.5) 100%)" }} />
-        <div className="brc-container" style={{ position: "relative", padding: "80px 0 72px" }}>
+        <div className="brc-container" style={{ position: "relative", paddingTop: "80px", paddingBottom: "72px" }}>
           <Eyebrow color="var(--gold-400)" withRule>Who We Are</Eyebrow>
           <h1 style={{ color: "var(--white)", fontSize: "clamp(2.8rem,1.6rem+5vw,5rem)", margin: "16px 0 20px", lineHeight: 0.96 }}>
             A Church Committed<br />to God&apos;s Word.
