@@ -4,192 +4,192 @@ import { Eyebrow } from "@/components/core/Eyebrow";
 
 export const metadata: Metadata = { title: "Church Government" };
 
+const pStyle: React.CSSProperties = { fontSize: "16px", lineHeight: 1.8, color: "var(--text-body)", margin: "0 0 18px" };
+const h3Style: React.CSSProperties = { fontSize: "clamp(1.2rem,1rem+.5vw,1.4rem)", margin: "40px 0 14px", color: "var(--ink-900)", lineHeight: 1.2 };
+
 export default function ChurchGovernmentPage() {
   return (
     <div>
-      {/* ── Hero ── */}
-      <section style={{ background: "var(--ink-900)", color: "var(--white)", padding: "64px 0 0" }}>
+      <section style={{ background: "var(--ink-900)", padding: "64px 0 0" }}>
         <div className="brc-container">
-          <Eyebrow color="var(--gold-400)" withRule>Leadership</Eyebrow>
-          <h1
-            style={{
-              color: "var(--white)",
-              fontSize: "clamp(2.6rem,1.6rem+4vw,4.5rem)",
-              margin: "16px 0 32px",
-              lineHeight: 0.98,
-            }}
-          >
+          <Eyebrow color="var(--gold-400)" withRule>Polity</Eyebrow>
+          <h1 style={{ color: "var(--white)", fontSize: "clamp(2.6rem,1.6rem+4vw,4.5rem)", margin: "16px 0 28px", lineHeight: 0.98 }}>
             Church Government
           </h1>
-
           {/* Vimeo embed */}
-          <div
-            style={{
-              position: "relative",
-              paddingBottom: "56.25%",
-              height: 0,
-              overflow: "hidden",
-              borderRadius: "var(--radius-lg)",
-              marginBottom: "0",
-              background: "#000",
-            }}
-          >
+          <div style={{ position: "relative", width: "100%", maxWidth: "720px", paddingBottom: "40.5%", borderRadius: "var(--radius-lg)", overflow: "hidden", boxShadow: "0 12px 40px rgba(0,0,0,.5)", marginBottom: "32px" }}>
             <iframe
               src="https://player.vimeo.com/video/160823910"
-              title="Church Government"
+              title="Church Government — Barabbas Road"
               allow="autoplay; fullscreen; picture-in-picture"
               allowFullScreen
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                border: 0,
-              }}
+              style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none" }}
             />
           </div>
         </div>
-
-        <div style={{ marginTop: "48px" }}>
-          <AboutSubNav />
-        </div>
+        <AboutSubNav />
       </section>
 
-      {/* ── Body ── */}
       <section style={{ padding: "var(--section-y) 0", background: "var(--surface-page)" }}>
         <div className="brc-container">
           <div style={{ maxWidth: "760px" }}>
-            <Eyebrow color="var(--gold-700)" withRule>Elder Leadership</Eyebrow>
-            <h2
-              style={{
-                fontFamily: "var(--font-cond)",
-                fontWeight: 800,
-                fontSize: "clamp(1.8rem,1rem+2.5vw,2.8rem)",
-                color: "var(--ink-900)",
-                margin: "16px 0 40px",
-                lineHeight: 1.05,
-              }}
-            >
+
+            <h2 style={{ fontSize: "clamp(1.6rem,1.2rem+1vw,2rem)", margin: "0 0 32px", color: "var(--ink-900)", lineHeight: 1.2, textTransform: "uppercase", letterSpacing: ".04em", fontFamily: "var(--font-semicond)", fontWeight: 800 }}>
               Answering the Key Questions About Elders
             </h2>
 
-            <p
-              style={{
-                fontSize: "17px",
-                lineHeight: 1.8,
-                color: "var(--text-body)",
-                marginBottom: "28px",
-              }}
-            >
-              The church, like every other dimension of God's kingdom manifested upon earth, depends upon its leadership. The strength, health, productivity, and fruitfulness of a church directly reflect the quality of its leadership.
-            </p>
+            <p style={pStyle}>The church, like every other dimension of God's kingdom manifested upon earth, depends upon its leadership. The strength, health, productivity, and fruitfulness of a church directly reflect the quality of its leadership.</p>
+            <p style={pStyle}>Under the plan God has ordained for the church, leadership is a position of humble, loving service. Those who would lead God's people must exemplify purity, sacrifice, diligence, and devotion. And with the tremendous responsibility inherent in leading the flock of God comes potential for either great blessing or great judgment. Good leaders are doubly blessed; poor leaders are doubly chastened, for &ldquo;from everyone who has been given much, much will be required&rdquo; (Luke 12:48). James 3:1 says, &ldquo;Let not many of you become teachers, my brethren, knowing that as such we will incur a stricter judgment.&rdquo;</p>
+            <p style={pStyle}>Biblically, the focal point of all church leadership is the elder. It is the elders who are charged with teaching, feeding, and protecting the church, and it is the elders who are accountable to God on behalf of the church. Yet as I meet elders and pastors from across the country, I find that many do not understand either the gravity or the potential of their role. Being uncertain of their function or their relationship to the church, they are greatly hindered in their ability to minister effectively. With that in mind, let me suggest ten key questions, the answers to which are fundamental to a proper understanding of the ministry of elders.</p>
 
-            <p
-              style={{
-                fontSize: "17px",
-                lineHeight: 1.8,
-                color: "var(--text-body)",
-                marginBottom: "28px",
-              }}
-            >
-              Under the plan God has ordained for the church, leadership is a position of humble, loving service. Those who would lead God's people must exemplify purity, sacrifice, diligence, and devotion. And with the tremendous responsibility inherent in leading the flock of God comes potential for either great blessing or great judgment. Good leaders are doubly blessed; poor leaders are doubly chastened, for "from everyone who has been given much, much will be required" (Luke 12:48). James 3:1 says, "Let not many of you become teachers, my brethren, knowing that as such we will incur a stricter judgment."
-            </p>
+            <h3 style={h3Style}>1. What is the proper understanding of the term elder?</h3>
+            <p style={pStyle}>The word elder is of Old Testament Jewish origin. The primary Hebrew word for elder, zaqen, was used, for example, in Numbers 11:16 and Deuteronomy 27:1, of the seventy tribal leaders who assisted Moses. There it refers to a special category of men who were set apart for leadership—much like a senate—in Israel. Deuteronomy 1:9–18 indicates that these men were charged with the responsibility of judging the people. Moses communicated through them to the people (Exodus 19:7; Deuteronomy 31:9). They led the Passover (Exodus 12:21) and perhaps other elements of worship.</p>
+            <p style={pStyle}>Later, the elders of Israel were specifically involved in the leadership of cities (1 Samuel 11:3; 16:4; 30:26). Still, their function was decision making— applying wisdom to the lives of the people in resolving conflicts, giving direction, and generally overseeing the details of an orderly society.</p>
+            <p style={pStyle}>The Old Testament refers to them as &ldquo;elders of Israel&rdquo; (1 Samuel 4:3); &ldquo;elders of the land&rdquo; (1 Kings 20:7); &ldquo;elders of Judah&rdquo; (2 Kings 23:1); &ldquo;elders ... of each city&rdquo; (Ezra 10:14); and &ldquo;elders of the congregation&rdquo; (Judges 21:16). They served in the capacity of local magistrates, and as governors over the tribes (Deuteronomy 16:18; 19:12; 31:28).</p>
+            <p style={pStyle}>Another Hebrew word for elder is sab, used only five times in the Old Testament, all in the book of Ezra. There it refers to the group of Jewish leaders in charge of rebuilding the Temple after the Exile.</p>
+            <p style={pStyle}>The Greek word for elder, presbuteros, is used about seventy times in the New Testament. Like zaqen, which means &ldquo;aged&rdquo; or &ldquo;bearded&rdquo;; sab, which means &ldquo;gray-headed&rdquo;; and our English word elder; presbuteros has reference to mature age. For example, in Acts 2:17, Peter quotes Joel 2:28: &ldquo;Your old men shall dream dreams.&rdquo; The Hebrew word used for &ldquo;old men&rdquo; in Joel is zaqen, and the Greek word used in Acts is presbuteros. Used in that sense, elder does not constitute an official title; it simply means &ldquo;an older man.&rdquo;</p>
+            <p style={pStyle}>In 1 Timothy 5:2, the feminine form of presbuteros is used to refer to older women. There, older women are contrasted with younger ones: &ldquo;[Appeal to] the older women as mothers, and the younger women as sisters, in all purity.&rdquo; In that context, the term again signifies only mature age, not an office in the church.</p>
+            <p style={pStyle}>First Peter 5:5 contains a similar usage: &ldquo;You younger men, likewise, be subject to your elders.&rdquo; There, as in 1 Timothy 5:2, the word is used to contrast between age and youth. In such a context, presbuteros is generally understood to mean only &ldquo;an older person,&rdquo; not necessarily an officeholder of any kind. That is the primary meaning of the term in general Greek usage.</p>
+            <p style={pStyle}>In the time of Christ, presbuteros was a familiar term. It is used twenty-eight times in the New Testament to refer to a group of ex officio spiritual leaders of Israel: &ldquo;the chief priests and elders&rdquo; (Matthew 27:3); &ldquo;the scribes and elders&rdquo; (27:41); &ldquo;officers of the temple and elders&rdquo; (Luke 22:52); and &ldquo;rulers and elders of the people&rdquo; (Acts 4:8). In each of those instances and every similar usage, presbuteros refers to recognized spiritual leaders in Israel who aren&rsquo;t defined as priests of any kind. These seem to be the Sanhedrin, the highest ruling body in Judaism in Jesus&rsquo; time.</p>
+            <p style={pStyle}>Matthew 15:2 and Mark 7:3 and 5 use the phrase &ldquo;tradition of the elders.&rdquo; There presbuteros refers to an ancestry of spiritual fathers who passed down principles that governed religious practice. These were the teachers who determined Jewish tradition.</p>
+            <p style={pStyle}>In this sense, elder is equivalent to rabbi and may or may not signify official status.</p>
+            <p style={pStyle}>There are twelve occurrences of presbuteros in the book of Revelation. All of them refer to the twenty-four elders who appear to be unique representatives of the redeemed people of God from all ages.</p>
 
-            {/* Pull quotes */}
-            <blockquote
-              style={{
-                margin: "40px 0",
-                padding: "24px 32px",
-                borderLeft: "4px solid var(--gold-400)",
-                background: "var(--surface-card)",
-                borderRadius: "0 var(--radius-md) var(--radius-md) 0",
-              }}
-            >
-              <p
-                style={{
-                  fontFamily: "var(--font-cond)",
-                  fontStyle: "italic",
-                  fontSize: "clamp(1.15rem,0.8rem+1.5vw,1.55rem)",
-                  lineHeight: 1.5,
-                  color: "var(--ink-900)",
-                  margin: "0 0 12px",
-                }}
-              >
-                "From everyone who has been given much, much will be required."
-              </p>
-              <cite
-                style={{
-                  fontFamily: "var(--font-semicond)",
-                  fontWeight: 700,
-                  fontSize: "13px",
-                  letterSpacing: ".06em",
-                  textTransform: "uppercase",
-                  color: "var(--gold-700)",
-                  fontStyle: "normal",
-                }}
-              >
-                Luke 12:48
-              </cite>
+            <h3 style={h3Style}>2. How is the term elder used in reference to the church?</h3>
+            <p style={pStyle}>The New Testament church was initially Jewish, so it would be natural that the concept of elder rule was adopted for use in the early church. Elder was the only commonly used Jewish term for leadership that was free from any connotation of either the monarchy or the priesthood. That is significant, because in the church each believer is a co-regent with Christ so there could be no earthly king. And unlike national Israel, the church has no specially designated earthly priesthood, for all believers are priests. So of all the Jewish concepts of leadership, the elder best transfers to the kind of leadership ordained for the church.</p>
+            <p style={pStyle}>The elders of Israel were mature men, heads of families (Exodus 12:21); able men of strong moral character, fearing God, men of truth and integrity (Exodus 18:20–21); men full of the Holy Spirit (Numbers 11:16–17); capable men of wisdom, discernment, and experience—impartial and courageous men who would intercede, teach, and judge righteously and fairly (Deuteronomy 1:13–17). All of those characteristics were involved in the Jewish understanding of the term presbuteros. The use of that term to describe church leaders emphasizes the maturity of their spiritual experience, as shown in the strength and consistency of their moral character.</p>
+            <p style={pStyle}>Presbuteros is used nearly twenty times in Acts and the epistles in reference to a unique group of leaders in the church. From the earliest beginnings of the church it was clear that a group of mature spiritual leaders was identified to have responsibility for the church. The church at Antioch, for example, where believers were first called &ldquo;Christians,&rdquo; sent Barnabas and Saul to the elders at Jerusalem with a gift to be distributed to the needy brethren in Judea (Acts 11:29–30). That demonstrates both that elders existed in the church at that early date, and that the believers at Antioch recognized their authority.</p>
+            <p style={pStyle}>Since the church at Antioch grew out of the ministry at Jerusalem, elders probably existed there as well. In fact, it is likely that Paul himself functioned as an elder at Antioch before he stepped out in the role of an apostle. He is listed in Acts 13:1 as one of that church&rsquo;s teachers.</p>
+            <p style={pStyle}>Elders played a dominant role in the Council of Jerusalem, as recorded in Acts 15 (see vv. 2, 4, 6, 22, 23; and 16:4). Obviously, they were very influential in the foundational life of the early church.</p>
+            <p style={pStyle}>As Paul and Barnabas began to preach in new areas, and as the church began to extend itself, the process of identifying church leaders became more clearly defined. And throughout the New Testament, as the church developed, leaders were called elders.</p>
+            <p style={pStyle}>As early in the biblical narrative as Acts 14, we see that one of the key steps in establishing a new church was to identify and appoint elders for church leadership. &ldquo;When they had appointed elders for them in every church, having prayed with fasting, they commended them to the Lord in whom they had believed&rdquo; (Acts 14:23).</p>
+            <p style={pStyle}>Nearly every church we know of in the New Testament is specifically said to have had elders. For example, Acts 20:17 says, &ldquo;From Miletus he sent to Ephesus and called to him the elders of the church.&rdquo; It is significant that the church at Ephesus had elders, because all the churches of Asia Minor—such as those listed in Revelation 1:11—were extensions of the ministry at Ephesus. We can assume that those churches also identified their leadership by the same terms that were set as the pattern in Ephesus—a plurality of elders.</p>
+            <p style={pStyle}>Peter wrote to the scattered believers in Pontus, Galatia, Cappadocia, Asia, and Bithynia, &ldquo;I exhort the elders among you ... shepherd the flock of God&rdquo; (1 Peter 5:1–2). Pontus, Galatia, Cappadocia, and Bithynia were not cities, but rather territories. Thus, Peter was writing to a number of churches scattered all over Asia. All of them had elders.</p>
+
+            <h3 style={h3Style}>3. How is the elder related to the bishop and the pastor?</h3>
+            <p style={pStyle}>Bishops and pastors are not distinct from elders; the terms are simply different ways of identifying the same people. The Greek word for bishop is episkopos, from which the Episcopalian Church gets its name. The Greek word for pastor is poimēn.</p>
+            <p style={pStyle}>The textual evidence indicates that all three terms refer to the same office. The qualifications for a bishop, listed in 1 Timothy 3:1–7, and those for an elder, in Titus 1:6–9, are unmistakably parallel. In fact, in Titus, Paul uses both terms to refer to the same man (1:5, 7).</p>
+            <p style={pStyle}>First Peter 5:1–2 brings all three terms together. Peter instructs the elders to be good bishops as they pastor: &ldquo;Therefore, I exhort the elders [presbuteros] among you, as your fellow elder and witness of the sufferings of Christ, and a partaker also of the glory that is to be revealed, shepherd [poimainō] the flock of God among you, exercising oversight [episkopeō] not under compulsion, but voluntarily, according to the will of God.&rdquo;</p>
+            <p style={pStyle}>Acts 20 also uses all three terms interchangeably. In verse 17, Paul assembles all the elders (presbuteros) of the church to give them his farewell message. In verse 28, he says, &ldquo;Be on guard for yourselves and for all the flock, among which the Holy Spirit has made you overseers [episkopos], to shepherd [poimainō] the church of God.&rdquo;</p>
+            <p style={pStyle}>In general usage, I prefer the term elder, because it seems to be free of many of the connotations and nuances of meanings that have been imposed on both bishop and pastor by our culture.</p>
+            <p style={pStyle}>Episkopos, the word for bishop, means &ldquo;overseer,&rdquo; or &ldquo;guardian.&rdquo; The New Testament uses episkopos five times. In 1 Peter 2:25, Jesus Christ is called the episkopos of our souls. That is, He is the One who has the clearest overview of us, who understands us best, and He is the Shepherd and Guardian of our souls. The other four uses of episkopos have reference to leaders in the church.</p>
+            <p style={pStyle}>Episkopos is the secular Greek culture&rsquo;s equivalent to the historic Hebrew idea of elders. Bishops were those appointed by the emperors to lead captured or newly founded city-states. The bishop was responsible to the emperor, but oversight was delegated to him. He functioned as a commissioner, regulating the affairs of the new colony or acquisition.</p>
+            <p style={pStyle}>Thus episkopos suggested two ideas to the first-century Greek mind: responsibility to a superior power, and an introduction to a new order of things. Gentile converts would immediately understand those concepts in the term.</p>
+            <p style={pStyle}>It is interesting to trace the biblical uses of episkopos. It appears in the book of Acts only once, near the end (Acts 20:28). Of course, at that time, there were relatively few Gentiles in the church, and so the term was not commonly used. But apparently as Gentiles were saved and the church began to lose its Jewish orientation, the Greek culture&rsquo;s word episkopos was used more frequently to describe those who functioned as elders (1 Timothy 3:1).</p>
+            <p style={pStyle}>The New Testament bishop, or overseer, is in a unique leadership role in the church, specifically responsible for teaching (1 Timothy 3:2), feeding, protecting, and generally nurturing the flock (Acts 20:28). Biblically, there is no difference in the role of an elder and that of a bishop; the two terms refer to the same group of leaders. Episkopos emphasizes the function; presbuteros, the character.</p>
+            <p style={pStyle}>Poimēn, the word for pastor or shepherd, is used a number of times in the New Testament, but Ephesians 4:11 is the only place in the King James Version where it is translated &ldquo;pastor.&rdquo; Every other time it appears in the Greek texts, it is translated &ldquo;shepherd&rdquo; in the English version.</p>
+            <p style={pStyle}>Two of the three times it appears in the epistles, poimēn refers to Christ. Hebrews 13:20–21 is a benediction: &ldquo;Now the God of peace, who brought up from the dead the great Shepherd [poimēn] of the sheep through the blood of the eternal covenant, even Jesus our Lord, equip you in every good thing to do His will.&rdquo; First Peter 2:25 says, &ldquo;For you were continually straying like sheep, but now you have returned to the Shepherd [poimēn] and Guardian [episkopos] of your souls.&rdquo;</p>
+            <p style={pStyle}>In Ephesians 4:11, pastor (poimēn) is used with the word teacher. The Greek construction there indicates that the two terms go together—we might hyphenate them in English (&ldquo;pastor-teacher&rdquo;). The emphasis is on the pastor&rsquo;s ministry of teaching.</p>
+            <p style={pStyle}>Poimēn, then, emphasizes the pastoral role of caring and feeding, although the concept of leadership is also inherent in the picture of a shepherd. The focus of the term poimēn is on the man&rsquo;s attitude. To be qualified as a pastor, a man must have a shepherd&rsquo;s caring heart.</p>
+            <p style={pStyle}>So the term elder emphasizes who the man is. Bishop speaks of what he does. And pastor deals with how he feels. All three terms are used of the same church leaders, and all three identify those who feed and lead the church, but each has a unique emphasis.</p>
+
+            <h3 style={h3Style}>4. What is the role of an elder?</h3>
+            <p style={pStyle}>As the apostolic era came to a close, the office of elder emerged as the highest level of local church leadership. Thus it carried a great amount of responsibility. The elders were charged with the care and feeding, as well as the spiritual guidance, of the entire church. There was no higher court of appeal, and no greater resource to know the mind and heart of God with regard to issues in the church.</p>
+            <p style={pStyle}>First Timothy 3:1 says, &ldquo;It is a trustworthy statement: if any man aspires to the office of overseer [episkopos], it is a fine work he desires to do.&rdquo; In verse 5, Paul says that the work of an episkopos is to &ldquo;take care of the church of God.&rdquo; The clear implication is that a bishop&rsquo;s primary responsibility is that of being caretaker for the church.</p>
+            <p style={pStyle}>That involves a number of more specific duties. Perhaps the most obvious is the function of overseeing the affairs of the local church. First Timothy 5:17 says, &ldquo;The elders who rule well are to be considered worthy of double honor.&rdquo; The Greek word translated &ldquo;rule&rdquo; in that verse is proistēmi, used to speak of the elders&rsquo; responsibilities four times in 1 Timothy (3:4, 5, 12; 5:17), once in 1 Thessalonians 5:12 (where it is translated, &ldquo;have charge over&rdquo;), and once in Romans 12:8, where ruling is listed as a spiritual gift. Proistēmi literally means &ldquo;to stand first,&rdquo; and it speaks of the duty of general oversight common to all elders.</p>
+            <p style={pStyle}>As those who rule in the church, elders are not subject to any higher earthly authority outside the local assembly. Their authority over the church is not by force or dictatorial power, but by precept and example (Hebrews 13:7).</p>
+            <p style={pStyle}>Nor are the elders to operate by majority rule or vote. If all the elders are guided by the same Spirit and all have the mind of Christ, there should be unanimity in the decisions they make (1 Corinthians 1:10; Ephesians 4:3; Philippians 1:27; 2:2). If there is division, all the elders should study, pray, and seek the will of God together until consensus is achieved. Unity and harmony in the church begin with this principle.</p>
+            <p style={pStyle}>With the elders lies the responsibility to preach and teach (1 Timothy 5:17). They are to determine doctrinal issues for the church and have the responsibility of proclaiming the truth to the congregation. First Timothy 3:2–7, listing the spiritual qualifications of the overseer, gives only one qualification that relates to a specific function: He must be &ldquo;able to teach.&rdquo; All the other qualifications are personal character qualities.</p>
+            <p style={pStyle}>Titus 1:7–9 also emphasizes the significance of the elder&rsquo;s responsibility as a teacher: &ldquo;For the overseer must … be able both to exhort in sound doctrine and to refute those who contradict.&rdquo; Already in the church, the threat of false teachers was so great that a key qualification for leadership was an understanding of sound doctrine and the ability to teach it.</p>
+            <p style={pStyle}>Exhort in that verse is the Greek word parakaleō, which literally means &ldquo;to call near.&rdquo; From its uses in the New Testament, we see that the ministry of exhortation has several elements. It involves persuasion (Acts 2:14; 14:22; Titus 1:9), pleading (2 Corinthians 8:17), comfort (1 Thessalonians 2:11), encouragement (1 Thessalonians 4:1), and patient reiterating of important doctrine (2 Timothy 4:2).</p>
+            <p style={pStyle}>The elders are a resource for those who seek partnership in prayer. James wrote, &ldquo;Is anyone among you sick? Then he must call for the elders of the church and they are to pray over him, anointing him with oil in the name of the Lord&rdquo; (James 5:14).</p>
+            <p style={pStyle}>Acts 20:28 says that another function of an elder is shepherding: &ldquo;Be on guard for yourselves and for all the flock, among which the Holy Spirit has made you overseers, to shepherd the church of God.&rdquo; Involved in the concept of shepherding are the twin responsibilities of feeding and protecting the flock. Verses 29–30 reemphasize the fact that the protecting ministry of the overseer is essential to counter the threat of false teachers.</p>
+            <p style={pStyle}>The elder acts as a caring and loving shepherd over the flock, but never in Scripture is it spoken of as &ldquo;his flock,&rdquo; or &ldquo;your flock.&rdquo; It is always the &ldquo;flock of God&rdquo; (1 Peter 5:2), and he is merely a steward—a caretaker for the possession of God.</p>
+            <p style={pStyle}>Elders, as the spiritual overseers of the flock, are to determine church policy (Acts 15:22); oversee (Acts 20:28); ordain others (1 Timothy 4:14); rule, teach, and preach (1 Timothy 5:17); exhort and refute (Titus 1:9); and act as shepherds, setting an example for all (1 Peter 5:1–3). Those responsibilities put elders at the core of the work of the New Testament church.</p>
+            <p style={pStyle}>Understandably, elders cannot afford to allow themselves to be consumed with business details, public relations, minor financial matters, and other particulars of the day-to-day operation of the church. They are to devote themselves first of all to prayer and to the ministry of the Word, and they must select deacons to handle the lesser matters (cf. Acts 6:3–4).</p>
+
+            <h3 style={h3Style}>5. What are the qualifications of an elder?</h3>
+            <p style={pStyle}>First Timothy 3 and Titus 1 identify the qualifications of an elder. First Timothy 3:1–7 says:</p>
+            <blockquote style={{ margin: "0 0 18px", padding: "20px 24px", borderLeft: "4px solid var(--gold-400)", background: "var(--surface-card)", borderRadius: "0 var(--radius-md) var(--radius-md) 0", fontStyle: "italic", fontSize: "16px", lineHeight: 1.8, color: "var(--text-body)" }}>
+              It is a trustworthy statement: if any man aspires to the office of overseer, it is a fine work he desires to do. An overseer, then, must be above reproach, the husband of one wife, temperate, prudent, respectable, hospitable, able to teach, not addicted to wine or pugnacious, but gentle, peaceable, free from the love of money. He must be one who manages his own household well, keeping his children under control with all dignity (but if a man does not know how to manage his own household, how will he take care of the church of God?), and not a new convert, so that he will not become conceited and fall into the condemnation incurred by the devil. And he must have a good reputation with those outside the church, so that he may not fall into reproach and the snare of the devil.
             </blockquote>
-
-            <p
-              style={{
-                fontSize: "17px",
-                lineHeight: 1.8,
-                color: "var(--text-body)",
-                marginBottom: "28px",
-              }}
-            >
-              Biblically, the focal point of all church leadership is the elder. It is the elders who are charged with teaching, feeding, and protecting the church, and it is the elders who are accountable to God on behalf of the church.
-            </p>
-
-            <p
-              style={{
-                fontSize: "17px",
-                lineHeight: 1.8,
-                color: "var(--text-body)",
-                marginBottom: "28px",
-              }}
-            >
-              The word <em>elder</em> is of Old Testament Jewish origin. The primary Hebrew word for elder, <em>zaqen</em>, was used in Numbers 11:16 and Deuteronomy 27:1, of the seventy tribal leaders who assisted Moses. There it refers to a special category of men who were set apart for leadership—much like a senate—in Israel.
-            </p>
-
-            <blockquote
-              style={{
-                margin: "40px 0",
-                padding: "24px 32px",
-                borderLeft: "4px solid var(--gold-400)",
-                background: "var(--surface-card)",
-                borderRadius: "0 var(--radius-md) var(--radius-md) 0",
-              }}
-            >
-              <p
-                style={{
-                  fontFamily: "var(--font-cond)",
-                  fontStyle: "italic",
-                  fontSize: "clamp(1.15rem,0.8rem+1.5vw,1.55rem)",
-                  lineHeight: 1.5,
-                  color: "var(--ink-900)",
-                  margin: "0 0 12px",
-                }}
-              >
-                "Let not many of you become teachers, my brethren, knowing that as such we will incur a stricter judgment."
-              </p>
-              <cite
-                style={{
-                  fontFamily: "var(--font-semicond)",
-                  fontWeight: 700,
-                  fontSize: "13px",
-                  letterSpacing: ".06em",
-                  textTransform: "uppercase",
-                  color: "var(--gold-700)",
-                  fontStyle: "normal",
-                }}
-              >
-                James 3:1
-              </cite>
+            <p style={pStyle}>There the single, overarching qualification of which the rest are supportive is that he is to be &ldquo;above reproach.&rdquo; That is, he must be a leader who cannot be accused of anything sinful. All the other qualifications, except perhaps teaching and management skill, only amplify that idea.</p>
+            <p style={pStyle}>An elder must be above reproach in his marital life, his social life, his family life, his business life, and his spiritual life. &ldquo;The husband of one wife&rdquo; (lit. &ldquo;a one-woman man&rdquo;) does not mean simply that he is married to one woman—that would not be a spiritual qualification. Rather, it means an elder is to be a man who is utterly single-minded in his devotion to his wife. If he is not married, he is not to be the type who is flirtatious. &ldquo;Temperate&rdquo; seems to imply the idea of a balanced, moderate life. &ldquo;Prudent&rdquo; is another word for &ldquo;wise.&rdquo; &ldquo;Respectable&rdquo; means that he has dignity and the respect of his peers. &ldquo;Hospitable&rdquo; means that he loves strangers—not necessarily that he has a lot of dinner parties, but rather that he is not cliquish. &ldquo;Able to teach&rdquo; is didaktikos, or &ldquo;skilled in teaching.&rdquo; Other characteristics are that he be &ldquo;not addicted to wine&rdquo; (Timothy himself apparently drank none; 1 Timothy 5:23); not &ldquo;pugnacious&rdquo; (not one who picks fights or is physically abusive); &ldquo;gentle&rdquo;; &ldquo;peaceable&rdquo;; and &ldquo;free from the love of money.&rdquo;</p>
+            <p style={pStyle}>All those must be proven, demonstrated qualities and abilities, and the first place he must manifest them is in his home. He must manage his own household well, and keep his children under control with dignity. &ldquo;Household&rdquo; in verse 5 probably refers to an extended household, including servants, lands, possessions, and many in-laws and other relatives. All those were elements of a household in the first century, and a great deal of leadership skill and spiritual character were required to manage them well. If a man could not manage his household, how could he be charged with managing the church?</p>
+            <p style={pStyle}>The qualifications of an elder, then, go far beyond good moral characteristics. An elder must be demonstrably skilled as a teacher and manager. If anything in his life signifies a weakness in those areas, he is disqualified. If he is in debt, if his children are rebellious, if anything in his handling of business affairs is not above reproach, he cannot be an elder.</p>
+            <p style={pStyle}>Understandably, he cannot be a new convert, for it takes time for him to mature, as well as time to examine his life and evaluate his qualifications. In addition, elevating a new convert to a position of leadership runs the risk of making him become conceited.</p>
+            <p style={pStyle}>To wrap all that up, he must have an impeccable reputation with those outside the church. His business and social activities in the community must also be above reproach.</p>
+            <p style={pStyle}>In Titus 1:5–9, Paul lists similar qualifications. Writing to Titus, with whom he had charged the responsibility of overseeing the appointment of elders on the island of Crete, he says:</p>
+            <blockquote style={{ margin: "0 0 18px", padding: "20px 24px", borderLeft: "4px solid var(--gold-400)", background: "var(--surface-card)", borderRadius: "0 var(--radius-md) var(--radius-md) 0", fontStyle: "italic", fontSize: "16px", lineHeight: 1.8, color: "var(--text-body)" }}>
+              For this reason I left you in Crete, that you would set in order what remains and appoint elders in every city as I directed you, namely, if any man is above reproach, the husband of one wife, having children who believe, not accused of dissipation or rebellion. For the overseer must be above reproach as God&rsquo;s steward, not self-willed, not quick-tempered, not addicted to wine, not pugnacious, not fond of sordid gain, but hospitable, loving what is good, sensible, just, devout, self-controlled, holding fast the faithful word which is in accordance with the teaching, so that he will be able both to exhort in sound doctrine and to refute those who contradict.
             </blockquote>
+            <p style={pStyle}>Most of those qualifications either echo or parallel the ones given in 1 Timothy. Again Paul says that an elder is to be a one-woman man, having children who believe and whose lives are not characterized by rebellion or dissipation, which is sinful indulgence. In other words, his children are not rebelling against him or the values of a righteous home and family, and they are not living lives of profligacy.</p>
+            <p style={pStyle}>The overseer must be &ldquo;above reproach as God&rsquo;s steward.&rdquo; Again, that implies that he is proven in the ministry already. He is &ldquo;not self-willed,&rdquo; seeking his own things. He is &ldquo;not quick-tempered,&rdquo; &ldquo;not addicted to wine,&rdquo; and &ldquo;not pugnacious,&rdquo; or violent. He does not seek to get money through illicit or questionable means. He is &ldquo;hospitable,&rdquo; &ldquo;loving what is good,&rdquo; and &ldquo;sensible,&rdquo; or discreet. He is &ldquo;just,&rdquo; &ldquo;devout&rdquo; (devoted to God), and &ldquo;self-controlled.&rdquo;</p>
+            <p style={pStyle}>And in addition to all that, he must demonstrate skill in handling the Word of God so that he can both &ldquo;exhort in sound doctrine&rdquo; and &ldquo;refute those who contradict&rdquo; it.</p>
+            <p style={pStyle}>No provision is made for women to serve as elders. First Timothy 2:11–12 says, &ldquo;A woman must quietly receive instruction with entire submissiveness. But I do not allow a woman to teach or exercise authority over a man, but to remain quiet.&rdquo; Women are to be under the authority of elders, excluded from teaching men or holding positions of authority over them.</p>
+            <p style={pStyle}>The reasons women must submit to the leadership of men are not cultural, nor do they reflect a Pauline prejudice, as some claim. Rather, the reason is rooted in the order of creation: &ldquo;For it was Adam who was first created, and then Eve&rdquo; (v. 13). The Fall of man confirmed the order: &ldquo;And it was not Adam who was deceived, but the woman being deceived, fell into transgression&rdquo; (v. 14).</p>
+            <p style={pStyle}>The balance of influence comes through the woman&rsquo;s responsibility of bearing and nurturing children (v. 15).</p>
+
+            <h3 style={h3Style}>6. How are elders to be ordained?</h3>
+            <p style={pStyle}>The New Testament clearly indicates that elders were uniquely set apart or appointed to their office. The term normally used for the appointing of elders in the New Testament is kathistēmi, which means &ldquo;to ordain.&rdquo; The concept of ordination implies official recognition by the leadership of the church and a public announcement setting men aside for special ministry.</p>
+            <p style={pStyle}>In 1 Timothy 4:14, Paul says to Timothy, &ldquo;Do not neglect the spiritual gift within you, which was bestowed on you through prophetic utterance with the laying on of hands by the presbytery.&rdquo;</p>
+            <p style={pStyle}>Interestingly, &ldquo;the laying on of hands&rdquo; comes from the Old Testament sacrificial system. When a sacrifice was given, the hands of the offerer were placed upon the sacrifice to show identification. So the laying on of hands became a means by which one could identify himself with another.</p>
+            <p style={pStyle}>In the same way, the New Testament ordination ritual demonstrated solidarity between the elders and the one on whom they laid their hands. It was a visible means of saying, &ldquo;We commend you to the ministry. We stand with you, support you, and affirm your right to function in a position of leadership in this church.&rdquo;</p>
+            <p style={pStyle}>Paul writes to warn Timothy, &ldquo;Do not lay hands upon anyone too hastily and thereby share responsibility for the sins of others; keep yourself free from sin&rdquo; (1 Timothy 5:22). That emphasizes the seriousness of the statement of solidarity. In other words, Paul is saying, &ldquo;If you lay hands on a man who is sinning, and thereby ordain him to the pastorate, you have entered into his sin. If you don&rsquo;t want to be a participant in sin, don&rsquo;t fail to seek the mind of the Lord in the process.&rdquo;</p>
+            <p style={pStyle}>A man should be considered for ordination only after he has proved himself suitable for a ministry of leadership through a period during which he is tested. Then he may be tempered for a time, during which he is observed functioning in a limited position of delegated oversight. If he demonstrates capability in leadership and loyalty to the message, he can be publicly acknowledged as one who is to be trusted in the service of leadership. The church should have men in this proving process as it looks to the future.</p>
+            <p style={pStyle}>Biblically, the laying on of hands was done by the recognized leaders of a church. In this way they identified themselves with those who were becoming leaders. But the process of identifying leaders may also have involved the people. Acts 14:23 says, &ldquo;And when they had appointed elders for them in every church, having prayed with fasting, they commended them to the Lord in whom they had believed.&rdquo; The word for &ldquo;appointed&rdquo; in that verse is cheirotoneō, which literally means &ldquo;to choose by raising hands.&rdquo; It is the same word used to describe how votes were taken in the Athenian legislature. It came to mean &ldquo;to appoint.&rdquo;</p>
+            <p style={pStyle}>Some feel that the use of cheirotoneō implies that a congregational vote by show of hands was taken. That is forcing the word. The context of Acts 14:23 indicates that only Barnabas and Paul (the antecedents of the pronoun they) were involved in the choosing.</p>
+            <p style={pStyle}>Second Corinthians 8:19 uses cheirotoneō to describe the appointment of an unnamed brother &ldquo;appointed by the churches&rdquo; to travel with Paul. There the plural &ldquo;churches&rdquo; indicates that he was selected not by a single congregational vote, but rather by the consensus of the churches of Macedonia—probably as represented by their leaders.</p>
+            <p style={pStyle}>So using the term cheirotoneō in an exaggerated, literal way is not sufficient to support the idea of the election of elders by congregational vote, although the assent of the congregation may be implied.</p>
+            <p style={pStyle}>Acts 6:5 is often submitted as proof for congregational selection: &ldquo;The statement found approval with the whole congregation; and they chose Stephen, a man full of faith and of the Holy Spirit, and Philip, Prochorus, Nicanor, Timon, Parmenas and Nicolas, a proselyte from Antioch.&rdquo; Note, however, that those chosen were not called elders. They were servers whose task was to free the apostles for spiritual leadership. And the people brought them to the apostles for approval—not the reverse (v. 6). The congregation recognized these men as godly and qualified men, but the apostles appointed them to their task.</p>
+            <p style={pStyle}>The New Testament church is seen in transition. Patterns of church leadership developed as the first-century church matured. We can trace three steps in the process of ordaining leaders. Initially, it was the apostles who selected and ordained elders (Acts 14:23). After that, elders were appointed by those who were close to the apostles and involved in their ministry. For example, Paul specifically charged Titus with the ordaining of elders (Titus 1:5). In the third phase, the elders themselves ordained other elders (1 Timothy 4:14). Always, the ultimate responsibility for appointing elders was a part of the function of church leadership.</p>
+            <p style={pStyle}>Today there are no apostles or men who have been closely associated with apostles, but the biblical pattern still holds. Church leaders—whether they be called elder, bishop, pastor, missionary, evangelist, apostolic representative, or whatever—should have the responsibility of identifying and ordaining other elders.</p>
+            <p style={pStyle}>Those who would be elders must desire to serve in this capacity. First Timothy 3:1 says, &ldquo;It is a trustworthy statement: if any man aspires to the office of overseer, it is a fine work he desires to do&rdquo; (emphases added). The starting point in identifying a potential elder is the desire in the heart of the individual. First Peter 5:2 says, &ldquo;Shepherd the flock of God among you, exercising oversight not under compulsion, but voluntarily, according to the will of God.&rdquo;</p>
+            <p style={pStyle}>In other words, we are not to go out and recruit men to become elders. One who is qualified to be an elder will be eager to give his life totally to the teaching of the Word of God and the leading of the flock of God, without any thought of gain at all. He will desire the office, pursue being set apart, and devote himself to the Word of God. No one will have to talk him into it; it is his heart&rsquo;s passion.</p>
+            <p style={pStyle}>Furthermore, he serves &ldquo;voluntarily, according to the will of God&rdquo; (emphasis added). His service as an elder is a calling from God. The desire to serve as an elder is in his heart because God put it there.</p>
+            <p style={pStyle}>If a man has the desire, feels he is called, and has all the qualifications, one thing is still necessary before he can be ordained. The elders must together seek God&rsquo;s will and affirm that He is in the decision. Acts 14:23 describes the process the apostles followed in selecting elders: &ldquo;When they had appointed elders for them in every church, having prayed with fasting, they commended them to the Lord in whom they had believed.&rdquo; Before they appointed any elders, they gave themselves over to prayer and fasting. They viewed eldership with great seriousness as the very highest calling.</p>
+            <p style={pStyle}>Acts 20:28 affirms the Holy Spirit&rsquo;s work in the selection of elders: &ldquo;Be on guard for yourselves and for all the flock, among which the Holy Spirit has made you overseers&rdquo; (emphasis added). In response to His call, God plants in a man&rsquo;s heart a passion for the ministry, and then confirms it by the leading of the Holy Spirit in the hearts of the leadership through prayer and fasting.</p>
+            <p style={pStyle}>When in my youth I sensed God&rsquo;s call to the pastorate, I spent years seeking God, praying, wanting to know God&rsquo;s heart and mind, and affirming that call in my heart before I stepped into the preparation for ministry. Every elder ought to view his calling as that serious, for it is. A man should not become an elder just because he has a vague notion that he would like to use his gifts and abilities to help the church. He should be motivated by a burden that causes him to seek God earnestly.</p>
+            <p style={pStyle}>Acts 13:2 says that the instructions from the Holy Spirit to set apart Paul and Barnabas came &ldquo;while they were ministering to the Lord [worshiping] and fasting.&rdquo; The call of God is not to be taken lightly, and the will of God is not to be sought superficially. God&rsquo;s will in the matter of ordaining church leaders will be expressed through the collective sense of God&rsquo;s working among the leadership. They must be sensitive to it. The church is where the call is confirmed.</p>
+            <p style={pStyle}>So elders are a group of specially called and ordained men with a great desire to lead and feed the flock of God. They are initiated by the Holy Spirit, confirmed by prayer, and qualified through the consistent testimony of a pure life in the eyes of all.</p>
+
+            <h3 style={h3Style}>7. Are elders to be supported financially by the church?</h3>
+            <p style={pStyle}>Even in the early church, some elders were paid by the church for their labor. First Timothy 5:17–18 says, &ldquo;The elders who rule are to be considered worthy of double honor, especially those who work hard at preaching and teaching. For the Scripture says, &lsquo;You shall not muzzle the ox while he is threshing,&rsquo; and &lsquo;The laborer is worthy of his wages.&rsquo;&rdquo; &ldquo;Honor&rdquo; in verse 17 is the Greek word timē, which, as the context shows, refers to remuneration. (Notice that Paul quotes an Old Testament verse [Deuteronomy 25:4] and a New Testament verse [Matthew 10:10] and calls them both Scripture.)</p>
+            <p style={pStyle}>In 1 Corinthians 9:1, 3–9 Paul says: &ldquo;Am I not free? Am I not an apostle? Have I not seen Jesus our Lord? Are you not my work in the Lord?… My defense to those who examine me is this: Do we not have a right to eat and drink? Do we not have a right to take along a believing wife, even as the rest of the apostles and the brothers of the Lord and Cephas? Or do only Barnabas and I not have a right to refrain from working? Who at any time serves as a soldier at his own expense? Who plants a vineyard, and does not eat the fruit of it? Or who tends a flock and does not use the milk of the flock? I am not speaking these things according to human judgment, am I? Or does not the Law also say these things? For it is written in the Law of Moses, &lsquo;You shall not muzzle the ox while he is threshing.&rsquo; God is not concerned about oxen, is He?&rdquo;</p>
+            <p style={pStyle}>In other words, it is bound into the very nature of the ministry that those who minister should be supported. Soldiers are supported by the government. Farmers eat of their harvest. Shepherds drink milk from the flock. Even oxen get fed through the work they do. So the pastor is to be supported by the church. He adds in verse 13, &ldquo;Do you not know that those who perform sacred services eat the food of the temple?&rdquo; Just as the priests lived off the offerings of the people, so those who minister under the New Covenant should be supported by those to whom they minister.</p>
+            <p style={pStyle}>Nevertheless, Paul also asserts that such subsidy is optional. It is a right, not a mandate. In verse 6, he says, &ldquo;Or do only Barnabas and I not have a right to refrain from working?&rdquo; He and Barnabas were supporting themselves through work outside the scope of the church. They had given up their right to refrain from working. Paul is clear that as ministers they had a right to be supported by the church, even if they chose not to exercise that right. Their working was out of choice, not necessity, because they wanted to offer the gospel without charge (v. 18), and they did not want to place the burden of their support on the church (1 Thessalonians 2:9).</p>
+            <p style={pStyle}>Every elder has the same right. If his eldership is a calling from the Lord, if the church has recognized that, and if his calling has been confirmed through the Spirit of God to the leadership, he has the right to be supported by the church. If he senses the leading of the Spirit of God to seek subsidy so that he can be freer to do what God has put in his heart to do, the church is obligated by the recognition of his pastorate to support him.</p>
+            <p style={pStyle}>But the &ldquo;tentmaking&rdquo; role is also an option. If an elder chooses to gain income in another way, that is within the latitude of Scripture. Elders may choose to support themselves by working outside the church, as did Paul, for a number of reasons. They may not wish to put the burden of their support on the church. They may feel their testimony has a greater impact if they do not seek support. In a church with a plurality of elders, it is likely that some will support themselves, and others will be supported by the church. This will be determined by the group. Either way, it does not affect the man&rsquo;s status as an elder.</p>
+            <p style={pStyle}>The terms lay and clergy are nonbiblical. That doesn&rsquo;t mean they aren&rsquo;t helpful. In certain circumstances, it may be useful to distinguish between those whose full support comes from their service to the church and those whose main source of income is another occupation; but in Scripture no such artificial distinctions are drawn. There are not different classes of saints, and in terms of position, there is biblically no difference between a lay elder and a pastor. Each elder is charged with the oversight, care, feeding, protection, and teaching of the flock. All the elders together constitute the leadership and example for the rest of the church. All have been ordained by the church, called by God, and set apart by God to a shepherding function as defined in the Scriptures. They are all called to the same level of commitment and to the same office. Subsidy should not be a dividing issue. Every elder has the option to receive support, or to support himself—whichever reflects God&rsquo;s will.</p>
+            <p style={pStyle}>In fact, those who choose not to accept support from the church may have an advantage in the ministry they could not enjoy if they were paid by the church. They are uniquely in a position to display to the world their testimony of being above reproach. They are more exposed to unbelievers in the workplace, and are on the cutting edge in a different dimension of life, able to interface with people whom the church might otherwise have no contact with. They may bring a greater amount of credibility to the entire group of elders. So an elder&rsquo;s subsidy is optional; his spiritual qualifications are not.</p>
+
+            <h3 style={h3Style}>8. Is the pastorate a team effort?</h3>
+            <p style={pStyle}>Clearly, all the biblical data indicates that the pastorate is a team effort. It is significant that every place in the New Testament where the term presbuteros is used, it is plural, except where the apostle John uses it of himself in 2 and 3 John, and where Peter uses it of himself in 1 Peter 5:1. The norm in the New Testament church was a plurality of elders. There is no reference in all the New Testament to a one-pastor congregation. That is not to say there were none, but none are mentioned. It is significant that Paul addressed his epistle to the Philippians &ldquo;to all the saints in Christ Jesus who are in Philippi, including the overseers [pl. episkopos] and deacons&rdquo; (1:1).</p>
+            <p style={pStyle}>Some have said that Revelation 1 supports the one-pastor concept. There, the apostle John speaks of &ldquo;the angels of the seven churches&rdquo; (v. 20). Angel can mean &ldquo;messenger,&rdquo; and those who argue for the single-pastor church say that the messengers here and in chapters 2–3 are the pastors of the churches. There are a number of problems with that interpretation. First, it cannot be proved that angelos refers to a pastor. These &ldquo;angels&rdquo; are never called &ldquo;elder,&rdquo; &ldquo;bishop,&rdquo; or &ldquo;pastor.&rdquo; In fact, it is debatable whether they are human messengers at all. Angelos is nowhere used to refer to a pastor, elder, or bishop in the New Testament, and every other time angelos appears in the book of Revelation, it refers to angels.</p>
+            <p style={pStyle}>Second, even if it could be demonstrated that these angels were pastors, that still does not prove that they were not representatives of a group of pastors. The clear New Testament pattern for church government is a plurality of elders. Acts 14:23 says, &ldquo;When they had appointed elders for them in every church, having prayed with fasting, they commended them to the Lord in whom they had believed.&rdquo; Titus 1:5 says, &ldquo;For this reason I left you in Crete, that you would set in order what remains and appoint elders in every city as I directed you.&rdquo; It may be that each elder in the city had an individual group in which he had oversight. But the church was seen as one church, and decisions were made by a collective process and in reference to the whole, not the individual parts.</p>
+            <p style={pStyle}>Much can be said for the benefits of leadership made up of a plurality of godly men. Their combined counsel and wisdom helps assure that decisions are not self-willed or self-serving to a single individual (see Proverbs 11:14). In fact, one-man leadership is characteristic of cults, not of the church.</p>
+
+            <h3 style={h3Style}>9. Does government by elders eliminate the role of a special leader?</h3>
+            <p style={pStyle}>That does not eliminate the unique role of a special leader. Within the framework of elders&rsquo; ministries there will be great diversity as each exercises his unique gifts. Some will demonstrate special giftedness in the areas of administration or service; others will evidence stronger gifts of teaching, exhortation, or other abilities. Some will be highly visible; others will function in the background. All are within the plan of God for the church.</p>
+            <p style={pStyle}>The twelve disciples are a good example of how diversity functions in a unified system. The disciples were all equal in terms of their office and privileges. With the exception of Judas, they all will reign on equal thrones, all to be equally respected and honored (Matthew 19:28). And yet within the twelve, there was a tremendous amount of diversity.</p>
+            <p style={pStyle}>Scripture records four lists of the disciples, in Matthew 10:2–4, Mark 3:16–19, Luke 6:14–16, and Acts 1:13. Each list divides the twelve into three groups of four names, and the three sub-lists always contain the same names, although the order may be altered. Generally, the names appear in descending order, beginning with those who were most intimate with Christ, always ending with Judas Iscariot.</p>
+            <p style={pStyle}>The first four always listed are Peter, James, John, and Andrew. We are more familiar with them, because they were closest to Christ, and the gospels tell us more about them. The second group comprises Philip, Matthew, Nathaniel, and Thomas; and the last group includes James, both Judases, and Thaddeus.</p>
+            <p style={pStyle}>It is significant that although the order of sub-lists differs from one account to the other, the first name in each group always remains the same. In the first group, the leading name is always Peter. The first name in the second group is always Philip. And James always leads the listing of the third group.</p>
+            <p style={pStyle}>Apparently, each of the groups had a recognized leader. His position as leader was not necessarily by appointment, but because of the unique influence he had on the rest of the group. Peter, the name at the first of every list, became the spokesman for the entire group, as we see repeatedly throughout Scripture. Almost every time the disciples wanted to ask Jesus a question, Peter was the mouthpiece.</p>
+            <p style={pStyle}>They had an equal office, equal honor, and equal privileges and responsibilities. They were all sent out two by two. They all preached the kingdom. They all healed. They all had access to Jesus. But while none of them was less than the others in terms of office or spiritual qualification (except for Judas), nevertheless, some of them stood out over the others as leaders among leaders.</p>
+            <p style={pStyle}>A position of leadership does not imply spiritual superiority. It seems unlikely that Peter was the most spiritually qualified of the disciples. Perhaps James and John came to Jesus to ask for the highest places because they thought Peter was not qualified. Even though he was a leader, he certainly was not spiritually superior to the others. It could be that James the Less was the most spiritual of all. He may have had marvelous gifts that we just don&rsquo;t read about, because Peter, as the spokesman for the group, was so dominant. We don&rsquo;t know. But it does no disservice to the equality of the twelve that one of them would give special leadership to the group.</p>
+            <p style={pStyle}>The same phenomenon can be observed in the book of Acts. James, for example, was apparently regarded as a leader and spokesman for the entire church (Acts 12:17; 15:13). Although he was not in any kind of official position over the other elders, they seemed to look to him for leadership, at least in the church in Jerusalem. Peter was present, yet James was in charge. Their roles clearly differed. But no one was the leader of everything.</p>
+            <p style={pStyle}>Peter and John are the two main characters in the first twelve chapters of Acts. Yet there is no record that John ever preached a single sermon. Again, Peter did all the talking. It wasn&rsquo;t that John didn&rsquo;t have anything to say; when he finally got it out, he wrote the gospel of John, three epistles, and the book of Revelation. But Peter had unique gifts, and in the plan of God, Peter was to be the spokesman. John&rsquo;s was a supporting role—not a less important role, but a different one.</p>
+            <p style={pStyle}>Beginning in Acts 13, Paul and Barnabas become the dominant characters. And although Barnabas was probably the leading teacher in the church before Paul came in, Paul totally dominated the duo. The Greeks even named him Mercury because he was the chief spokesman. Barnabas undoubtedly did some teaching and preaching, but his sermons are not recorded. His was a different—less visible, perhaps, but no less important—role in their joint ministry.</p>
+            <p style={pStyle}>Every ministry we see in the New Testament is a team effort. Paul seems continually to commend the people who worked with him. Some of them were, no doubt, co-teachers. Others of them carried out servants&rsquo; tasks. None of that eliminates the unique roles of leadership. But it does prevent the independent, unaccountable, self-styled leader from dominating like Diotrephes, &ldquo;who loves to be first&rdquo; (3 John 9).</p>
+
+            <h3 style={h3Style}>10. What is the elder&apos;s relation to the congregation?</h3>
+            <p style={pStyle}>Elders are called and appointed by God, confirmed by the church leadership, and ordained to the task of leadership. To them are committed the responsibilities of being examples to the flock, giving the church direction, teaching the people, and leading the congregation. Scripture implies that anyone at a lower level of leadership involved in decision making as it relates to church policy or doctrine should be under the elders&rsquo; authority.</p>
+            <p style={pStyle}>Because they share unique responsibility and position in the church, elders are worthy of great respect. First Thessalonians 5:12–13 says, &ldquo;But we request of you, brethren, that you appreciate those who diligently labor among you, and have charge over you in the Lord and give you instruction, and that you esteem them very highly in love because of their work.&rdquo;</p>
+            <p style={pStyle}>The word translated &ldquo;appreciate&rdquo; in that passage means &ldquo;to know intimately.&rdquo; Along with the rest of this passage, it implies a close relationship involving appreciation, respect, love, and cooperation. And the reason for this great feeling of appreciation is &ldquo;because of their work.&rdquo; We are to respect them because of the calling that they are fulfilling—not only because of their diligent labor and the task they have, but primarily because of the calling to which they have been called.</p>
+            <p style={pStyle}>Hebrews 13:7 says, &ldquo;Remember those who led you, who spoke the word of God to you; and considering the result of their conduct, imitate their faith.&rdquo; That emphasizes both the elder&rsquo;s responsibility to live as an example, manifesting in his life the result of virtue, and the church member&rsquo;s duty to be mindful of those who have led them in this way.</p>
+            <p style={pStyle}>Verse 17 adds another dimension of the congregation&rsquo;s duty toward their spiritual leaders: &ldquo;Obey your leaders and submit to them, for they keep watch over your souls as those who will give an account. Let them do this with joy and not with grief, for this would be unprofitable for you.&rdquo; In other words, the congregation is spiritually accountable to the elders, and the elders are accountable to God. The congregation should submit to the elders&rsquo; leadership and let the elders be concerned with their own accountability before the Lord. If the congregation is submissive and obedient, the elders will be able to lead with joy and not with grief, which is ultimately unprofitable for everyone.</p>
+            <p style={pStyle}>That does not mean, however, that if an elder sins openly his sin should be ignored. First Timothy 5:19–21 says:</p>
+            <blockquote style={{ margin: "0 0 18px", padding: "20px 24px", borderLeft: "4px solid var(--gold-400)", background: "var(--surface-card)", borderRadius: "0 var(--radius-md) var(--radius-md) 0", fontStyle: "italic", fontSize: "16px", lineHeight: 1.8, color: "var(--text-body)" }}>
+              Do not receive an accusation against an elder except on the basis of two or three witnesses. Those who continue in sin, rebuke in the presence of all, so that the rest also will be fearful of sinning. I solemnly charge you in the presence of God and of Christ Jesus and of His chosen angels, to maintain these principles without bias, doing nothing in a spirit of partiality.
+            </blockquote>
+            <p style={pStyle}>An accusation of sin against an elder is not to be received lightly. Nor is it to be overlooked. Elders are to be disciplined for sinning in the same way anyone else in the church would be. In no way are they to receive preferential treatment.</p>
+            <p style={pStyle}>The testimony of the church is most visible in the lives of the elders. If they ignore the biblical mandate for holiness, the church will suffer the consequences. Equally, if the church is not submissive to the leadership God has ordained, its testimony will suffer, its priorities will be unbalanced, and ultimately its savor as the salt of the earth will be lost.</p>
+
+            <p style={{ ...pStyle, marginTop: "48px", paddingTop: "24px", borderTop: "1px solid var(--border-subtle)", fontSize: "14px", color: "var(--text-muted)", fontStyle: "italic" }}>
+              &copy;1984 by John MacArthur. All rights reserved. Unless otherwise identified, all Scripture quotations are from the New American Standard Bible, &copy;1960, 1962, 1963, 1968, 1971, 1973, 1975, 1977, and 1995 by The Lockman Foundation, and are used by permission.
+            </p>
+
           </div>
         </div>
       </section>
