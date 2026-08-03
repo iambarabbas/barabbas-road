@@ -24,14 +24,14 @@ export function EventsSection() {
           <p style={{ color: "var(--text-muted)", fontSize: "18px", lineHeight: 1.6, marginTop: "20px", maxWidth: "44ch" }}>
             From Sunday worship to midweek Life Groups and seasonal gatherings, our life together runs on a steady rhythm. The full, always-current schedule lives on our calendar.
           </p>
-          <div style={{ display: "flex", gap: "14px", marginTop: "30px", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "30px", width: "fit-content" }}>
             <Link href="/calendar">
-              <Button variant="primary" size="lg" iconLeft={<Icon name="calendar" size={16} />}>
+              <Button variant="primary" size="lg" fullWidth iconLeft={<Icon name="calendar" size={16} />}>
                 View the Calendar
               </Button>
             </Link>
-            <Link href="/app-download">
-              <Button variant="outline" size="lg">Download Our App</Button>
+            <Link href="/app-download" style={{ display: "block" }}>
+              <Button variant="outline" size="lg" fullWidth>Download Our App</Button>
             </Link>
           </div>
         </div>
