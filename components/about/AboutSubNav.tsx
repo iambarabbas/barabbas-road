@@ -12,6 +12,7 @@ const LINKS = [
   { label: "Elders",             href: "/about/elders" },
   { label: "Church History",     href: "/about/church-history" },
   { label: "Distinctives",       href: "/about/distinctives" },
+  { label: "Missions",           href: "/missions" },
 ];
 
 export function AboutSubNav() {

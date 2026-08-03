@@ -15,12 +15,28 @@ const FIELDS = [
     flag: "🇺🇬",
     description:
       "Through God's grace and mercy Barabbas Road was able to plant a church in Arua, Uganda in 2011. The church there continues to grow in both maturity and in number through your prayers and through the preaching of the Word.",
+    href: null,
   },
   {
     name: "India",
     flag: "🇮🇳",
     description:
       "India is one of the darkest nations in the world with over a billion lost souls. Over the past few years we have been able to partner with indigenous church planters to reach those who have never heard the life-saving message of the gospel. We are working with and supporting our indigenous partners in many ways throughout the year.",
+    href: null,
+  },
+  {
+    name: "Papua New Guinea",
+    flag: "🇵🇬",
+    description:
+      "Barabbas Road supports church planting and gospel work in Papua New Guinea. Follow the link below to learn more about our missionaries serving there.",
+    href: "https://www.finisterremission.org/missionary/ensley-derek-and-kaylee",
+  },
+  {
+    name: "Philippines",
+    flag: "🇵🇭",
+    description:
+      "Barabbas Road partners with missionaries working to make disciple-making disciples in the Philippines through church planting and theological training.",
+    href: "https://disciplethenations.org/about/staff/david-adriana-petro/",
   },
 ];
 
@@ -78,27 +94,45 @@ export default function MissionsPage() {
       {/* ── Mission Fields ── */}
       <section style={{ padding: "var(--section-y) 0", background: "var(--surface-card)" }}>
         <div className="brc-container">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(320px,1fr))", gap: "24px" }}>
-            {FIELDS.map((f) => (
-              <div
-                key={f.name}
-                style={{
-                  background: "var(--white)",
-                  borderRadius: "var(--radius-lg)",
-                  padding: "36px",
-                  border: "1px solid var(--border-subtle)",
-                  borderTop: "4px solid var(--gold-400)",
-                }}
-              >
-                <div style={{ fontSize: "3rem", marginBottom: "16px" }}>{f.flag}</div>
-                <h3 style={{ fontSize: "clamp(1.6rem,1.2rem+1vw,2rem)", margin: "0 0 14px", color: "var(--ink-900)" }}>
-                  {f.name}
-                </h3>
-                <p style={{ color: "var(--text-muted)", fontSize: "16px", lineHeight: 1.7, margin: 0 }}>
-                  {f.description}
-                </p>
-              </div>
-            ))}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(300px,1fr))", gap: "24px" }}>
+            {FIELDS.map((f) => {
+              const inner = (
+                <div
+                  key={f.name}
+                  style={{
+                    background: "var(--white)",
+                    borderRadius: "var(--radius-lg)",
+                    padding: "36px",
+                    border: "1px solid var(--border-subtle)",
+                    borderTop: "4px solid var(--gold-400)",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "12px",
+                  }}
+                >
+                  <div style={{ fontSize: "2.8rem" }}>{f.flag}</div>
+                  <h3 style={{ fontSize: "clamp(1.4rem,1.1rem+.8vw,1.8rem)", margin: 0, color: "var(--ink-900)" }}>
+                    {f.name}
+                  </h3>
+                  <p style={{ color: "var(--text-muted)", fontSize: "16px", lineHeight: 1.7, margin: 0, flex: 1 }}>
+                    {f.description}
+                  </p>
+                  {f.href && (
+                    <span style={{ fontFamily: "var(--font-semicond)", fontWeight: 700, fontSize: "12px", textTransform: "uppercase", letterSpacing: ".06em", color: "var(--gold-700)" }}>
+                      Learn More &rarr;
+                    </span>
+                  )}
+                </div>
+              );
+              return f.href ? (
+                <a key={f.name} href={f.href} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", display: "block" }}>
+                  {inner}
+                </a>
+              ) : (
+                <div key={f.name}>{inner}</div>
+              );
+            })}
           </div>
         </div>
       </section>
