@@ -11,7 +11,6 @@ const LINKS = [
   { label: "Church Government",  href: "/about/church-government" },
   { label: "Elders",             href: "/about/elders" },
   { label: "Church History",     href: "/about/church-history" },
-  { label: "Member Testimonies", href: "/about/member-testimonies" },
   { label: "Distinctives",       href: "/about/distinctives" },
 ];
 

@@ -42,12 +42,6 @@ const NAV_CARDS = [
     icon: "clock",
   },
   {
-    label: "Member Testimonies",
-    desc: "Stories of what God has done and is doing in the lives of our members.",
-    href: "/about/member-testimonies",
-    icon: "heart",
-  },
-  {
     label: "Distinctives",
     desc: "Teaching God's design for the local church.",
     href: "/about/distinctives",
