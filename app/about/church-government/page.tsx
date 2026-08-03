@@ -16,16 +16,6 @@ export default function ChurchGovernmentPage() {
           <h1 style={{ color: "var(--white)", fontSize: "clamp(2.6rem,1.6rem+4vw,4.5rem)", margin: "16px 0 28px", lineHeight: 0.98 }}>
             Church Government
           </h1>
-          {/* Vimeo embed */}
-          <div style={{ position: "relative", width: "100%", maxWidth: "720px", paddingBottom: "40.5%", borderRadius: "var(--radius-lg)", overflow: "hidden", boxShadow: "0 12px 40px rgba(0,0,0,.5)", marginBottom: "32px" }}>
-            <iframe
-              src="https://player.vimeo.com/video/160823910"
-              title="Church Government — Barabbas Road"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-              style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none" }}
-            />
-          </div>
         </div>
         <AboutSubNav />
       </section>
@@ -33,6 +23,17 @@ export default function ChurchGovernmentPage() {
       <section style={{ padding: "var(--section-y) 0", background: "var(--surface-page)" }}>
         <div className="brc-container">
           <div style={{ maxWidth: "760px" }}>
+
+            {/* Vimeo embed */}
+            <div style={{ position: "relative", width: "100%", paddingBottom: "56.25%", borderRadius: "var(--radius-lg)", overflow: "hidden", boxShadow: "var(--shadow-md)", marginBottom: "48px" }}>
+              <iframe
+                src="https://player.vimeo.com/video/160823910"
+                title="Church Government — Barabbas Road"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none" }}
+              />
+            </div>
 
             <h2 style={{ fontSize: "clamp(1.6rem,1.2rem+1vw,2rem)", margin: "0 0 32px", color: "var(--ink-900)", lineHeight: 1.2, textTransform: "uppercase", letterSpacing: ".04em", fontFamily: "var(--font-semicond)", fontWeight: 800 }}>
               Answering the Key Questions About Elders
