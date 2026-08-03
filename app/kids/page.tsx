@@ -193,6 +193,83 @@ export default function KidsPage() {
         </div>
       </section>
 
+      {/* ── Adventure Club ── */}
+      <section style={{ background: "var(--ink-900)", padding: "var(--section-y) 0" }}>
+        <div
+          className="brc-container brc-welcome"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "clamp(2rem,5vw,5rem)",
+            alignItems: "center",
+          }}
+        >
+          {/* Copy */}
+          <div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/adventure-club-logo.png`}
+              alt="Adventure Club"
+              style={{ height: "110px", marginBottom: "24px" }}
+            />
+            <Eyebrow color="var(--gold-400)" withRule>Kids Ministry</Eyebrow>
+            <h2
+              style={{
+                color: "var(--white)",
+                fontSize: "clamp(2rem,1.2rem+2.5vw,3rem)",
+                margin: "14px 0 18px",
+                lineHeight: 1,
+              }}
+            >
+              Adventure Club
+            </h2>
+            <p
+              style={{
+                color: "rgba(255,255,255,.7)",
+                fontSize: "17px",
+                lineHeight: 1.75,
+                marginBottom: "28px",
+              }}
+            >
+              Adventure Club is a monthly program for kids that combines outdoor
+              adventure, team challenges, and Bible-centered discipleship. It&apos;s
+              an exciting way for children to explore God&apos;s creation, build
+              lasting friendships, and grow in their faith outside the regular
+              classroom.
+            </p>
+            <Link href="/kids/adventure-club">
+              <Button variant="primary" size="lg">Learn About Adventure Club</Button>
+            </Link>
+          </div>
+
+          {/* Vimeo embed */}
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              paddingBottom: "56.25%",
+              borderRadius: "var(--radius-lg)",
+              overflow: "hidden",
+              boxShadow: "0 12px 40px rgba(0,0,0,.5)",
+            }}
+          >
+            <iframe
+              src="https://player.vimeo.com/video/952724789"
+              title="Adventure Club — Barabbas Road Kids"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                border: "none",
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* ── Active Learning ── */}
       <section style={{ padding: "var(--section-y) 0", background: "var(--surface-card)" }}>
         <div
