@@ -44,10 +44,10 @@ export function SiteHeader() {
     >
       <div
         className="brc-container"
-        style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "76px", gap: "24px" }}
+        style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "84px", gap: "24px" }}
       >
         <Link href="/" style={{ display: "flex", flexShrink: 0 }} aria-label="Barabbas Road Church — home">
-          <Logo variant="black" logolock height={52} />
+          <Logo variant="black" logolock height={65} />
         </Link>
 
         <nav className="brc-desktop-nav" style={{ display: "flex", alignItems: "center", gap: "26px", flexWrap: "nowrap" }}>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AboutSubNav } from "@/components/about/AboutSubNav";
 import { Eyebrow } from "@/components/core/Eyebrow";
 import { Button } from "@/components/core/Button";
 
@@ -70,6 +71,7 @@ export default function MissionsPage() {
             we can.
           </p>
         </div>
+        <AboutSubNav />
       </section>
 
       {/* ── Intro ── */}
