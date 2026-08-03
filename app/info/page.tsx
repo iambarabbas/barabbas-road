@@ -45,33 +45,26 @@ export default function InfoPage() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        padding: "48px 20px 64px",
+        padding: "40px 20px 64px",
       }}
     >
       <div style={{ width: "100%", maxWidth: "480px", display: "flex", flexDirection: "column", alignItems: "center", gap: "0" }}>
 
-        {/* ── Logo + Church name ── */}
-        <div style={{ textAlign: "center", marginBottom: "36px" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={`${BASE}/assets/logolock-white.png`}
-            alt="Barabbas Road Church"
-            style={{ height: "72px", marginBottom: "16px" }}
-          />
-          <p
-            style={{
-              color: "rgba(255,255,255,.55)",
-              fontSize: "14px",
-              fontFamily: "var(--font-semicond)",
-              fontWeight: 700,
-              textTransform: "uppercase",
-              letterSpacing: "0.1em",
-              margin: 0,
-            }}
-          >
-            Miramar, San Diego &nbsp;·&nbsp; Sundays 10am
-          </p>
-        </div>
+        {/* ── Tagline ── */}
+        <p
+          style={{
+            color: "rgba(255,255,255,.5)",
+            fontSize: "13px",
+            fontFamily: "var(--font-semicond)",
+            fontWeight: 700,
+            textTransform: "uppercase",
+            letterSpacing: "0.1em",
+            margin: "0 0 28px",
+            textAlign: "center",
+          }}
+        >
+          Miramar, San Diego &nbsp;·&nbsp; Sundays 10am
+        </p>
 
         {/* ── Nav links ── */}
         <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: "12px", marginBottom: "40px" }}>
@@ -96,9 +89,9 @@ export default function InfoPage() {
               boxSizing: "border-box",
             };
             return internal ? (
-              <Link key={label} href={href} style={style}>{label}</Link>
+              <Link key={label} href={href} style={style} className="brc-info-btn">{label}</Link>
             ) : (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer" style={style}>{label}</a>
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" style={style} className="brc-info-btn">{label}</a>
             );
           })}
         </div>

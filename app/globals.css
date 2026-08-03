@@ -377,6 +377,16 @@ img { max-width: 100%; display: block; }
   .brc-featured { grid-template-columns: 1fr !important; }
 }
 
+/* /info page link buttons */
+.brc-info-btn {
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease !important;
+}
+.brc-info-btn:hover {
+  background: rgba(255,255,255,0.14) !important;
+  border-color: rgba(255,255,255,0.35) !important;
+  transform: translateY(-2px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: .001ms !important;

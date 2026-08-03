@@ -362,6 +362,36 @@ export default function ResourcesPage() {
           </a>
         </div>
       </section>
+      {/* ── Swag Shop ── */}
+      <section style={{ background: "var(--surface-page)", padding: "48px 0", borderTop: "1px solid var(--border-subtle)" }}>
+        <div className="brc-container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "20px" }}>
+          <div>
+            <p style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "1.1rem", color: "var(--ink-900)", margin: "0 0 4px" }}>BRC Gear</p>
+            <p style={{ fontSize: "15px", color: "var(--text-muted)", margin: 0 }}>Rep the church — hats, shirts, and more in our online shop.</p>
+          </div>
+          <a
+            href="https://www.markful.com/apparel-841107?CompanyId=604264&mcid=TH-100-08139"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-block",
+              background: "var(--ink-900)",
+              color: "var(--white)",
+              fontFamily: "var(--font-display)",
+              fontWeight: 800,
+              fontSize: "14px",
+              letterSpacing: "0.06em",
+              textTransform: "uppercase",
+              padding: "12px 28px",
+              borderRadius: "var(--radius-sm)",
+              textDecoration: "none",
+              flexShrink: 0,
+            }}
+          >
+            Visit the Swag Shop
+          </a>
+        </div>
+      </section>
     </div>
   );
 }
