@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Eyebrow } from "@/components/core/Eyebrow";
+import { PaperCard } from "@/components/resources/PaperCard";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -170,100 +171,6 @@ const SECTIONS: Section[] = [
   },
 ];
 
-function FileTypeBadge({ type }: { type: "pdf" | "doc" }) {
-  const isPdf = type === "pdf";
-  return (
-    <span
-      style={{
-        display: "inline-block",
-        fontSize: "10px",
-        fontFamily: "var(--font-display)",
-        fontWeight: 700,
-        letterSpacing: "0.08em",
-        textTransform: "uppercase",
-        padding: "3px 7px",
-        borderRadius: "4px",
-        background: isPdf ? "rgba(220,38,38,.1)" : "rgba(37,99,235,.1)",
-        color: isPdf ? "#b91c1c" : "#1d4ed8",
-        border: `1px solid ${isPdf ? "rgba(220,38,38,.2)" : "rgba(37,99,235,.2)"}`,
-      }}
-    >
-      {isPdf ? "PDF" : "Word Doc"}
-    </span>
-  );
-}
-
-function PaperCard({ paper }: { paper: Paper }) {
-  const isPdf = paper.type === "pdf";
-  return (
-    <div
-      style={{
-        background: "var(--white)",
-        borderRadius: "var(--radius-lg)",
-        border: "1px solid var(--border-subtle)",
-        borderLeft: "4px solid var(--gold-400)",
-        padding: "24px 24px 20px",
-        display: "flex",
-        flexDirection: "column",
-        gap: "10px",
-      }}
-    >
-      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "12px" }}>
-        <h3
-          style={{
-            fontFamily: "var(--font-display)",
-            fontWeight: 800,
-            fontSize: "1.05rem",
-            color: "var(--ink-900)",
-            margin: 0,
-            lineHeight: 1.25,
-          }}
-        >
-          {paper.title}
-        </h3>
-        <FileTypeBadge type={paper.type} />
-      </div>
-      <p
-        style={{
-          fontSize: "14.5px",
-          color: "var(--text-muted)",
-          margin: 0,
-          lineHeight: 1.65,
-          flexGrow: 1,
-        }}
-      >
-        {paper.description}
-      </p>
-      <a
-        href={`${BASE}/resources/${paper.file}`}
-        target={isPdf ? "_blank" : undefined}
-        download={!isPdf ? paper.title : undefined}
-        rel="noopener noreferrer"
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: "7px",
-          marginTop: "6px",
-          fontFamily: "var(--font-display)",
-          fontWeight: 700,
-          fontSize: "13px",
-          letterSpacing: "0.05em",
-          textTransform: "uppercase",
-          color: "var(--gold-700)",
-          textDecoration: "none",
-        }}
-      >
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-          <polyline points="7 10 12 15 17 10"/>
-          <line x1="12" y1="15" x2="12" y2="3"/>
-        </svg>
-        {isPdf ? "Read / Download" : "Download"}
-      </a>
-    </div>
-  );
-}
-
 export default function ResourcesPage() {
   return (
     <div>
@@ -320,12 +227,20 @@ export default function ResourcesPage() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
-                gap: "20px",
+                gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+                gap: "24px",
               }}
             >
-              {section.papers.map((paper) => (
-                <PaperCard key={paper.file} paper={paper} />
+              {section.papers.map((paper, i) => (
+                <PaperCard
+                  key={paper.file}
+                  number={String(i + 1).padStart(2, "0")}
+                  title={paper.title}
+                  description={paper.description}
+                  file={paper.file}
+                  type={paper.type}
+                  base={BASE}
+                />
               ))}
             </div>
           </div>
