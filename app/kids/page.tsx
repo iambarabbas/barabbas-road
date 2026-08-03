@@ -112,7 +112,7 @@ export default function KidsPage() {
       </section>
 
       {/* ── Want to Serve? ── */}
-      <section style={{ background: "var(--gold-400)", padding: "56px 0" }}>
+      <section style={{ background: "var(--white)", padding: "56px 0", borderBottom: "1px solid var(--border-subtle)" }}>
         <div
           className="brc-container"
           style={{
@@ -123,7 +123,7 @@ export default function KidsPage() {
           }}
         >
           <div>
-            <Eyebrow color="var(--ink-900)" withRule style={{ opacity: 0.6 }}>Get Involved</Eyebrow>
+            <Eyebrow color="var(--gold-700)" withRule>Get Involved</Eyebrow>
             <h2
               style={{
                 fontSize: "clamp(1.8rem,1.2rem+2vw,2.6rem)",
@@ -138,7 +138,7 @@ export default function KidsPage() {
               style={{
                 fontSize: "17px",
                 lineHeight: 1.75,
-                color: "rgba(19,43,66,0.8)",
+                color: "var(--text-body)",
                 maxWidth: "56ch",
                 margin: 0,
               }}
