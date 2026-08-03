@@ -5,9 +5,19 @@ import { Button } from "@/components/core/Button";
 
 export const metadata: Metadata = { title: "Our Team" };
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const PHOTO_WORSHIP = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=80";
 
-const STAFF = [
+const STAFF: Array<{
+  name: string;
+  title: string;
+  email: string;
+  photo: string;
+  familyPhoto?: string;
+  bio: string;
+  credentials: string[];
+}> = [
   {
     name: "Matt Smith",
     title: "Senior Pastor",
@@ -49,6 +59,7 @@ const STAFF = [
     title: "Pastor — Children & Youth",
     email: "trace@barabbas.com",
     photo: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&q=80",
+    familyPhoto: "/assets/trebilco-family.jpg",
     bio: "Trace is originally from Chicago. He and his wife Jordan moved to San Diego in 2016. He serves as the Pastor over the Children's Church and Youth ministries. Trace has a heart for evangelism and discipleship within the church — especially with families. He and Jordan have four young children: Wyatt, Charlotte, Wesley, and Elliot. He enjoys cars, reading, hiking, and surfing.",
     credentials: [],
   },
@@ -145,9 +156,29 @@ export default function TeamPage() {
                       {s.title}
                     </div>
                   </div>
-                  <p style={{ fontSize: "17px", lineHeight: 1.7, color: "var(--text-body)", marginBottom: s.credentials.length ? "24px" : 0 }}>
+                  <p style={{ fontSize: "17px", lineHeight: 1.7, color: "var(--text-body)", marginBottom: (s.credentials.length || s.familyPhoto) ? "24px" : 0 }}>
                     {s.bio}
                   </p>
+                  {s.familyPhoto && (
+                    <div style={{ marginBottom: s.credentials.length ? "32px" : 0 }}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`${BASE_PATH}${s.familyPhoto}`}
+                        alt={`${s.name} and family`}
+                        style={{
+                          width: "100%",
+                          borderRadius: "var(--radius-lg)",
+                          boxShadow: "var(--shadow-md)",
+                          aspectRatio: "16/9",
+                          objectFit: "cover",
+                          objectPosition: "center top",
+                        }}
+                      />
+                      <p style={{ fontSize: "13px", color: "var(--text-subtle)", marginTop: "8px", fontStyle: "italic" }}>
+                        Trace with his wife Jordan and their four children.
+                      </p>
+                    </div>
+                  )}
                   {s.credentials.length > 0 && (
                     <div>
                       <div
