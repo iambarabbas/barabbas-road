@@ -5,8 +5,7 @@ import Link from "next/link";
 import { Eyebrow } from "@/components/core/Eyebrow";
 
 /* ── Supabase ─────────────────────────────────────────────── */
-const SB_URL  = "https://inqbqchjxzvdvcslvskb.supabase.co";
-const SB_KEY  = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlucWJxY2hqeHp2ZHZjc2x2c2tiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMwNzA4NzEsImV4cCI6MjA4ODY0Njg3MX0.cqOtZQQOdSI9hwVxI8RSAMsgxI3hJsZ8ttzehJRKVgk";
+const FORMSPREE = "https://formspree.io/f/xzdnnqen";
 
 /* ── Shared styles ─────────────────────────────────────────── */
 const inputStyle: React.CSSProperties = {
@@ -201,20 +200,26 @@ export default function KidsServePage() {
     }
     setSubmitting(true);
     try {
-      const res = await fetch(`${SB_URL}/rest/v1/form_submissions`, {
+      const res = await fetch(FORMSPREE, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "apikey": SB_KEY,
-          "Authorization": `Bearer ${SB_KEY}`,
-          "Prefer": "return=minimal",
+          Accept: "application/json",
         },
         body: JSON.stringify({
-          form_type: "children-ministry-application",
           name: `${form.firstName} ${form.lastName}`,
           email: form.email,
           phone: `(${form.areaCode}) ${form.phone}`,
-          data: form,
+          address: `${form.address1}${form.address2 ? `, ${form.address2}` : ""}, ${form.city}, ${form.state} ${form.zip}`,
+          background_check_consent: form.backgroundCheck,
+          how_became_christian: form.howBecameChristian,
+          baptized: form.baptized,
+          read_doctrinal_statement: form.readDoctrinal,
+          agree_doctrinal_statement: form.agreeDoctrinal,
+          taught_children_before: form.taughtChildren,
+          how_become_christian: form.howBecomeChristian,
+          signature: form.signatureName,
+          date: form.date,
         }),
       });
       if (!res.ok) throw new Error("Failed");
