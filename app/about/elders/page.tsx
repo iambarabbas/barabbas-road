@@ -117,20 +117,7 @@ export default function EldersPage() {
                     <p style={{ fontSize: "17px", lineHeight: 1.75, color: "var(--text-body)", margin: "0 0 20px" }}>
                       {elder.bio}
                     </p>
-                    <a
-                      href={`mailto:${elder.email}`}
-                      style={{
-                        fontFamily: "var(--font-semicond)",
-                        fontWeight: 700,
-                        fontSize: "13px",
-                        color: "var(--gold-700)",
-                        textDecoration: "none",
-                        letterSpacing: ".04em",
-                        textTransform: "uppercase",
-                      }}
-                    >
-                      {elder.email}
-                    </a>
+
                   </div>
 
                   {/* Family photo */}
