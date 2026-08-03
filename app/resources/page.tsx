@@ -176,7 +176,7 @@ export default function ResourcesPage() {
     <div>
       {/* ── Hero ── */}
       <section style={{ background: "var(--ink-900)", padding: "64px 0 56px" }}>
-        <div className="brc-container" style={{ maxWidth: "720px" }}>
+        <div className="brc-container">
           <Eyebrow color="var(--gold-400)" withRule>Pastoral Papers</Eyebrow>
           <h1
             style={{
