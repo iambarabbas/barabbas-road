@@ -20,9 +20,13 @@ export function SiteFooter() {
               A church in San Diego that exists to know Jesus and make Him known. Hear the Truth. Live the Truth. Defend the Truth.
             </p>
             <div style={{ display: "flex", gap: "14px", marginTop: "20px" }}>
-              {(["facebook", "instagram", "youtube"] as const).map((s) => (
-                <a key={s} href="#" aria-label={s} style={{ color: "var(--gold-400)", display: "flex" }}>
-                  <Icon name={s} size={20} />
+              {([
+                { name: "facebook",  href: "https://www.facebook.com/barabbasroadchurch" },
+                { name: "instagram", href: "https://www.instagram.com/barabbasroadchurch/" },
+                { name: "youtube",   href: "https://www.youtube.com/user/BarabbasRoadChurch" },
+              ] as const).map((s) => (
+                <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.name} style={{ color: "var(--gold-400)", display: "flex" }}>
+                  <Icon name={s.name} size={20} />
                 </a>
               ))}
             </div>

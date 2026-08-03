@@ -2,7 +2,7 @@ import { Eyebrow } from "@/components/core/Eyebrow";
 import { Button } from "@/components/core/Button";
 import { Icon } from "@/components/Icon";
 
-const MAP_SRC = "https://www.google.com/maps?q=Mission+Valley,+San+Diego,+CA&output=embed";
+const MAP_SRC = "https://maps.google.com/maps?q=7340+Miramar+Rd,+San+Diego,+CA+92126&hl=en&z=16&ie=UTF8&iwloc=B&output=embed";
 
 const DETAILS = [
   { icon: "clock",    h: "Sunday Service",   l: "Every Sunday at 10:00am" },

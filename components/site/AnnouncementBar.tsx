@@ -13,18 +13,24 @@ export function AnnouncementBar() {
           </span>
           <span style={{ opacity: 0.4 }}>|</span>
           <span style={{ display: "flex", alignItems: "center", gap: "7px" }}>
-            <Icon name="mapPin" size={14} /> Clairemont, San Diego · Sundays @ 10am
+            <Icon name="mapPin" size={14} /> Miramar, San Diego · Sundays @ 10am
           </span>
         </div>
         <div className="brc-announcement-extras" style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-          {(["facebook", "instagram", "youtube"] as const).map((s) => (
+          {([
+            { name: "facebook",  href: "https://www.facebook.com/barabbasroadchurch" },
+            { name: "instagram", href: "https://www.instagram.com/barabbasroadchurch/" },
+            { name: "youtube",   href: "https://www.youtube.com/user/BarabbasRoadChurch" },
+          ] as const).map((s) => (
             <a
-              key={s}
-              href="#"
+              key={s.name}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
               style={{ color: "var(--text-on-dark)", opacity: 0.75, display: "flex" }}
-              aria-label={s}
+              aria-label={s.name}
             >
-              <Icon name={s} size={15} />
+              <Icon name={s.name} size={15} />
             </a>
           ))}
         </div>

@@ -11,7 +11,7 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
 
 // export const metadata: Metadata = { title: "Contact" }; // can't use with "use client"
 
-const MAP_SRC = "https://www.google.com/maps?q=7340+Miramar+Rd,+San+Diego,+CA+92126&output=embed";
+const MAP_SRC = "https://maps.google.com/maps?q=7340+Miramar+Rd,+San+Diego,+CA+92126&hl=en&z=16&ie=UTF8&iwloc=B&output=embed";
 
 const CONTACTS = [
   { icon: "phone",   h: "Call Us",     l: "619.289.8987",       href: "tel:6192898987" },
