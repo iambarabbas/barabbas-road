@@ -64,7 +64,7 @@ export function HeroBold() {
           <Link href="/new-here">
             <Button variant="primary" size="lg">Plan Your Visit</Button>
           </Link>
-          <Link href="/sermons">
+          <Link href="/livestream">
             <Button
               variant="outline"
               size="lg"
