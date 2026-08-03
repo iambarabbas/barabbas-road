@@ -34,22 +34,59 @@ const EVENTS = [
 export default function YouthPage() {
   return (
     <div>
-      {/* ── Hero ── */}
-      <section style={{ background: "var(--ink-900)", padding: "64px 0 56px" }}>
-        <div className="brc-container">
+      {/* ── Hero — full-bleed photo ── */}
+      <section
+        style={{
+          position: "relative",
+          overflow: "hidden",
+          minHeight: "clamp(480px, 55vw, 680px)",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        {/* Background photo */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/youth-bible-study.jpg`}
+          alt="Youth Bible study at Barabbas Road Church"
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center 30%",
+          }}
+        />
+        {/* Dark gradient overlay */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(to right, rgba(13,27,42,0.92) 0%, rgba(13,27,42,0.70) 50%, rgba(13,27,42,0.30) 100%)",
+          }}
+        />
+        {/* Content */}
+        <div
+          className="brc-container"
+          style={{ position: "relative", zIndex: 1, padding: "80px 0" }}
+        >
           <Eyebrow color="var(--gold-400)" withRule>Youth Ministry</Eyebrow>
           <h1
             style={{
               color: "var(--white)",
               fontSize: "clamp(2.6rem,1.6rem+4vw,4.5rem)",
-              margin: "16px 0 12px",
+              margin: "16px 0 14px",
               lineHeight: 0.98,
             }}
           >
             Youth
           </h1>
-          <p style={{ color: "rgba(255,255,255,.65)", fontSize: "18px", maxWidth: "54ch", lineHeight: 1.6 }}>
-            Our goal is to equip students to think biblically about the world around them, build lasting friendships rooted in Christ, and develop a faith that stands firm in every season of life. We encourage your youth to participate in both events below as well as the entire life of the church.
+          <p style={{ color: "rgba(255,255,255,.72)", fontSize: "18px", maxWidth: "52ch", lineHeight: 1.65 }}>
+            Our goal is to equip students to think biblically about the world
+            around them, build lasting friendships rooted in Christ, and develop
+            a faith that stands firm in every season of life.
           </p>
         </div>
       </section>
