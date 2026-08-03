@@ -111,6 +111,52 @@ export default function KidsPage() {
         </div>
       </section>
 
+      {/* ── Want to Serve? ── */}
+      <section style={{ background: "var(--gold-400)", padding: "56px 0" }}>
+        <div
+          className="brc-container"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr auto",
+            gap: "clamp(2rem,5vw,5rem)",
+            alignItems: "center",
+          }}
+        >
+          <div>
+            <Eyebrow color="var(--ink-900)" withRule style={{ opacity: 0.6 }}>Get Involved</Eyebrow>
+            <h2
+              style={{
+                fontSize: "clamp(1.8rem,1.2rem+2vw,2.6rem)",
+                margin: "12px 0 16px",
+                lineHeight: 1.05,
+                color: "var(--ink-900)",
+              }}
+            >
+              Want to Serve?
+            </h2>
+            <p
+              style={{
+                fontSize: "17px",
+                lineHeight: 1.75,
+                color: "rgba(19,43,66,0.8)",
+                maxWidth: "56ch",
+                margin: 0,
+              }}
+            >
+              Our children&apos;s church is constantly growing. If you have a passion for
+              serving children and nurturing them into adult followers of Christ, please
+              contact Trace Trebilco, Director of Children&apos;s Church. To get a head start
+              in the process please fill out the online service form.
+            </p>
+          </div>
+          <div style={{ flexShrink: 0 }}>
+            <Link href="/kids/serve">
+              <Button variant="primary" size="lg">Fill Out the Service Form</Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── Framework ── */}
       <section style={{ padding: "var(--section-y) 0", background: "var(--surface-page)" }}>
         <div className="brc-container">
