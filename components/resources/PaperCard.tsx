@@ -23,7 +23,7 @@ export function PaperCard({ number, title, description, file, type, base }: Pape
       target={isPdf ? "_blank" : undefined}
       download={!isPdf ? true : undefined}
       rel="noopener noreferrer"
-      style={{ textDecoration: "none", display: "flex" }}
+      style={{ textDecoration: "none", display: "flex", color: "inherit" }}
     >
       <Card interactive style={{ height: "100%", width: "100%" }}>
         {/* Top row: number + icon */}

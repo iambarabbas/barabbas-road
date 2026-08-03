@@ -3,6 +3,8 @@ import Link from "next/link";
 import { Eyebrow } from "@/components/core/Eyebrow";
 import { Button } from "@/components/core/Button";
 import { Icon } from "@/components/Icon";
+import { FaqAccordion } from "@/components/new-here/FaqAccordion";
+import type { FaqItem } from "@/components/new-here/FaqAccordion";
 
 export const metadata: Metadata = {
   title: "New Here?",
@@ -11,44 +13,81 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/new-here/" },
 };
 
-const SERVICE_FAQS = [
+const EXPECT = [
+  { icon: "heart",      title: "Come as you are",           body: "No dress code. No performance. Just show up." },
+  { icon: "clock",      title: "About 1.5 hours",           body: "We start at 10am and finish around 11:30am." },
+  { icon: "bookOpen",   title: "Verse-by-verse teaching",   body: "Every week we preach through a book of the Bible." },
+  { icon: "users",      title: "Kids ministry available",   body: "Children's Church for ages 1–11, every Sunday." },
+];
+
+const SERVICE_FAQS: FaqItem[] = [
   {
     q: "What do I wear to church?",
-    a: "You can dress as you like at Barabbas Road Church. We have no formal dress code. On any given Sunday you will see dresses and suits to board shorts and flip flops.",
+    a: "You can dress as you like. There is no dress code at Barabbas Road. On any given Sunday you will see everything from suits and dresses to board shorts and flip flops.",
   },
   {
-    q: "What happens in church?",
-    a: "Church starts at 10am with a 15-minute musical praise time. This is followed by a one-hour sermon. The service concludes with a time for offering and the taking of communion. A typical service lasts 1.5 hours.",
+    q: "What happens during the service?",
+    a: "We start at 10am with 15 minutes of congregational worship. Then comes a one-hour verse-by-verse sermon through a book of the Bible. The service closes with offering and communion. From start to finish, expect about 1.5 hours.",
   },
   {
-    q: "Will I be called out as a visitor?",
-    a: "No. There are no formal introductions of visitors during the service. We have friendly greeters at the doors and a loving community ready to welcome you.",
+    q: "Will I be singled out as a visitor?",
+    a: "No. We don't do public visitor introductions. You won't be asked to stand, raise your hand, or wear a name tag. Friendly greeters will be at the doors, but the service itself will not put you on the spot.",
+  },
+  {
+    q: "How long is the service?",
+    a: "A typical Sunday service runs about 1.5 hours — 10am to 11:30am. There's no rush to leave afterward. A lot of people stick around in the foyer to talk.",
+  },
+  {
+    q: "What kind of music do you play?",
+    a: "We sing hymns and contemporary worship songs, led by a small team with acoustic instruments. The focus is on congregational participation and truth-filled lyrics — not performance.",
+  },
+  {
+    q: "What Bible translation do you use?",
+    a: "We preach from the English Standard Version (ESV). Feel free to bring whatever Bible you own, or download a free Bible app on your phone before you come.",
+  },
+  {
+    q: "Is the service livestreamed or recorded?",
+    a: "Yes. Every Sunday service is broadcast live on YouTube and stays available to watch at any time. You can also tune in from the Livestream page on this site.",
+  },
+  {
+    q: "Is there parking?",
+    a: "Yes — free on-site parking is available at 7340 Miramar Rd, San Diego, CA 92126. The lot entrance is clearly marked.",
   },
 ];
 
-const KIDS_FAQS = [
+const KIDS_FAQS: FaqItem[] = [
   {
     q: "Can I bring my kids?",
-    a: "Yes. We love children and have an amazing children's church that is fully staffed for ages 1–11. To read all about our Children's Church, visit the Kids page.",
+    a: "Absolutely. We love children. Our Children's Church is fully staffed and designed for ages 1–11 — you can drop them off before the service and pick them up right after.",
   },
   {
     q: "Are children allowed in the main service?",
-    a: "This is up to you. If you would like your child to stay with you during the service that is perfectly fine — we only request that they remain quiet.",
+    a: "Yes. If you prefer to keep your kids with you, that's perfectly fine. We just ask that they stay quiet so others can hear. We also have a glassed-in area in the back for parents with little ones.",
+  },
+  {
+    q: "What ages is Children's Church for?",
+    a: "Our Children's Church is for kids ages 1 through 11 (up through 5th grade). Students in middle and high school attend the main service with everyone else.",
   },
   {
     q: "Is Children's Church free?",
-    a: "Yes. There is no financial cost to anything at Barabbas Road Church.",
+    a: "Yes. There is no cost to attend anything at Barabbas Road Church — including Children's Church.",
   },
   {
-    q: "Are the Children's teachers given background checks?",
-    a: "Yes. All of our teachers are given a full background check and are trained through Ministry Safe before serving in any classroom.",
+    q: "Are the teachers background-checked?",
+    a: "Yes. Every teacher and volunteer in our children's ministry completes a full background check and is trained through Ministry Safe before serving in any classroom.",
+  },
+  {
+    q: "What curriculum do you use?",
+    a: "We use the Generations of Grace curriculum, which walks kids through the entire Bible chronologically with age-appropriate content. Our goal in the kids' room is the same as the main service — to help them understand and love God's Word.",
   },
 ];
+
+const ALL_FAQS = [...SERVICE_FAQS, ...KIDS_FAQS];
 
 const FAQ_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [...SERVICE_FAQS, ...KIDS_FAQS].map((faq) => ({
+  mainEntity: ALL_FAQS.map((faq) => ({
     "@type": "Question",
     name: faq.q,
     acceptedAnswer: { "@type": "Answer", text: faq.a },
@@ -62,6 +101,7 @@ export default function NewHerePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
       />
+
       {/* ── Hero ── */}
       <section style={{ background: "var(--ink-900)", padding: "64px 0 56px" }}>
         <div
@@ -113,7 +153,7 @@ export default function NewHerePage() {
         </div>
       </section>
 
-      {/* ── Service info ── */}
+      {/* ── Service info bar ── */}
       <section style={{ background: "var(--gold-400)", padding: "24px 0" }}>
         <div className="brc-container">
           <div style={{ display: "flex", gap: "clamp(2rem,5vw,5rem)", flexWrap: "wrap", alignItems: "center", justifyContent: "center" }}>
@@ -133,35 +173,86 @@ export default function NewHerePage() {
         </div>
       </section>
 
-      {/* ── Welcome copy ── */}
+      {/* ── What to Expect ── */}
       <section style={{ padding: "var(--section-y) 0", background: "var(--surface-page)" }}>
-        <div className="brc-container" style={{ maxWidth: "720px" }}>
-          <Eyebrow color="var(--gold-700)" withRule>About Us</Eyebrow>
-          <h2 style={{ fontSize: "clamp(2rem,1.4rem+2vw,2.8rem)", margin: "16px 0 20px", lineHeight: 1 }}>
-            Welcome to Barabbas Road Church
-          </h2>
-          <p style={{ fontSize: "17px", lineHeight: 1.75, color: "var(--text-body)" }}>
-            If you are new to church or have been searching through San Diego churches, we invite you to come on out and meet men, women, and children that have been set free from sin because of Jesus. We are the body of Christ. We are Barabbas, and we invite you to join us.
-          </p>
+        <div className="brc-container">
+          <div style={{ maxWidth: "600px", marginBottom: "44px" }}>
+            <Eyebrow color="var(--gold-700)" withRule>Your First Sunday</Eyebrow>
+            <h2 style={{ fontSize: "clamp(2rem,1.4rem+2vw,2.8rem)", margin: "16px 0 12px", lineHeight: 1 }}>
+              What to Expect
+            </h2>
+            <p style={{ fontSize: "17px", lineHeight: 1.75, color: "var(--text-body)", margin: 0 }}>
+              Whether you&apos;ve been going to church your whole life or you&apos;ve never
+              stepped inside one — here&apos;s what a Sunday at Barabbas Road looks like.
+            </p>
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
+              gap: "20px",
+            }}
+          >
+            {EXPECT.map((item) => (
+              <div
+                key={item.title}
+                style={{
+                  background: "var(--white)",
+                  borderRadius: "var(--radius-lg)",
+                  padding: "28px 24px",
+                  border: "1px solid var(--border-subtle)",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "12px",
+                }}
+              >
+                <div
+                  style={{
+                    width: "44px",
+                    height: "44px",
+                    borderRadius: "var(--radius-sm)",
+                    background: "var(--gold-100)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "var(--gold-700)",
+                  }}
+                >
+                  <Icon name={item.icon} size={22} strokeWidth={1.8} />
+                </div>
+                <h3
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontWeight: 800,
+                    fontSize: "1.05rem",
+                    color: "var(--ink-900)",
+                    margin: 0,
+                    lineHeight: 1.2,
+                  }}
+                >
+                  {item.title}
+                </h3>
+                <p style={{ color: "var(--text-muted)", fontSize: "14.5px", margin: 0, lineHeight: 1.6 }}>
+                  {item.body}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ── Service FAQs ── */}
       <section style={{ padding: "var(--section-y) 0", background: "var(--surface-card)" }}>
         <div className="brc-container">
-          <div style={{ maxWidth: "600px", marginBottom: "44px" }}>
-            <Eyebrow color="var(--gold-700)" withRule>Church Service FAQ&apos;s</Eyebrow>
-            <h2 style={{ fontSize: "clamp(2rem,1.4rem+2vw,2.8rem)", margin: "16px 0 0", lineHeight: 1 }}>
-              Common Questions
-            </h2>
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: "16px", maxWidth: "760px" }}>
-            {SERVICE_FAQS.map((faq) => (
-              <div key={faq.q} style={{ background: "var(--white)", borderRadius: "var(--radius-lg)", padding: "24px 28px", border: "1px solid var(--border-subtle)", borderLeft: "4px solid var(--gold-400)" }}>
-                <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "1.15rem", margin: "0 0 10px", color: "var(--ink-900)" }}>{faq.q}</h3>
-                <p style={{ color: "var(--text-muted)", margin: 0, fontSize: "16px", lineHeight: 1.65 }}>{faq.a}</p>
-              </div>
-            ))}
+          <div style={{ maxWidth: "760px" }}>
+            <div style={{ marginBottom: "36px" }}>
+              <Eyebrow color="var(--gold-700)" withRule>Church Service</Eyebrow>
+              <h2 style={{ fontSize: "clamp(2rem,1.4rem+2vw,2.8rem)", margin: "12px 0 0", lineHeight: 1 }}>
+                Common Questions
+              </h2>
+            </div>
+            <FaqAccordion items={SERVICE_FAQS} />
           </div>
         </div>
       </section>
@@ -169,24 +260,19 @@ export default function NewHerePage() {
       {/* ── Kids FAQs ── */}
       <section style={{ padding: "var(--section-y) 0", background: "var(--surface-page)" }}>
         <div className="brc-container">
-          <div style={{ maxWidth: "600px", marginBottom: "44px" }}>
-            <Eyebrow color="var(--gold-700)" withRule>Kid&apos;s FAQ&apos;s</Eyebrow>
-            <h2 style={{ fontSize: "clamp(2rem,1.4rem+2vw,2.8rem)", margin: "16px 0 0", lineHeight: 1 }}>
-              Bringing the Family?
-            </h2>
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: "16px", maxWidth: "760px" }}>
-            {KIDS_FAQS.map((faq) => (
-              <div key={faq.q} style={{ background: "var(--white)", borderRadius: "var(--radius-lg)", padding: "24px 28px", border: "1px solid var(--border-subtle)", borderLeft: "4px solid var(--gold-400)" }}>
-                <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "1.15rem", margin: "0 0 10px", color: "var(--ink-900)" }}>{faq.q}</h3>
-                <p style={{ color: "var(--text-muted)", margin: 0, fontSize: "16px", lineHeight: 1.65 }}>{faq.a}</p>
-              </div>
-            ))}
-          </div>
-          <div style={{ marginTop: "32px" }}>
-            <Link href="/kids">
-              <Button variant="primary">Learn About Kids Church</Button>
-            </Link>
+          <div style={{ maxWidth: "760px" }}>
+            <div style={{ marginBottom: "36px" }}>
+              <Eyebrow color="var(--gold-700)" withRule>Bringing the Family?</Eyebrow>
+              <h2 style={{ fontSize: "clamp(2rem,1.4rem+2vw,2.8rem)", margin: "12px 0 0", lineHeight: 1 }}>
+                Kids &amp; Children&apos;s Church
+              </h2>
+            </div>
+            <FaqAccordion items={KIDS_FAQS} />
+            <div style={{ marginTop: "32px" }}>
+              <Link href="/kids">
+                <Button variant="primary">Learn About Kids Church</Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

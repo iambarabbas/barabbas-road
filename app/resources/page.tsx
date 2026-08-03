@@ -201,7 +201,7 @@ export default function ResourcesPage() {
         <section
           key={section.id}
           style={{
-            background: si % 2 === 0 ? "var(--surface-page)" : "var(--surface-card)",
+            background: "var(--surface-card)",
             padding: "var(--section-y) 0",
           }}
         >
