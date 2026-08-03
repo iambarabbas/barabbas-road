@@ -6,7 +6,7 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 export const metadata: Metadata = {
   title: "Info | Barabbas Road Church",
   description: "Links, resources, and info from Barabbas Road Church — Miramar, San Diego.",
-  alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/info/" },
+  alternates: { canonical: "https://barabbas.com/info/" },
 };
 
 const LINKS = [

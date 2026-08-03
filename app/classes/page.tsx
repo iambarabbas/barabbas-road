@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Classes",
   description:
     "Bible-teaching classes at Barabbas Road Church — Inductive Bible Study on Sundays and Theologetics on Tuesdays. Open to all, no sign-up required.",
-  alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/classes/" },
+  alternates: { canonical: "https://barabbas.com/classes/" },
 };
 
 export default function ClassesPage() {

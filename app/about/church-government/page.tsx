@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Church Government",
   description:
     "How Barabbas Road Church is governed — a plurality of elders, congregational model rooted in New Testament principles. A Bible-teaching church in Miramar, San Diego.",
-  alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/about/church-government/" },
+  alternates: { canonical: "https://barabbas.com/about/church-government/" },
 };
 
 const pStyle: React.CSSProperties = { fontSize: "16px", lineHeight: 1.8, color: "var(--text-body)", margin: "0 0 18px" };

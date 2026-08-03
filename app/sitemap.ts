@@ -3,7 +3,7 @@ import postsData from "@/data/posts.json";
 
 export const dynamic = "force-static";
 
-const SITE_URL = "https://iambarabbas.github.io/barabbas-road";
+const SITE_URL = "https://barabbas.com";
 
 const STATIC_PAGES = [
   { path: "/",                          priority: 1.0, changeFrequency: "weekly"  as const },

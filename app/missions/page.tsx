@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Missions",
   description:
     "Barabbas Road Church is committed to making disciple-making disciples to the remotest parts of the world. Learn about our mission work in Uganda, India, and beyond.",
-  alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/missions/" },
+  alternates: { canonical: "https://barabbas.com/missions/" },
 };
 
 const FIELDS = [

@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   title: "Barabbas Road Church — San Diego",
   description:
     "Barabbas Road Church is a Bible-teaching church in Miramar, San Diego. Join us Sundays at 10am at 7340 Miramar Rd for verse-by-verse expository preaching, Life Groups, and gospel community.",
-  alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/" },
+  alternates: { canonical: "https://barabbas.com/" },
   openGraph: {
     title: "Barabbas Road Church — Bible-Teaching Church in San Diego",
     description:
       "A Bible-teaching church in Miramar, San Diego. Verse-by-verse preaching every Sunday at 10am. 7340 Miramar Rd, San Diego, CA 92126.",
-    url: "https://iambarabbas.github.io/barabbas-road/",
+    url: "https://barabbas.com/",
   },
 };
 

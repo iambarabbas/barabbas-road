@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://iambarabbas.github.io/barabbas-road/sitemap.xml",
+    sitemap: "https://barabbas.com/sitemap.xml",
   };
 }

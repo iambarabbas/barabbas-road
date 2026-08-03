@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Church History",
   description:
     "The story of Barabbas Road Church — from a 10-person evening service in a San Diego storage room in 2006 to a thriving Bible-teaching congregation in Miramar today.",
-  alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/about/church-history/" },
+  alternates: { canonical: "https://barabbas.com/about/church-history/" },
 };
 
 const TIMELINE = [

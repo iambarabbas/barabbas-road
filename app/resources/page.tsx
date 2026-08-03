@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Resources",
   description:
     "Pastoral papers, theological studies, and position papers from Barabbas Road Church — exploring doctrine, Scripture, and everyday Christian living.",
-  alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/resources/" },
+  alternates: { canonical: "https://barabbas.com/resources/" },
 };
 
 type Paper = { title: string; description: string; file: string; type: "pdf" | "doc" };

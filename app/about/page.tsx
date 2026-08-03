@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Learn about Barabbas Road Church — our mission, vision, beliefs, history, and leadership. A Bible-teaching church in Miramar, San Diego since 2006.",
-  alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/about/" },
+  alternates: { canonical: "https://barabbas.com/about/" },
 };
 
 const NAV_CARDS = [

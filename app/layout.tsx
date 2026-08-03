@@ -4,7 +4,7 @@ import { AnnouncementBar } from "@/components/site/AnnouncementBar";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 
-const SITE_URL = "https://iambarabbas.github.io/barabbas-road";
+const SITE_URL = "https://barabbas.com";
 const CHURCH_NAME = "Barabbas Road Church";
 
 const churchSchema = {
@@ -101,7 +101,7 @@ const churchSchema = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://iambarabbas.github.io"),
+  metadataBase: new URL("https://barabbas.com"),
   title: {
     template: `%s | ${CHURCH_NAME} — San Diego`,
     default: `${CHURCH_NAME} — Bible-Teaching Church in Miramar, San Diego`,

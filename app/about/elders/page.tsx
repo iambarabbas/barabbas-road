@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Elders",
   description:
     "Meet the elders of Barabbas Road Church in Miramar, San Diego. Our plurality of elders provides biblical oversight and spiritual care for our congregation.",
-  alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/about/elders/" },
+  alternates: { canonical: "https://barabbas.com/about/elders/" },
 };
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Button } from "@/components/core/Button";
 
 export default function NotFound() {
   return (
@@ -64,39 +65,14 @@ export default function NotFound() {
           Please double-check your URL and try again, or select a popular page below.
         </p>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
-            gap: "12px",
-          }}
-        >
+        <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: "center" }}>
           {[
             { label: "Sermons",   href: "/sermons"   },
             { label: "About Us",  href: "/about"     },
             { label: "New Here?", href: "/new-here"  },
           ].map(({ label, href }) => (
-            <Link
-              key={label}
-              href={href}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: "14px 20px",
-                border: "1px solid var(--border-default)",
-                borderRadius: "var(--radius-sm)",
-                fontFamily: "var(--font-display)",
-                fontWeight: 700,
-                fontSize: "15px",
-                letterSpacing: "0.03em",
-                color: "var(--ink-900)",
-                textDecoration: "none",
-                background: "var(--white)",
-                transition: "border-color 0.15s ease, background 0.15s ease",
-              }}
-            >
-              {label}
+            <Link key={label} href={href}>
+              <Button variant="primary">{label}</Button>
             </Link>
           ))}
         </div>

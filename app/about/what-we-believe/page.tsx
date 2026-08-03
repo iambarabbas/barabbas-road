@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "What We Believe",
   description:
     "Barabbas Road Church's doctrinal statement — our beliefs on Scripture, God, Christ, salvation, and the church. A conservative evangelical, Bible-centered church in Miramar, San Diego.",
-  alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/about/what-we-believe/" },
+  alternates: { canonical: "https://barabbas.com/about/what-we-believe/" },
 };
 
 const DOCTRINE = [

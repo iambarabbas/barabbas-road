@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: "A Lot of Words Podcast",
   description:
     "A conversational deep-dive podcast hosted by Pastor Matt Smith and Brett Schoeneck — biblical clarity on real questions about faith, Scripture, theology, and everyday Christian living.",
-  alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/podcast/" },
+  alternates: { canonical: "https://barabbas.com/podcast/" },
   openGraph: {
     title: "A Lot of Words Podcast | Barabbas Road Church",
     description:
       "Real questions. Biblical answers. Pastor Matt Smith and Brett Schoeneck tackle theology, culture, and everyday Christian living every week.",
-    url: "https://iambarabbas.github.io/barabbas-road/podcast/",
+    url: "https://barabbas.com/podcast/",
   },
 };
 

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "New Here?",
   description:
     "New to Barabbas Road Church? Join us Sundays at 10am at 7340 Miramar Rd, San Diego, CA 92126. No dress code, no pressure — just come as you are.",
-  alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/new-here/" },
+  alternates: { canonical: "https://barabbas.com/new-here/" },
 };
 
 const EXPECT = [
