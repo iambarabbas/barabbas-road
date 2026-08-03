@@ -52,7 +52,7 @@ export function WelcomeSection() {
             Come as you are. We gather Sundays at 10am for worship and teaching, and throughout the week in Life Groups across the city.
           </p>
           <Link href="/about">
-            <Button variant="secondary">Learn About Us</Button>
+            <Button variant="outline">Learn About Us</Button>
           </Link>
         </div>
       </div>
