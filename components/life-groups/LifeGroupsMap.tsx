@@ -43,15 +43,15 @@ const GROUPS: Group[] = [
 const DAYS = ['All', 'Sunday', 'Monday', 'Wednesday', 'Thursday'] as const;
 type DayFilter = (typeof DAYS)[number];
 
-// Brand-adjacent day accent colors
+// Vivid day colors — warm/earthy family, clearly distinct
 const DAY_BG: Record<string, string> = {
-  Sunday:    '#d3ab64', // gold-400
-  Monday:    '#3c3933', // ink-700
-  Wednesday: '#9a7530', // gold-700
-  Thursday:  '#6c675c', // ink-500
+  Sunday:    '#d97706', // amber-orange
+  Monday:    '#2563eb', // clear blue
+  Wednesday: '#dc2626', // strong red
+  Thursday:  '#16a34a', // forest green
 };
 const DAY_TEXT: Record<string, string> = {
-  Sunday:    '#1e1d1b',
+  Sunday:    '#ffffff',
   Monday:    '#ffffff',
   Wednesday: '#ffffff',
   Thursday:  '#ffffff',
@@ -270,14 +270,17 @@ export default function LifeGroupsMap() {
             {filtered.map(g => (
               <div
                 key={g.id}
-                onClick={() => setFlyTarget([g.lat, g.lng])}
+                onClick={() => {
+                  if (!g.full && !g.onBreak) openModal(g);
+                  else setFlyTarget([g.lat, g.lng]);
+                }}
                 style={{
                   background: 'var(--white)',
                   borderRadius: 'var(--radius-lg)',
                   padding: '16px',
                   border: '1px solid var(--border-subtle)',
                   borderLeft: `4px solid ${g.full ? 'var(--ink-200)' : g.onBreak ? '#d3ab64' : (DAY_BG[g.day] ?? '#d3ab64')}`,
-                  cursor: 'pointer',
+                  cursor: !g.full && !g.onBreak ? 'pointer' : 'default',
                   display: 'flex',
                   gap: '14px',
                   alignItems: 'flex-start',
@@ -327,24 +330,13 @@ export default function LifeGroupsMap() {
                       </span>
                     )}
                     {!g.onBreak && !g.full && (
-                      <button
-                        onClick={e => { e.stopPropagation(); openModal(g); }}
-                        style={{
-                          padding: '3px 11px',
-                          background: 'var(--gold-400)',
-                          color: 'var(--ink-900)',
-                          border: 'none',
-                          borderRadius: 'var(--radius-sm)',
-                          fontFamily: 'var(--font-semicond)',
-                          fontWeight: 700,
-                          fontSize: '11px',
-                          textTransform: 'uppercase',
-                          letterSpacing: '.04em',
-                          cursor: 'pointer',
-                        }}
-                      >
-                        Join
-                      </button>
+                      <span style={{
+                        fontSize: '12px',
+                        color: 'var(--gold-700)',
+                        fontFamily: 'var(--font-semicond)',
+                        fontWeight: 700,
+                        letterSpacing: '.03em',
+                      }}>Join Group →</span>
                     )}
                   </div>
                 </div>

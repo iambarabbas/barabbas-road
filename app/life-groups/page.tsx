@@ -43,27 +43,6 @@ export default function LifeGroupsPage() {
         </div>
       </section>
 
-      {/* ── Scripture bar ── */}
-      <section style={{ background: "var(--gold-400)", padding: "22px 0" }}>
-        <div className="brc-container" style={{ textAlign: "center" }}>
-          <p
-            style={{
-              fontFamily: "var(--font-display)",
-              fontWeight: 800,
-              fontSize: "clamp(1rem,.9rem+.8vw,1.35rem)",
-              textTransform: "uppercase",
-              letterSpacing: "0.04em",
-              color: "var(--ink-900)",
-              margin: 0,
-            }}
-          >
-            &ldquo;They devoted themselves to the apostles&apos; teaching and
-            to fellowship, to the breaking of bread and to prayer.&rdquo;
-            &mdash; Acts&nbsp;2:42
-          </p>
-        </div>
-      </section>
-
       {/* ── Group Finder ── */}
       <section style={{ background: "var(--paper)" }}>
         <div className="brc-container" style={{ paddingTop: "48px", paddingBottom: "12px" }}>
