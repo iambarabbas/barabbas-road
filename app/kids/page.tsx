@@ -112,12 +112,12 @@ export default function KidsPage() {
       </section>
 
       {/* ── Want to Serve? ── */}
-      <section style={{ background: "var(--white)", padding: "56px 0", borderBottom: "1px solid var(--border-subtle)" }}>
+      <section style={{ background: "var(--white)", padding: "var(--section-y) 0", borderBottom: "1px solid var(--border-subtle)" }}>
         <div
-          className="brc-container"
+          className="brc-container brc-welcome"
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr auto",
+            gridTemplateColumns: "1fr 1fr",
             gap: "clamp(2rem,5vw,5rem)",
             alignItems: "center",
           }}
@@ -126,9 +126,9 @@ export default function KidsPage() {
             <Eyebrow color="var(--gold-700)" withRule>Get Involved</Eyebrow>
             <h2
               style={{
-                fontSize: "clamp(1.8rem,1.2rem+2vw,2.6rem)",
-                margin: "12px 0 16px",
-                lineHeight: 1.05,
+                fontSize: "clamp(1.8rem,1.2rem+2vw,2.8rem)",
+                margin: "16px 0 20px",
+                lineHeight: 1.02,
                 color: "var(--ink-900)",
               }}
             >
@@ -139,8 +139,7 @@ export default function KidsPage() {
                 fontSize: "17px",
                 lineHeight: 1.75,
                 color: "var(--text-body)",
-                maxWidth: "56ch",
-                margin: 0,
+                marginBottom: "28px",
               }}
             >
               Our children&apos;s church is constantly growing. If you have a passion for
@@ -148,12 +147,25 @@ export default function KidsPage() {
               contact Trace Trebilco, Director of Children&apos;s Church. To get a head start
               in the process please fill out the online service form.
             </p>
-          </div>
-          <div style={{ flexShrink: 0 }}>
             <Link href="/kids/serve">
               <Button variant="primary" size="lg">Fill Out the Service Form</Button>
             </Link>
           </div>
+
+          {/* Photo */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/kids-serve-volunteer.jpg`}
+            alt="Children's Church volunteer reading the Bible with a child"
+            style={{
+              width: "100%",
+              borderRadius: "var(--radius-lg)",
+              boxShadow: "var(--shadow-md)",
+              aspectRatio: "4/3",
+              objectFit: "cover",
+              objectPosition: "center top",
+            }}
+          />
         </div>
       </section>
 
