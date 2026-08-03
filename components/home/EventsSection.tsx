@@ -30,7 +30,9 @@ export function EventsSection() {
                 View the Calendar
               </Button>
             </Link>
-            <Button variant="outline" size="lg">Subscribe to Updates</Button>
+            <Link href="/app-download">
+              <Button variant="outline" size="lg">Download Our App</Button>
+            </Link>
           </div>
         </div>
 
