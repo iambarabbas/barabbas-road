@@ -196,6 +196,89 @@ export default function ResourcesPage() {
         </div>
       </section>
 
+      {/* ── Featured Book ── */}
+      <section style={{ background: "var(--surface-page)", padding: "var(--section-y) 0", borderBottom: "1px solid var(--border-subtle)" }}>
+        <div
+          className="brc-container brc-welcome"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "clamp(2rem,5vw,5rem)",
+            alignItems: "center",
+          }}
+        >
+          <div>
+            <Eyebrow color="var(--gold-700)" withRule>New Book</Eyebrow>
+            <h2
+              style={{
+                fontSize: "clamp(2rem,1.2rem+3vw,3.4rem)",
+                margin: "16px 0 6px",
+                lineHeight: 0.98,
+                color: "var(--ink-900)",
+              }}
+            >
+              Mere Membership
+            </h2>
+            <p
+              style={{
+                fontFamily: "var(--font-semicond)",
+                fontWeight: 700,
+                fontSize: "14px",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "var(--gold-700)",
+                margin: "0 0 20px",
+              }}
+            >
+              Belonging Made Visible Through Baptism and the Lord&apos;s Table
+            </p>
+            <p style={{ fontSize: "17px", lineHeight: 1.75, color: "var(--text-body)", marginBottom: "28px" }}>
+              What does it actually mean to belong to a local church? In{" "}
+              <em>Mere Membership</em>, Pastor Matt Smith argues that Christ already gave
+              His church visible means by which belonging is known — Baptism and the Lord&apos;s
+              Table — and that when these ordinances are allowed to function as Scripture
+              intends, membership becomes something lived rather than managed.
+            </p>
+            <p style={{ fontSize: "15px", color: "var(--text-muted)", marginBottom: "28px", lineHeight: 1.65 }}>
+              Written for pastors, elders, and thoughtful Christians who sense that something
+              essential has been displaced in the life of the local church.
+            </p>
+            <a
+              href="https://www.amazon.com/Mere-Membership-Belonging-Visible-Through/dp/B0GQ6FQT34/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-block",
+                background: "var(--ink-900)",
+                color: "var(--white)",
+                fontFamily: "var(--font-display)",
+                fontWeight: 800,
+                fontSize: "15px",
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+                padding: "14px 32px",
+                borderRadius: "var(--radius-sm)",
+                textDecoration: "none",
+              }}
+            >
+              Buy on Amazon
+            </a>
+          </div>
+
+          {/* Book promo image */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${BASE}/assets/mere-membership-book.jpg`}
+            alt="Mere Membership by Matthew P. Smith"
+            style={{
+              width: "100%",
+              borderRadius: "var(--radius-lg)",
+              boxShadow: "var(--shadow-md)",
+            }}
+          />
+        </div>
+      </section>
+
       {/* ── Sections ── */}
       {SECTIONS.map((section, si) => (
         <section
@@ -258,7 +341,9 @@ export default function ResourcesPage() {
             Pastor Matt Smith and Brett Schoeneck answer real questions about faith, Scripture, theology, and everyday Christian living. New episodes every week.
           </p>
           <a
-            href="/podcast"
+            href="https://www.youtube.com/@ALotofWordsPodcast/videos"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               display: "inline-block",
               background: "var(--gold-400)",
