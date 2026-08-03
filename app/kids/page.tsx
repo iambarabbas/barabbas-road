@@ -144,7 +144,7 @@ export default function KidsPage() {
             >
               Our children&apos;s church is constantly growing. If you have a passion for
               serving children and nurturing them into adult followers of Christ, please
-              contact Trace Trebilco, Director of Children&apos;s Church. To get a head start
+              contact Trace Trebilco, our Family Pastor. To get a head start
               in the process please fill out the online service form.
             </p>
             <Link href="/kids/serve">
@@ -472,7 +472,7 @@ export default function KidsPage() {
           style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(2rem,5vw,5rem)", alignItems: "start" }}
         >
           <div>
-            <Eyebrow color="var(--gold-700)" withRule>Children &amp; Youth Pastor</Eyebrow>
+            <Eyebrow color="var(--gold-700)" withRule>Family Pastor</Eyebrow>
             <h2 style={{ fontSize: "clamp(2rem,1.4rem+2vw,2.8rem)", margin: "16px 0 20px", lineHeight: 1 }}>
               Trace Trebilco
             </h2>

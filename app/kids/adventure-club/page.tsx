@@ -156,7 +156,7 @@ export default function AdventureClubPage() {
               lineHeight: 1.6,
             }}
           >
-            Reach out to Pastor Trace Trebilco, our Director of Children&apos;s Church,
+            Reach out to Pastor Trace Trebilco, our Family Pastor,
             for more information or to get your child involved.
           </p>
           <div style={{ display: "flex", gap: "14px", flexWrap: "wrap", justifyContent: "center" }}>

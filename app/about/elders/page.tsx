@@ -38,7 +38,7 @@ const ELDERS = [
   },
   {
     name: "Trace Trebilco",
-    title: "Pastor — Children & Youth",
+    title: "Family Pastor",
     email: "trace@barabbas.com",
     familyPhoto: `${BASE}/assets/trebilco-family.jpg`,
     familyCaption: "Trace with his wife Jordan and their four children Wyatt, Charlotte, Wesley, and Elliot.",

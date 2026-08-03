@@ -147,7 +147,7 @@ export default function YouthPage() {
           style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(2rem,5vw,5rem)", alignItems: "start" }}
         >
           <div>
-            <Eyebrow color="var(--gold-700)" withRule>Children &amp; Youth Pastor</Eyebrow>
+            <Eyebrow color="var(--gold-700)" withRule>Family Pastor</Eyebrow>
             <h2 style={{ fontSize: "clamp(2rem,1.4rem+2vw,2.8rem)", margin: "16px 0 20px", lineHeight: 1 }}>Trace Trebilco</h2>
             <p style={{ fontSize: "17px", lineHeight: 1.75, color: "var(--text-body)", marginBottom: "20px" }}>
               Trace is originally from Chicago. Him and his wife, Jordan, moved to San Diego for a relocation for work, but ended up staying in SD for the church. He has served in the Children&apos;s Ministry since 2016. Trace has a heart for evangelism and discipleship within the church and specifically with families. Trace has four young children, Wyatt, Charlotte, Wesley and Elliot. He enjoys cars, reading, hiking, and surfing.
