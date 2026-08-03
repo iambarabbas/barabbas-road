@@ -95,9 +95,8 @@ export default function KidsPage() {
             }}
           >
             <iframe
-              src="https://embed.subsplash.com/mediaplayer/video/d/mtxp8fm?appKey=-Z9H3R5"
+              src="https://subsplash.com/+495b/embed/mi/+mtxp8fm?audio&video&info&logoWatermark&shareable&embeddable"
               title="Discipleship Not Daycare — Barabbas Road Kids"
-              allow="autoplay; fullscreen"
               allowFullScreen
               style={{
                 position: "absolute",
