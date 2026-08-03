@@ -30,11 +30,11 @@ const AGES = [
 
 const SAFETY = [
   {
-    icon: "shield",
+    icon: "users",
     text: "All volunteers are screened, trained, and background-checked through Ministry Safe before serving in any classroom.",
   },
   {
-    icon: "users",
+    icon: "heart",
     text: "We maintain a safe child-to-adult ratio in every classroom at all times.",
   },
   {
@@ -42,15 +42,15 @@ const SAFETY = [
     text: "Every class has at least one volunteer trained in First Aid and CPR.",
   },
   {
-    icon: "smartphone",
+    icon: "phone",
     text: "You will be texted immediately if anything comes up with your child during service.",
   },
   {
-    icon: "tag",
+    icon: "clock",
     text: "At check-in you receive a pager number — your ticket to check your child out and your emergency contact number during service.",
   },
   {
-    icon: "lock",
+    icon: "bookOpen",
     text: "Only adults 18 and older are authorized to check in or check out a child.",
   },
 ];
@@ -264,17 +264,17 @@ export default function KidsPage() {
           >
             {[
               {
-                icon: "clipboardList",
+                icon: "bookOpen",
                 title: "Registration",
                 body: "Fill out a quick form at drop-off with your child's emergency contacts. First timers: plan to arrive by 9:45am.",
               },
               {
-                icon: "tag",
+                icon: "clock",
                 title: "Check-In Pager",
                 body: "You'll receive a pager number at check-in. This is your child's release ticket and how we'll reach you if needed during service.",
               },
               {
-                icon: "smartphone",
+                icon: "phone",
                 title: "Text Alerts",
                 body: "If anything comes up with your child during service, a teacher will text you directly — no interrupting the service.",
               },
@@ -497,6 +497,56 @@ export default function KidsPage() {
               provide the best care possible.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* ── Meet the Pastor ── */}
+      <section style={{ padding: "var(--section-y) 0", background: "var(--surface-page)" }}>
+        <div
+          className="brc-container brc-welcome"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "clamp(2rem,5vw,5rem)",
+            alignItems: "start",
+          }}
+        >
+          <div>
+            <Eyebrow color="var(--gold-700)" withRule>Children &amp; Youth Pastor</Eyebrow>
+            <h2 style={{ fontSize: "clamp(2rem,1.4rem+2vw,2.8rem)", margin: "16px 0 20px", lineHeight: 1 }}>
+              Trace Trebilco
+            </h2>
+            <p style={{ fontSize: "17px", lineHeight: 1.7, color: "var(--text-body)", marginBottom: "20px" }}>
+              Trace is originally from Chicago. Him and his wife, Jordan, moved to San Diego for a relocation for work, but ended up staying in SD for the church. He has served in the Children&apos;s Ministry since 2016. Trace has a heart for evangelism and discipleship within the church and specifically with families. Trace has four young children, Wyatt, Charlotte, Wesley and Elliot. He enjoys cars, reading, hiking, and surfing.
+            </p>
+            <a
+              href="mailto:trace@barabbas.com"
+              style={{
+                fontFamily: "var(--font-semicond)",
+                fontWeight: 700,
+                fontSize: "14px",
+                textTransform: "uppercase",
+                letterSpacing: ".06em",
+                color: "var(--gold-700)",
+                textDecoration: "none",
+              }}
+            >
+              trace@barabbas.com
+            </a>
+          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/trebilco-family.jpg`}
+            alt="Trace Trebilco and family"
+            style={{
+              width: "100%",
+              borderRadius: "var(--radius-lg)",
+              boxShadow: "var(--shadow-md)",
+              aspectRatio: "4/3",
+              objectFit: "cover",
+              objectPosition: "center top",
+            }}
+          />
         </div>
       </section>
 

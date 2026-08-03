@@ -60,7 +60,7 @@ const STAFF: Array<{
     email: "trace@barabbas.com",
     photo: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&q=80",
     familyPhoto: "/assets/trebilco-family.jpg",
-    bio: "Trace is originally from Chicago. He and his wife Jordan moved to San Diego in 2016. He serves as the Pastor over the Children's Church and Youth ministries. Trace has a heart for evangelism and discipleship within the church — especially with families. He and Jordan have four young children: Wyatt, Charlotte, Wesley, and Elliot. He enjoys cars, reading, hiking, and surfing.",
+    bio: "Trace is originally from Chicago. Him and his wife, Jordan, moved to San Diego for a relocation for work, but ended up staying in SD for the church. He has served in the Children's Ministry since 2016. Trace has a heart for evangelism and discipleship within the church and specifically with families. Trace has four young children, Wyatt, Charlotte, Wesley and Elliot. He enjoys cars, reading, hiking, and surfing.",
     credentials: [],
   },
 ];
