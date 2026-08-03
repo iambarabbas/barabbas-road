@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Life Groups",
   description:
     "Find a Life Group near you. Weekly small groups throughout San Diego for Bible study, fellowship, and community.",
+  alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/life-groups/" },
 };
 
 import LifeGroupsMapLoader from "@/components/life-groups/LifeGroupsMapLoader";

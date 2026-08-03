@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import { AboutSubNav } from "@/components/about/AboutSubNav";
 import { Eyebrow } from "@/components/core/Eyebrow";
 
-export const metadata: Metadata = { title: "Church Government" };
+export const metadata: Metadata = {
+  title: "Church Government",
+  description:
+    "How Barabbas Road Church is governed — a plurality of elders, congregational model rooted in New Testament principles. A Bible-teaching church in Miramar, San Diego.",
+  alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/about/church-government/" },
+};
 
 const pStyle: React.CSSProperties = { fontSize: "16px", lineHeight: 1.8, color: "var(--text-body)", margin: "0 0 18px" };
 const h3Style: React.CSSProperties = { fontSize: "clamp(1.2rem,1rem+.5vw,1.4rem)", margin: "40px 0 14px", color: "var(--ink-900)", lineHeight: 1.2 };

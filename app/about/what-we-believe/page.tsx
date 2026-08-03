@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import { AboutSubNav } from "@/components/about/AboutSubNav";
 import { Eyebrow } from "@/components/core/Eyebrow";
 
-export const metadata: Metadata = { title: "What We Believe" };
+export const metadata: Metadata = {
+  title: "What We Believe",
+  description:
+    "Barabbas Road Church's doctrinal statement — our beliefs on Scripture, God, Christ, salvation, and the church. A conservative evangelical, Bible-centered church in Miramar, San Diego.",
+  alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/about/what-we-believe/" },
+};
 
 const DOCTRINE = [
   {

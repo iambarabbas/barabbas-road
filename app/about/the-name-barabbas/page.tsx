@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import { AboutSubNav } from "@/components/about/AboutSubNav";
 import { Eyebrow } from "@/components/core/Eyebrow";
 
-export const metadata: Metadata = { title: "The Name Barabbas" };
+export const metadata: Metadata = {
+  title: "The Name Barabbas",
+  description:
+    "Why Barabbas? The biblical account of Barabbas and what it means for every person set free by Christ — the story behind the name of Barabbas Road Church in San Diego.",
+  alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/about/the-name-barabbas/" },
+};
 
 export default function TheNameBarabbasPage() {
   return (

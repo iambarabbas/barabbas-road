@@ -3,7 +3,12 @@ import Link from "next/link";
 import { Eyebrow } from "@/components/core/Eyebrow";
 import { Button } from "@/components/core/Button";
 
-export const metadata: Metadata = { title: "Our Team" };
+export const metadata: Metadata = {
+  title: "Our Team",
+  description:
+    "Meet the staff and leadership team at Barabbas Road Church in Miramar, San Diego — the pastors, ministers, and ministry leaders serving our congregation.",
+  alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/team/" },
+};
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
 

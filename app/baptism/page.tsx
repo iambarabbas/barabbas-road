@@ -6,7 +6,8 @@ import { Button } from "@/components/core/Button";
 export const metadata: Metadata = {
   title: "Baptism",
   description:
-    "Learn about baptism at Barabbas Road Church — what it is, who should be baptized, and how to sign up.",
+    "Learn about baptism at Barabbas Road Church — what it is, who should be baptized, and how to sign up for baptism at our San Diego church.",
+  alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/baptism/" },
 };
 
 export default function BaptismPage() {

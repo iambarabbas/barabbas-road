@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Youth",
   description:
     "Youth ministry at Barabbas Road Church. Monthly events equipping students ages 12–17 to think biblically, build community, and develop lasting faith.",
+  alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/youth/" },
 };
 
 const EVENTS = [

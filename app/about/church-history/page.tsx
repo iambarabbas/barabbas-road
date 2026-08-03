@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import { AboutSubNav } from "@/components/about/AboutSubNav";
 import { Eyebrow } from "@/components/core/Eyebrow";
 
-export const metadata: Metadata = { title: "Church History" };
+export const metadata: Metadata = {
+  title: "Church History",
+  description:
+    "The story of Barabbas Road Church — from a 10-person evening service in a San Diego storage room in 2006 to a thriving Bible-teaching congregation in Miramar today.",
+  alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/about/church-history/" },
+};
 
 const TIMELINE = [
   { year: "2002", event: "Pastor Matt Smith gets saved in New York City. After reading through scripture he feels called to return to his hometown and start seminary." },

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Kids Church",
   description:
     "Children's Church at Barabbas Road is available for ages 1–11 every Sunday. Safe, Bible-based teaching using the Generations of Grace curriculum.",
+  alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/kids/" },
 };
 
 const SAFETY_ITEMS = [

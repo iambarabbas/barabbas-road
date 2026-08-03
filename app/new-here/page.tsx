@@ -7,7 +7,8 @@ import { Icon } from "@/components/Icon";
 export const metadata: Metadata = {
   title: "New Here?",
   description:
-    "New to Barabbas Road Church? Join us Sundays at 10am at 7340 Miramar Rd, San Diego, CA 92126.",
+    "New to Barabbas Road Church? Join us Sundays at 10am at 7340 Miramar Rd, San Diego, CA 92126. No dress code, no pressure — just come as you are.",
+  alternates: { canonical: "https://iambarabbas.github.io/barabbas-road/new-here/" },
 };
 
 const SERVICE_FAQS = [
@@ -44,9 +45,23 @@ const KIDS_FAQS = [
   },
 ];
 
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [...SERVICE_FAQS, ...KIDS_FAQS].map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 export default function NewHerePage() {
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
+      />
       {/* ── Hero ── */}
       <section style={{ background: "var(--ink-900)", padding: "64px 0 56px" }}>
         <div
