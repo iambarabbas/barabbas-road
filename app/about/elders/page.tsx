@@ -136,12 +136,10 @@ export default function EldersPage() {
                       alt={`${elder.name} and family`}
                       style={{
                         width: "100%",
+                        height: "auto",
+                        display: "block",
                         borderRadius: "var(--radius-lg)",
                         boxShadow: "var(--shadow-md)",
-                        display: "block",
-                        objectFit: "cover",
-                        aspectRatio: "4/3",
-                        objectPosition: "center top",
                       }}
                     />
                     <p style={{ fontSize: "13px", color: "var(--text-subtle, var(--text-muted))", marginTop: "8px", fontStyle: "italic", margin: "8px 0 0" }}>
