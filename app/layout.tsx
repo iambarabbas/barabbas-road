@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     default: "Barabbas Road Church — San Diego",
   },
   description:
-    "A Bible-teaching church in Clairemont, San Diego. 7340 Miramar Rd. Sundays at 10am. Hear the Truth. Live the Truth. Defend the Truth.",
+    "A Bible-teaching church in Miramar, San Diego. 7340 Miramar Rd. Sundays at 10am. Hear the Truth. Live the Truth. Defend the Truth.",
   openGraph: {
     siteName: "Barabbas Road Church",
     locale: "en_US",

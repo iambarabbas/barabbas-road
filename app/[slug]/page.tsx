@@ -200,7 +200,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                 Barabbas Road Church
               </Eyebrow>
               <p style={{ color: "var(--text-muted)", margin: "10px 0 0", maxWidth: "40ch" }}>
-                A Bible-teaching church in Clairemont, San Diego. Sundays at 10am.
+                A Bible-teaching church in Miramar, San Diego. Sundays at 10am.
               </p>
             </div>
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>

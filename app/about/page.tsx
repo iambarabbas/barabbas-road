@@ -113,7 +113,7 @@ export default function AboutPage() {
               },
               {
                 label: "Who We Are",
-                body: "Barabbas Road Church in San Diego is located in the neighborhood of Clairemont. We are a church that is unashamedly committed to the supremacy and sufficiency of the Bible. We believe the Bible is the very word of God and we are committed to proclaiming its unchanging message to an ever changing world. Each week folks from all across San Diego County gather to hear from God's Word the Bible and to share in worshiping God together through songs. At Barabbas Road our aim is not to reinvent church rather we strive to honor the one to whom the church belongs and that is Jesus Christ our Lord, He is the head of the church and He is the one we proclaim.",
+                body: "Barabbas Road Church in San Diego is located in the neighborhood of Miramar. We are a church that is unashamedly committed to the supremacy and sufficiency of the Bible. We believe the Bible is the very word of God and we are committed to proclaiming its unchanging message to an ever changing world. Each week folks from all across San Diego County gather to hear from God's Word the Bible and to share in worshiping God together through songs. At Barabbas Road our aim is not to reinvent church rather we strive to honor the one to whom the church belongs and that is Jesus Christ our Lord, He is the head of the church and He is the one we proclaim.",
               },
             ].map((item) => (
               <div
