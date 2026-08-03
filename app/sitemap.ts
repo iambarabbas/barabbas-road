@@ -29,6 +29,8 @@ const STATIC_PAGES = [
   { path: "/calendar/",                 priority: 0.7, changeFrequency: "weekly"  as const },
   { path: "/livestream/",               priority: 0.7, changeFrequency: "weekly"  as const },
   { path: "/app-download/",            priority: 0.5, changeFrequency: "monthly" as const },
+  { path: "/resources/",               priority: 0.8, changeFrequency: "monthly" as const },
+  { path: "/podcast/",                  priority: 0.8, changeFrequency: "weekly"  as const },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

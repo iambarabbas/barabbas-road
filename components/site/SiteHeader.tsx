@@ -15,6 +15,7 @@ const NAV = [
   { label: "Classes",    href: "/classes" },
   { label: "Kids",       href: "/kids" },
   { label: "Youth",      href: "/youth" },
+  { label: "Resources",  href: "/resources" },
   { label: "Give",       href: "/give" },
 ];
 

@@ -4,7 +4,7 @@ import { Icon } from "@/components/Icon";
 
 const FOOTER_LINKS = [
   { heading: "Connect", items: [{ label: "I'm New", href: "/new-here" }, { label: "Plan a Visit", href: "/new-here" }, { label: "Life Groups", href: "/life-groups" }, { label: "Contact", href: "/contact" }] },
-  { heading: "Grow",    items: [{ label: "Sermons",  href: "/sermons" }, { label: "Livestream", href: "/livestream" }, { label: "Classes", href: "/classes" }, { label: "Kids", href: "/kids" }, { label: "Youth", href: "/youth" }] },
+  { heading: "Grow",    items: [{ label: "Sermons",  href: "/sermons" }, { label: "Livestream", href: "/livestream" }, { label: "Classes", href: "/classes" }, { label: "Kids", href: "/kids" }, { label: "Youth", href: "/youth" }, { label: "Podcast", href: "/podcast" }, { label: "Resources", href: "/resources" }] },
   { heading: "Give",    items: [{ label: "Give Online", href: "/give" }, { label: "Ways to Give", href: "/give" }, { label: "Missions", href: "/missions" }] },
 ];
 
