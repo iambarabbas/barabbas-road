@@ -67,30 +67,66 @@ export default function KidsPage() {
     <div>
       {/* ── Hero ── */}
       <section style={{ background: "var(--ink-900)", padding: "64px 0 56px" }}>
-        <div className="brc-container">
-          <Eyebrow color="var(--gold-400)" withRule>For Families</Eyebrow>
-          <h1
+        <div
+          className="brc-container brc-welcome"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "clamp(2rem,5vw,4rem)",
+            alignItems: "center",
+          }}
+        >
+          <div>
+            <Eyebrow color="var(--gold-400)" withRule>For Families</Eyebrow>
+            <h1
+              style={{
+                color: "var(--white)",
+                fontSize: "clamp(2.6rem,1.6rem+4vw,4.5rem)",
+                margin: "16px 0 12px",
+                lineHeight: 0.98,
+              }}
+            >
+              Kids Church
+            </h1>
+            <p
+              style={{
+                color: "rgba(255,255,255,.65)",
+                fontSize: "18px",
+                maxWidth: "44ch",
+                lineHeight: 1.6,
+              }}
+            >
+              Children&apos;s Church runs every Sunday during the 10am service
+              for ages 1–11. Your kids are safe, loved, and learning straight
+              from God&apos;s Word.
+            </p>
+          </div>
+
+          {/* Subsplash video embed */}
+          <div
             style={{
-              color: "var(--white)",
-              fontSize: "clamp(2.6rem,1.6rem+4vw,4.5rem)",
-              margin: "16px 0 12px",
-              lineHeight: 0.98,
+              position: "relative",
+              width: "100%",
+              paddingBottom: "56.25%", /* 16:9 */
+              borderRadius: "var(--radius-lg)",
+              overflow: "hidden",
+              boxShadow: "0 12px 40px rgba(0,0,0,.5)",
             }}
           >
-            Kids Church
-          </h1>
-          <p
-            style={{
-              color: "rgba(255,255,255,.65)",
-              fontSize: "18px",
-              maxWidth: "54ch",
-              lineHeight: 1.6,
-            }}
-          >
-            Children&apos;s Church runs every Sunday during the 10am service
-            for ages 1–11. Your kids are safe, loved, and learning straight
-            from God&apos;s Word.
-          </p>
+            <iframe
+              src="https://embed.subsplash.com/mediaplayer/video/d/mtxp8fm?appKey=-Z9H3R5"
+              title="Discipleship Not Daycare — Barabbas Road Kids"
+              allow="autoplay; fullscreen"
+              allowFullScreen
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                border: "none",
+              }}
+            />
+          </div>
         </div>
       </section>
 
