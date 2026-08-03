@@ -47,67 +47,67 @@ const CHECK_IN_CARDS = [
 export default function KidsPage() {
   return (
     <div>
-      {/* ── Hero ── */}
-      <section style={{ background: "var(--ink-900)", padding: "64px 0 56px" }}>
-        <div
-          className="brc-container brc-welcome"
+      {/* ── Hero — full-bleed photo ── */}
+      <section
+        style={{
+          position: "relative",
+          overflow: "hidden",
+          minHeight: "clamp(480px, 55vw, 680px)",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        {/* Background photo */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/kids-hero.jpg`}
+          alt="Children's Church Bible Challenge at Barabbas Road Church"
           style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "clamp(2rem,5vw,4rem)",
-            alignItems: "center",
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center 20%",
           }}
+        />
+        {/* Dark gradient overlay */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(to right, rgba(13,27,42,0.92) 0%, rgba(13,27,42,0.70) 50%, rgba(13,27,42,0.30) 100%)",
+          }}
+        />
+        {/* Content */}
+        <div
+          className="brc-container"
+          style={{ position: "relative", zIndex: 1, padding: "80px 0" }}
         >
-          <div>
-            <Eyebrow color="var(--gold-400)" withRule>Kids Church</Eyebrow>
-            <h1
-              style={{
-                color: "var(--white)",
-                fontSize: "clamp(2.4rem,1.4rem+4vw,4rem)",
-                margin: "16px 0 12px",
-                lineHeight: 1,
-              }}
-            >
-              Evangelize,<br />Encourage,<br />Equip
-            </h1>
-            <p
-              style={{
-                color: "rgba(255,255,255,.65)",
-                fontSize: "18px",
-                maxWidth: "40ch",
-                lineHeight: 1.6,
-                marginTop: "16px",
-              }}
-            >
-              Children&apos;s Church is available from ages 1–11 every Sunday
-              during the 10am service.
-            </p>
-          </div>
-
-          {/* Subsplash video embed */}
-          <div
+          <Eyebrow color="var(--gold-400)" withRule>Kids Church</Eyebrow>
+          <h1
             style={{
-              position: "relative",
-              width: "100%",
-              paddingBottom: "56.25%",
-              borderRadius: "var(--radius-lg)",
-              overflow: "hidden",
-              boxShadow: "0 12px 40px rgba(0,0,0,.5)",
+              color: "var(--white)",
+              fontSize: "clamp(2.4rem,1.4rem+4vw,4.5rem)",
+              margin: "16px 0 14px",
+              lineHeight: 1,
             }}
           >
-            <iframe
-              src="https://subsplash.com/+495b/embed/mi/+mtxp8fm?audio&video&info&logoWatermark&shareable&embeddable"
-              title="Discipleship Not Daycare — Barabbas Road Kids"
-              allowFullScreen
-              style={{
-                position: "absolute",
-                inset: 0,
-                width: "100%",
-                height: "100%",
-                border: "none",
-              }}
-            />
-          </div>
+            Evangelize,<br />Encourage,<br />Equip
+          </h1>
+          <p
+            style={{
+              color: "rgba(255,255,255,.72)",
+              fontSize: "18px",
+              maxWidth: "44ch",
+              lineHeight: 1.65,
+              margin: 0,
+            }}
+          >
+            Children&apos;s Church is available from ages 1–11 every Sunday
+            during the 10am service.
+          </p>
         </div>
       </section>
 

@@ -14,14 +14,46 @@ export const metadata: Metadata = {
 export default function ClassesPage() {
   return (
     <div>
-      {/* ── Hero ── */}
-      <section style={{ background: "var(--ink-900)", padding: "64px 0 56px" }}>
-        <div className="brc-container">
+      {/* ── Hero — full-bleed photo ── */}
+      <section
+        style={{
+          position: "relative",
+          overflow: "hidden",
+          minHeight: "clamp(480px, 55vw, 680px)",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        {/* Background photo */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/classes-hero.jpg`}
+          alt="Bible teaching at Barabbas Road Church"
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center 25%",
+          }}
+        />
+        {/* Dark gradient overlay */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(to right, rgba(13,27,42,0.92) 0%, rgba(13,27,42,0.70) 50%, rgba(13,27,42,0.30) 100%)",
+          }}
+        />
+        {/* Content */}
+        <div className="brc-container" style={{ position: "relative", zIndex: 1, padding: "80px 0" }}>
           <Eyebrow color="var(--gold-400)" withRule>Equip Yourself</Eyebrow>
-          <h1 style={{ color: "var(--white)", fontSize: "clamp(2.6rem,1.6rem+4vw,4.5rem)", margin: "16px 0 12px", lineHeight: 0.98 }}>
+          <h1 style={{ color: "var(--white)", fontSize: "clamp(2.6rem,1.6rem+4vw,4.5rem)", margin: "16px 0 14px", lineHeight: 0.98 }}>
             Classes
           </h1>
-          <p style={{ color: "rgba(255,255,255,.65)", fontSize: "clamp(16px,1rem+.5vw,18px)", maxWidth: "52ch", lineHeight: 1.65, marginBottom: "32px" }}>
+          <p style={{ color: "rgba(255,255,255,.72)", fontSize: "clamp(16px,1rem+.5vw,18px)", maxWidth: "52ch", lineHeight: 1.65, marginBottom: "32px" }}>
             Two weekly classes open to anyone — no sign-up, no cost, no prerequisites. Just show up and dig into God&apos;s Word.
           </p>
           {/* Quick schedule pills */}
