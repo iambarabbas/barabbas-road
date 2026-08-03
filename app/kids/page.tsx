@@ -171,24 +171,72 @@ export default function KidsPage() {
 
       {/* ── Framework ── */}
       <section style={{ padding: "var(--section-y) 0", background: "var(--surface-page)" }}>
-        <div className="brc-container">
-          <div style={{ maxWidth: "720px" }}>
+        <div
+          className="brc-container brc-welcome"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "clamp(2rem,5vw,5rem)",
+            alignItems: "center",
+          }}
+        >
+          {/* Copy */}
+          <div>
             <Eyebrow color="var(--gold-700)" withRule>Framework</Eyebrow>
             <h2 style={{ fontSize: "clamp(2rem,1.4rem+2vw,2.8rem)", margin: "16px 0 20px", lineHeight: 1 }}>
               Children&apos;s Church
             </h2>
-            <p style={{ fontSize: "17px", lineHeight: 1.75, color: "var(--text-body)", marginBottom: "0" }}>
-              Children&apos;s Church is available from ages 1–11. We believe the best way to teach children God&apos;s word is by actually using it. This is why our teachers read straight from the bible during the lessons and why we chose a curriculum that represents our commitment to God&apos;s word. With our curriculum,{" "}
-              <a
-                href="https://gracecurriculum.org/collections/generations-of-grace"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: "var(--gold-700)", textDecoration: "underline" }}
-              >
-                Generations of Grace
-              </a>
-              , we take the children through the bible in three years.
+            <p style={{ fontSize: "17px", lineHeight: 1.75, color: "var(--text-body)", marginBottom: "24px" }}>
+              Children&apos;s Church is available from ages 1–11. We believe the best way to teach children God&apos;s word is by actually using it. This is why our teachers read straight from the bible during the lessons and why we chose a curriculum that represents our commitment to God&apos;s word. We take the children through the Bible in its entirety over three years.
             </p>
+            <a
+              href="https://gracecurriculum.org/collections/generations-of-grace"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                background: "var(--ink-900)",
+                color: "var(--white)",
+                fontFamily: "var(--font-display)",
+                fontWeight: 800,
+                fontSize: "14px",
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+                padding: "12px 24px",
+                borderRadius: "var(--radius-sm)",
+                textDecoration: "none",
+              }}
+            >
+              Learn About Generations of Grace
+            </a>
+          </div>
+
+          {/* Vimeo embed */}
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              paddingBottom: "56.25%",
+              borderRadius: "var(--radius-lg)",
+              overflow: "hidden",
+              boxShadow: "var(--shadow-md)",
+            }}
+          >
+            <iframe
+              src="https://player.vimeo.com/video/952725117"
+              title="Children&apos;s Church Curriculum — Generations of Grace"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                border: "none",
+              }}
+            />
           </div>
         </div>
       </section>
