@@ -37,6 +37,25 @@ export default function TheNameBarabbasPage() {
               </cite>
             </blockquote>
 
+            {/* Video */}
+            <div style={{
+              position: "relative",
+              width: "100%",
+              paddingBottom: "56.25%",
+              borderRadius: "var(--radius-lg)",
+              overflow: "hidden",
+              boxShadow: "var(--shadow-md)",
+              marginBottom: "48px",
+            }}>
+              <iframe
+                src="https://player.vimeo.com/video/1011540228"
+                title="The Name Barabbas — Barabbas Road Church"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none" }}
+              />
+            </div>
+
             {/* Explanation */}
             <p style={{ fontSize: "18px", lineHeight: 1.75, color: "var(--text-body)", marginBottom: "24px" }}>
               From the above scripture we can see that Barabbas, the guilty one, was set free because Jesus, the innocent one, took his place.
