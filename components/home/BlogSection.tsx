@@ -12,7 +12,7 @@ const POSTS = [
     t: "Expository Preaching at Barabbas Road Church",
     cat: "Teaching",
     date: "July 7, 2016",
-    img: "https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=900&q=80",
+    img: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/expository-preaching.jpg`,
     excerpt:
       "At Barabbas Road, you'll hear verse-by-verse preaching every Sunday — because the text, not the preacher, sets the agenda.",
   },
@@ -30,7 +30,7 @@ const POSTS = [
     t: "Preaching that Punctures",
     cat: "Teaching",
     date: "January 27, 2017",
-    img: "https://images.unsplash.com/photo-1543269664-56d93c1b41a6?w=900&q=80",
+    img: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/preaching-punctures.jpg`,
     excerpt:
       "Not all preaching is created equal. Why expository preaching cuts to the heart in ways topical sermons rarely do.",
   },
