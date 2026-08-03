@@ -16,20 +16,6 @@ export default function ClassesPage() {
       {/* ── Hero ── */}
       <section style={{ background: "var(--ink-900)", padding: "64px 0 56px" }}>
         <div className="brc-container">
-          {/* Barabbas University mark */}
-          <div style={{ display: "flex", justifyContent: "center", marginBottom: "40px" }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/barabbas-university.jpg`}
-              alt="Barabbas University — Equipping the Saints"
-              style={{
-                height: "180px",
-                width: "auto",
-                borderRadius: "var(--radius-lg)",
-                boxShadow: "0 4px 24px rgba(0,0,0,.4)",
-              }}
-            />
-          </div>
           <Eyebrow color="var(--gold-400)" withRule>Equip Yourself</Eyebrow>
           <h1 style={{ color: "var(--white)", fontSize: "clamp(2.6rem,1.6rem+4vw,4.5rem)", margin: "16px 0 12px", lineHeight: 0.98 }}>
             Classes
