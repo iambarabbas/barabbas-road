@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Eyebrow } from "@/components/core/Eyebrow";
 import { Button } from "@/components/core/Button";
+import { Icon } from "@/components/Icon";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -33,12 +34,51 @@ export default function AdventureClubPage() {
               fontSize: "18px",
               maxWidth: "52ch",
               lineHeight: 1.65,
-              margin: 0,
+              marginBottom: "24px",
             }}
           >
             A monthly program combining outdoor adventure, team challenges, and
             Bible-centered discipleship for kids at Barabbas Road Church.
           </p>
+          {/* Time + registration */}
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center" }}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+                background: "rgba(255,255,255,.08)",
+                border: "1px solid rgba(255,255,255,.15)",
+                borderRadius: "var(--radius-md)",
+                padding: "10px 18px",
+              }}
+            >
+              <Icon name="clock" size={16} strokeWidth={2} style={{ color: "var(--gold-400)", flexShrink: 0 }} />
+              <span style={{ fontFamily: "var(--font-semicond)", fontWeight: 700, fontSize: "15px", color: "var(--white)", letterSpacing: "0.02em" }}>
+                Tuesdays &nbsp;&middot;&nbsp; 6:30 &ndash; 7:30pm
+              </span>
+            </div>
+            <a
+              href="https://subspla.sh/h92fq9r"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-block",
+                background: "var(--gold-400)",
+                color: "var(--ink-900)",
+                fontFamily: "var(--font-display)",
+                fontWeight: 800,
+                fontSize: "14px",
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+                padding: "11px 24px",
+                borderRadius: "var(--radius-sm)",
+                textDecoration: "none",
+              }}
+            >
+              Register Here
+            </a>
+          </div>
         </div>
       </section>
 
