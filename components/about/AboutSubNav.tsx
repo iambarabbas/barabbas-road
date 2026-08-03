@@ -34,46 +34,56 @@ export function AboutSubNav() {
     <>
       <style>{`
         .brc-subnav-pill {
-          display: inline-flex;
+          display: flex;
           align-items: center;
-          padding: 8px 16px;
-          border-radius: 999px;
+          justify-content: center;
+          padding: 10px 14px;
+          border-radius: var(--radius-md, 6px);
           font-family: var(--font-semicond);
           font-weight: 700;
-          font-size: 13px;
+          font-size: 12px;
           letter-spacing: .06em;
           text-transform: uppercase;
           text-decoration: none;
-          white-space: nowrap;
+          text-align: center;
           transition: background .15s ease, color .15s ease;
-          min-height: 36px;
+          min-height: 40px;
+          line-height: 1.2;
         }
         .brc-subnav-pill:not(.active) {
-          background: rgba(255,255,255,.08);
-          color: rgba(255,255,255,.6);
+          background: rgba(255,255,255,.07);
+          color: rgba(255,255,255,.55);
+          border: 1px solid rgba(255,255,255,.08);
         }
         .brc-subnav-pill:not(.active):hover {
-          background: rgba(255,255,255,.14);
+          background: rgba(255,255,255,.13);
           color: rgba(255,255,255,.9);
         }
         .brc-subnav-pill.active {
           background: var(--gold-400);
           color: var(--ink-900);
+          border: 1px solid var(--gold-400);
         }
+        /* Mobile: 2-col grid — all items visible at once */
         .brc-subnav-scroll {
-          display: flex;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
           gap: 6px;
-          overflow-x: auto;
-          overflow-y: hidden;
-          -webkit-overflow-scrolling: touch;
-          scrollbar-width: none;
-          -ms-overflow-style: none;
-          padding: 10px 0 10px;
-          /* Fade right edge to hint more items */
-          -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
-          mask-image: linear-gradient(to right, black 80%, transparent 100%);
+          padding: 12px 0;
         }
-        .brc-subnav-scroll::-webkit-scrollbar { display: none; }
+        /* Desktop: horizontal row */
+        @media (min-width: 640px) {
+          .brc-subnav-scroll {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            padding: 10px 0;
+          }
+          .brc-subnav-pill {
+            font-size: 12px;
+            white-space: nowrap;
+          }
+        }
       `}</style>
 
       <nav
