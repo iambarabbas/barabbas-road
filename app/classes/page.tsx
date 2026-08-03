@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   description:
     "Bible-teaching classes at Barabbas Road Church — Inductive Bible Study on Sundays and Theologetics on Tuesdays. Open to all, no sign-up required.",
   alternates: { canonical: "https://barabbas.com/classes/" },
+  openGraph: {
+    images: [{ url: "/assets/classes-hero.jpg", width: 1200, height: 630, alt: "Bible Classes at Barabbas Road Church — San Diego" }],
+  },
 };
 
 export default function ClassesPage() {

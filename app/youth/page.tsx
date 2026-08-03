@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   description:
     "Youth ministry at Barabbas Road Church. Monthly events equipping students ages 12–17 to think biblically, build community, and develop lasting faith.",
   alternates: { canonical: "https://barabbas.com/youth/" },
+  openGraph: {
+    images: [{ url: "/assets/youth-bible-study.jpg", width: 1200, height: 630, alt: "Youth Ministry at Barabbas Road Church — San Diego" }],
+  },
 };
 
 const EVENTS = [

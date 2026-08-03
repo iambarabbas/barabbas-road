@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   description:
     "Find a Life Group near you. Weekly small groups throughout San Diego for Bible study, fellowship, and community.",
   alternates: { canonical: "https://barabbas.com/life-groups/" },
+  openGraph: {
+    images: [{ url: "/assets/life-groups-hero.jpg", width: 1200, height: 630, alt: "Life Groups at Barabbas Road Church — San Diego" }],
+  },
 };
 
 import LifeGroupsMapLoader from "@/components/life-groups/LifeGroupsMapLoader";

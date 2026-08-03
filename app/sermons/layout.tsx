@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     description:
       "Verse-by-verse expository preaching through entire books of the Bible. Every Sunday at 10am, Miramar, San Diego.",
     url: "https://barabbas.com/sermons/",
+    images: [{ url: "/assets/expository-preaching.jpg", width: 1200, height: 630, alt: "Sermons — Barabbas Road Church, San Diego" }],
   },
 };
 

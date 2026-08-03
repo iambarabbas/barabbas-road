@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   description:
     "Pastoral papers, theological studies, and position papers from Barabbas Road Church — exploring doctrine, Scripture, and everyday Christian living.",
   alternates: { canonical: "https://barabbas.com/resources/" },
+  openGraph: {
+    images: [{ url: "/assets/mere-membership-book.jpg", width: 1200, height: 630, alt: "Resources — Barabbas Road Church" }],
+  },
 };
 
 type Paper = { title: string; description: string; file: string; type: "pdf" | "doc" };

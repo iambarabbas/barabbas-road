@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   description:
     "Children's Church at Barabbas Road is available for ages 1–11 every Sunday. Safe, Bible-based teaching using the Generations of Grace curriculum.",
   alternates: { canonical: "https://barabbas.com/kids/" },
+  openGraph: {
+    images: [{ url: "/assets/kids-hero.jpg", width: 1200, height: 630, alt: "Children's Church at Barabbas Road Church — San Diego" }],
+  },
 };
 
 const SAFETY_ITEMS = [

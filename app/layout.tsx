@@ -140,7 +140,7 @@ export const metadata: Metadata = {
       "A Bible-teaching church in Miramar, San Diego. Verse-by-verse preaching every Sunday at 10am. 7340 Miramar Rd, San Diego, CA 92126.",
     images: [
       {
-        url: "/barabbas-road/assets/logolock-black.png",
+        url: "/assets/og-default.jpg",
         width: 1200,
         height: 630,
         alt: "Barabbas Road Church — San Diego",
@@ -151,7 +151,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${CHURCH_NAME} — San Diego`,
     description: "Bible-teaching church in Miramar, San Diego. Sundays at 10am. 7340 Miramar Rd.",
-    images: ["/barabbas-road/assets/logolock-black.png"],
+    images: ["/assets/og-default.jpg"],
   },
   robots: {
     index: true,
