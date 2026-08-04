@@ -17,7 +17,7 @@ interface Post {
   category: string;
 }
 
-const posts = postsData as Post[];
+const posts = (postsData as Post[]).filter((p) => !/^genesis\s/i.test(p.title));
 const postMap = new Map(posts.map((p) => [p.slug, p]));
 
 // ── Static generation ─────────────────────────────────────────────────────────

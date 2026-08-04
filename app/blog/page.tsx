@@ -50,7 +50,7 @@ interface Post extends RawPost {
   cat: string;
 }
 
-const allPosts: Post[] = (postsData as RawPost[]).map((p) => ({
+const allPosts: Post[] = (postsData as RawPost[]).filter((p) => !/^genesis\s/i.test(p.title)).map((p) => ({
   ...p,
   cat: deriveCategory(p.title),
 }));
