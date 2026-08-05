@@ -45,8 +45,8 @@ const SCHEDULE = [
   },
   {
     icon: "book" as const,
-    label: "Apologetics Class",
-    time: "Tuesdays · 7:00 PM",
+    label: "Theologetics Class",
+    time: "Tuesdays · 6:30 PM",
     note: "Join us for in-depth study and equipping",
   },
 ];

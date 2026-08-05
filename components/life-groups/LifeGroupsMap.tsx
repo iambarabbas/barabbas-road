@@ -57,6 +57,25 @@ const DAY_TEXT: Record<string, string> = {
   Thursday:  '#ffffff',
 };
 
+// ─── Avatar with fallback ──────────────────────────────────────────────────────
+
+function Avatar({ src, name, size, style }: { src: string; name: string; size: number; style?: React.CSSProperties }) {
+  const [failed, setFailed] = useState(false);
+  const initials = name.split("'")[0].trim().split(' ').map((w: string) => w[0]).join('').slice(0, 2).toUpperCase();
+  const colors = ['#d97706','#2563eb','#dc2626','#16a34a','#7c3aed','#0891b2','#b45309','#be185d'];
+  const color = colors[name.charCodeAt(0) % colors.length];
+
+  if (failed) {
+    return (
+      <div style={{ width: size, height: size, borderRadius: '50%', background: color, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: size * 0.35, color: '#fff', ...style }}>
+        {initials}
+      </div>
+    );
+  }
+  // eslint-disable-next-line @next/next/no-img-element
+  return <img src={src} alt={name} onError={() => setFailed(true)} style={{ width: size, height: size, borderRadius: '50%', objectFit: 'cover', flexShrink: 0, ...style }} />;
+}
+
 // ─── Map controller child ────────────────────────────────────────────────────
 
 function FlyTo({ target }: { target: [number, number] | null }) {
@@ -214,8 +233,7 @@ export default function LifeGroupsMap() {
               <Popup>
                 <div style={{ padding: '14px 16px', minWidth: '210px', fontFamily: 'var(--font-sans)' }}>
                   <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', marginBottom: '10px' }}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={g.image} alt={g.name} style={{ width: '46px', height: '46px', borderRadius: '50%', objectFit: 'cover', border: '2px solid #d3ab64', flexShrink: 0 }} />
+                    <Avatar src={g.image} name={g.name} size={46} style={{ border: '2px solid #d3ab64' }} />
                     <div>
                       <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '17px', color: '#1e1d1b', lineHeight: 1.1 }}>{g.name}</div>
                       <div style={{ fontSize: '13px', color: '#6c675c', marginTop: '3px' }}>{g.day}s · {g.time}</div>
@@ -290,13 +308,7 @@ export default function LifeGroupsMap() {
                 onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 4px 18px rgba(0,0,0,.10)')}
                 onMouseLeave={e => (e.currentTarget.style.boxShadow = 'none')}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={g.image}
-                  alt={g.name}
-                  loading="lazy"
-                  style={{ width: '52px', height: '52px', borderRadius: '50%', objectFit: 'cover', flexShrink: 0, border: '2px solid var(--gold-100)' }}
-                />
+                <Avatar src={g.image} name={g.name} size={52} style={{ border: '2px solid var(--gold-100)' }} />
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '18px', color: 'var(--ink-900)', lineHeight: 1.1, marginBottom: '4px' }}>
                     {g.name}
@@ -373,8 +385,7 @@ export default function LifeGroupsMap() {
           }}>
             {/* Header */}
             <div style={{ background: 'var(--ink-900)', padding: '20px 24px', display: 'flex', gap: '14px', alignItems: 'center' }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={modalGroup.image} alt={modalGroup.name} style={{ width: '52px', height: '52px', borderRadius: '50%', objectFit: 'cover', border: '2px solid var(--gold-400)', flexShrink: 0 }} />
+              <Avatar src={modalGroup.image} name={modalGroup.name} size={52} style={{ border: '2px solid var(--gold-400)' }} />
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '20px', color: 'var(--white)', lineHeight: 1.1 }}>{modalGroup.name}</div>
                 <div style={{ fontSize: '13px', color: 'rgba(255,255,255,.6)', marginTop: '3px' }}>{modalGroup.day}s at {modalGroup.time} · {modalGroup.location}</div>
