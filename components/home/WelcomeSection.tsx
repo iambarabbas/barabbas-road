@@ -32,7 +32,7 @@ export function WelcomeSection() {
             }}
           >
             <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "40px", color: "var(--gold-400)", lineHeight: 1 }}>
-              2009
+              2008
             </div>
             <div style={{ fontSize: "14px", color: "rgba(255,255,255,.7)", marginTop: "4px" }}>
               Planted in San Diego to make disciples of Jesus.
