@@ -222,7 +222,7 @@ export default function MissionsPage() {
               margin: "0 0 20px",
             }}
           >
-            &ldquo;Go therefore and make disciples of all nations.&rdquo; — Matthew 28:19
+            &ldquo;Go therefore and make disciples of all the nations.&rdquo; — Matthew 28:19
           </p>
           <Link href="/give">
             <Button variant="secondary">Give to Missions</Button>

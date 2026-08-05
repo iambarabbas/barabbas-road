@@ -65,7 +65,7 @@ export default function EldersPage() {
           {/* Scripture */}
           <blockquote style={{ margin: "0 0 64px", padding: "0 0 0 24px", borderLeft: "3px solid var(--gold-400)" }}>
             <p style={{ fontFamily: "var(--font-serif, Georgia, serif)", fontStyle: "italic", fontSize: "17px", lineHeight: 1.7, color: "var(--text-body)", margin: "0 0 10px" }}>
-              &ldquo;All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness, that the man of God may be competent, equipped for every good work.&rdquo;
+              &ldquo;All Scripture is inspired by God and profitable for teaching, for reproof, for correction, for training in righteousness; so that the man of God may be adequate, equipped for every good work.&rdquo;
             </p>
             <cite style={{ fontFamily: "var(--font-semicond)", fontWeight: 700, fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "var(--gold-700)", fontStyle: "normal" }}>
               2 Timothy 3:16–17

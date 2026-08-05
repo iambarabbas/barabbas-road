@@ -168,8 +168,8 @@ export default function GivePage() {
                     color: "rgba(255,255,255,.9)",
                   }}
                 >
-                  &ldquo;Each one must give as he has decided in his heart, not
-                  reluctantly or under compulsion, for God loves a cheerful
+                  &ldquo;Each one must do just as he has purposed in his heart, not
+                  grudgingly or under compulsion, for God loves a cheerful
                   giver.&rdquo;
                 </blockquote>
                 <div

@@ -175,7 +175,7 @@ export default function ClassesPage() {
       <section style={{ background: "var(--gold-400)", padding: "28px 0" }}>
         <div className="brc-container" style={{ textAlign: "center" }}>
           <p style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(1rem,.9rem+.8vw,1.25rem)", textTransform: "uppercase", letterSpacing: ".04em", color: "var(--ink-900)", margin: 0, lineHeight: 1.4 }}>
-            &ldquo;Study to show yourself approved to God, a worker who does not need to be ashamed, rightly dividing the word of truth.&rdquo;
+            &ldquo;Be diligent to present yourself approved to God as a workman who does not need to be ashamed, accurately handling the word of truth.&rdquo;
             <span style={{ display: "block", marginTop: "4px", fontSize: ".75em", opacity: 0.6 }}>2 Timothy 2:15</span>
           </p>
         </div>

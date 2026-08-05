@@ -160,7 +160,7 @@ export default function AboutPage() {
             margin: 0,
             lineHeight: 1.4,
           }}>
-            &ldquo;All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness.&rdquo;
+            &ldquo;All Scripture is inspired by God and profitable for teaching, for reproof, for correction, for training in righteousness.&rdquo;
             <span style={{ color: "rgba(255,255,255,.45)", display: "block", marginTop: "6px", fontSize: ".8em" }}>
               2 Timothy 3:16–17
             </span>

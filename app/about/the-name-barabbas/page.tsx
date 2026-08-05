@@ -35,7 +35,7 @@ export default function TheNameBarabbasPage() {
               borderRadius: "0 var(--radius-md) var(--radius-md) 0",
             }}>
               <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "17px", lineHeight: 1.75, color: "var(--text-body)", margin: "0 0 16px" }}>
-                &ldquo;But the crowd cried out together, 'Away with this man (Jesus), and release to us Barabbas,' a man who had been thrown into prison for an insurrection started in the city and for murder. Pilate addressed the crowd once more, desiring to release Jesus, but they kept shouting, 'Crucify, crucify him!' A third time he said to them, 'Why, what evil has he done? I have found in him no guilt deserving death. I will therefore punish and release him.' But they were urgent, demanding with loud cries that he should be crucified. And their voices prevailed. So Pilate decided that their demand should be granted. He released the man who had been thrown into prison for insurrection and murder (Barabbas), for whom they asked, but he delivered Jesus over to their will.&rdquo;
+                &ldquo;But they cried out all together, saying, &lsquo;Away with this man, and release Barabbas for us!&rsquo; (He was one who had been thrown into prison for a certain insurrection made in the city, and for murder.) Pilate, wanting to release Jesus, addressed them again, but they kept on calling out, saying, &lsquo;Crucify, crucify Him!&rsquo; And he said to them a third time, &lsquo;Why, what evil has this man done? I have found in Him no guilt demanding death; therefore I will punish Him and release Him.&rsquo; But they were insistent, with loud voices asking that He be crucified. And their voices began to prevail. And Pilate pronounced sentence for their demand to be granted. And he released the man they were asking for who had been thrown into prison for insurrection and murder, but he handed over Jesus to their will.&rdquo;
               </p>
               <cite style={{ fontFamily: "var(--font-semicond)", fontWeight: 700, fontSize: "13px", letterSpacing: ".1em", textTransform: "uppercase", color: "var(--gold-700)", fontStyle: "normal" }}>
                 Luke 23:18–25
@@ -78,7 +78,7 @@ export default function TheNameBarabbasPage() {
               color: "var(--white)",
             }}>
               <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "16px", lineHeight: 1.7, color: "rgba(255,255,255,.85)", margin: "0 0 12px" }}>
-                &ldquo;All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness, that the man of God may be competent, equipped for every good work.&rdquo;
+                &ldquo;All Scripture is inspired by God and profitable for teaching, for reproof, for correction, for training in righteousness; so that the man of God may be adequate, equipped for every good work.&rdquo;
               </p>
               <cite style={{ fontFamily: "var(--font-semicond)", fontWeight: 700, fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "var(--gold-400)", fontStyle: "normal" }}>
                 2 Timothy 3:16–17
