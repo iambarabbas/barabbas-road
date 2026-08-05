@@ -22,22 +22,22 @@ interface Group {
 }
 
 const GROUPS: Group[] = [
-  { id: 1,  name: "Brett & Kari's Group", day: "Sunday",    time: "12:30pm", location: "Church Campus",       lat: 32.8754, lng: -117.1425, full: false, onBreak: true,  image: "https://www.barabbas.com/wp-content/uploads/2015/05/brettkari3.jpg" },
-  { id: 2,  name: "Jesse's Group",         day: "Sunday",    time: "1:00pm",  location: "Scripps Ranch",        lat: 32.9000, lng: -117.1000, full: false, onBreak: false, image: "https://www.barabbas.com/wp-content/uploads/2015/05/jesse.png" },
-  { id: 3,  name: "Justin's Group",        day: "Sunday",    time: "2:00pm",  location: "Lemon Grove",          lat: 32.7425, lng: -117.0314, full: false, onBreak: true,  image: "https://www.barabbas.com/wp-content/uploads/2015/05/justin.png" },
-  { id: 4,  name: "Jeremy's Group",        day: "Sunday",    time: "6:00pm",  location: "Coronado",             lat: 32.6859, lng: -117.1831, full: false, onBreak: true,  image: "https://www.barabbas.com/wp-content/uploads/2015/05/jeremy1.png" },
-  { id: 5,  name: "Jon Paul's Group",      day: "Sunday",    time: "6:00pm",  location: "Scripps Ranch",        lat: 32.9050, lng: -117.1050, full: false, onBreak: true,  image: "https://www.barabbas.com/wp-content/uploads/2015/05/jonpaul.jpg" },
-  { id: 6,  name: "Mark's Group",          day: "Monday",    time: "6:00pm",  location: "Cardiff",              lat: 33.0214, lng: -117.2766, full: false, onBreak: true,  image: "https://www.barabbas.com/wp-content/uploads/2015/05/mark.png" },
-  { id: 7,  name: "Brett's Group",         day: "Monday",    time: "6:30pm",  location: "Bay Park",             lat: 32.7905, lng: -117.2120, full: false, onBreak: true,  image: "https://www.barabbas.com/wp-content/uploads/2015/05/brett2.png" },
-  { id: 8,  name: "Jon's Group",           day: "Monday",    time: "6:30pm",  location: "Crown Point / PB",     lat: 32.7874, lng: -117.2360, full: false, onBreak: false, note: "2nd & 4th Monday", image: "https://www.barabbas.com/wp-content/uploads/2015/05/jon.png" },
-  { id: 9,  name: "Rob's Group",           day: "Wednesday", time: "5:00pm",  location: "Rancho Peñasquitos",   lat: 32.9595, lng: -117.1128, full: false, onBreak: true,  image: "https://www.barabbas.com/wp-content/uploads/2015/05/rob.jpg" },
-  { id: 11, name: "Connor's Group",        day: "Wednesday", time: "6:30pm",  location: "Santee",               lat: 32.8384, lng: -116.9739, full: false, onBreak: true,  image: "https://www.barabbas.com/wp-content/uploads/2015/05/connor.png" },
-  { id: 12, name: "Beau's Group",          day: "Wednesday", time: "6:30pm",  location: "University City",      lat: 32.8660, lng: -117.2100, full: false, onBreak: true,  image: "https://www.barabbas.com/wp-content/uploads/2015/05/beau2.png" },
-  { id: 13, name: "Garrett's Group",       day: "Wednesday", time: "6:00pm",  location: "La Mesa",              lat: 32.7678, lng: -117.0231, full: false, onBreak: true,  image: "https://www.barabbas.com/wp-content/uploads/2015/05/garrett.png" },
-  { id: 15, name: "Tyler's Group",         day: "Thursday",  time: "6:00pm",  location: "Church Campus",        lat: 32.8754, lng: -117.1425, full: false, onBreak: true,  image: "https://www.barabbas.com/wp-content/uploads/2015/05/tyler.jpg" },
-  { id: 16, name: "Robert's Group",        day: "Thursday",  time: "6:30pm",  location: "Del Cerro / SDSU",     lat: 32.7700, lng: -117.0600, full: false, onBreak: true,  image: "https://www.barabbas.com/wp-content/uploads/2015/05/robert.png" },
-  { id: 17, name: "Brandon's Group",       day: "Thursday",  time: "6:30pm",  location: "El Cajon",             lat: 32.7948, lng: -116.9625, full: false, onBreak: false, image: "https://www.barabbas.com/wp-content/uploads/2015/05/brandon.jpg" },
-  { id: 18, name: "Jim's Group",           day: "Thursday",  time: "7:00pm",  location: "Clairemont",           lat: 32.8420, lng: -117.1950, full: false, onBreak: false, image: "https://www.barabbas.com/wp-content/uploads/2015/05/jim1.png" },
+  { id: 1,  name: "Brett & Kari's Group", day: "Sunday",    time: "12:30pm", location: "Church Campus",       lat: 32.8754, lng: -117.1425, full: false, onBreak: true,  image: "/assets/life-groups/brettkari3.jpg" },
+  { id: 2,  name: "Jesse's Group",         day: "Sunday",    time: "1:00pm",  location: "Scripps Ranch",        lat: 32.9000, lng: -117.1000, full: false, onBreak: false, image: "/assets/life-groups/jesse.png" },
+  { id: 3,  name: "Justin's Group",        day: "Sunday",    time: "2:00pm",  location: "Lemon Grove",          lat: 32.7425, lng: -117.0314, full: false, onBreak: true,  image: "/assets/life-groups/justin.png" },
+  { id: 4,  name: "Jeremy's Group",        day: "Sunday",    time: "6:00pm",  location: "Coronado",             lat: 32.6859, lng: -117.1831, full: false, onBreak: true,  image: "/assets/life-groups/jeremy1.png" },
+  { id: 5,  name: "Jon Paul's Group",      day: "Sunday",    time: "6:00pm",  location: "Scripps Ranch",        lat: 32.9050, lng: -117.1050, full: false, onBreak: true,  image: "/assets/life-groups/jonpaul.jpg" },
+  { id: 6,  name: "Mark's Group",          day: "Monday",    time: "6:00pm",  location: "Cardiff",              lat: 33.0214, lng: -117.2766, full: false, onBreak: true,  image: "/assets/life-groups/mark.png" },
+  { id: 7,  name: "Brett's Group",         day: "Monday",    time: "6:30pm",  location: "Bay Park",             lat: 32.7905, lng: -117.2120, full: false, onBreak: true,  image: "/assets/life-groups/brett2.png" },
+  { id: 8,  name: "Jon's Group",           day: "Monday",    time: "6:30pm",  location: "Crown Point / PB",     lat: 32.7874, lng: -117.2360, full: false, onBreak: false, note: "2nd & 4th Monday", image: "/assets/life-groups/jon.png" },
+  { id: 9,  name: "Rob's Group",           day: "Wednesday", time: "5:00pm",  location: "Rancho Peñasquitos",   lat: 32.9595, lng: -117.1128, full: false, onBreak: true,  image: "/assets/life-groups/rob.jpg" },
+  { id: 11, name: "Connor's Group",        day: "Wednesday", time: "6:30pm",  location: "Santee",               lat: 32.8384, lng: -116.9739, full: false, onBreak: true,  image: "/assets/life-groups/connor.png" },
+  { id: 12, name: "Beau's Group",          day: "Wednesday", time: "6:30pm",  location: "University City",      lat: 32.8660, lng: -117.2100, full: false, onBreak: true,  image: "/assets/life-groups/beau2.png" },
+  { id: 13, name: "Garrett's Group",       day: "Wednesday", time: "6:00pm",  location: "La Mesa",              lat: 32.7678, lng: -117.0231, full: false, onBreak: true,  image: "/assets/life-groups/garrett.png" },
+  { id: 15, name: "Tyler's Group",         day: "Thursday",  time: "6:00pm",  location: "Church Campus",        lat: 32.8754, lng: -117.1425, full: false, onBreak: true,  image: "/assets/life-groups/tyler.jpg" },
+  { id: 16, name: "Robert's Group",        day: "Thursday",  time: "6:30pm",  location: "Del Cerro / SDSU",     lat: 32.7700, lng: -117.0600, full: false, onBreak: true,  image: "/assets/life-groups/robert.png" },
+  { id: 17, name: "Brandon's Group",       day: "Thursday",  time: "6:30pm",  location: "El Cajon",             lat: 32.7948, lng: -116.9625, full: false, onBreak: false, image: "/assets/life-groups/brandon.jpg" },
+  { id: 18, name: "Jim's Group",           day: "Thursday",  time: "7:00pm",  location: "Clairemont",           lat: 32.8420, lng: -117.1950, full: false, onBreak: false, image: "/assets/life-groups/jim1.png" },
 ];
 
 const DAYS = ['All', 'Sunday', 'Monday', 'Wednesday', 'Thursday'] as const;
