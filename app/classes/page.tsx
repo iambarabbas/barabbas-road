@@ -263,6 +263,11 @@ export default function ClassesPage() {
                   </li>
                 ))}
               </ul>
+              <div style={{ marginTop: "28px" }}>
+                <Link href="/classes/theologetics/past">
+                  <Button variant="secondary" size="md">Browse Past Sessions</Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
