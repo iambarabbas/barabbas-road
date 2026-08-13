@@ -21,7 +21,7 @@ function PageHeader() {
             lineHeight: 0.98,
           }}
         >
-          Past Sessions
+          Past Classes
         </h1>
         <p style={{ color: "rgba(255,255,255,.65)", fontSize: "18px", maxWidth: "54ch", lineHeight: 1.6 }}>
           Browse the full archive of Theologetics class recordings — theology, apologetics, and defending the faith.
