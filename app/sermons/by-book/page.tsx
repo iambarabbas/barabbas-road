@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { Eyebrow } from "@/components/core/Eyebrow";
 
 function PageHeader() {
@@ -52,35 +51,32 @@ function SermonTabs({ active }: { active: "recent" | "by-book" }) {
   );
 }
 
-function SubsplashEmbed({ embedId, embedArgs }: { embedId: string; embedArgs: string }) {
+export default function SermonsByBookPage() {
   useEffect(() => {
     const timer = setTimeout(() => {
-      const target = document.getElementById(embedId);
+      const target = document.getElementById("subsplash-embed-5nwrbjy");
       if (!target) return;
       const script = document.createElement("script");
       script.src = "https://dashboard.static.subsplash.com/production/web-client/external/embed-1.1.0.js";
       script.onload = () => {
-        (window as any).subsplashEmbed(embedArgs, "https://subsplash.com/", embedId);
+        (window as any).subsplashEmbed(
+          "+495b/lb/li/+ydr7897?embed&branding&1785454398796",
+          "https://subsplash.com/",
+          "subsplash-embed-5nwrbjy"
+        );
       };
       target.parentElement!.insertBefore(script, target);
     }, 50);
     return () => clearTimeout(timer);
-  }, [embedId, embedArgs]);
+  }, []);
 
-  return <div id={embedId} />;
-}
-
-export default function SermonsPage() {
   return (
     <div>
       <PageHeader />
       <section style={{ padding: "var(--section-y) 0", background: "var(--surface-page)" }}>
         <div className="brc-container">
-          <SermonTabs active="recent" />
-          <SubsplashEmbed
-            embedId="subsplash-embed-2wgzx8q"
-            embedArgs="+495b/lb/li/+vx6yh4b?embed&branding&1785456228870"
-          />
+          <SermonTabs active="by-book" />
+          <div id="subsplash-embed-5nwrbjy" />
         </div>
       </section>
     </div>
