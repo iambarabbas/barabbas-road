@@ -27,7 +27,6 @@ const GROUPS: Group[] = [
   { id: 5,  name: "Jon Paul's Group",      day: "Sunday",    time: "6:00pm",  location: "Scripps Ranch",        lat: 32.9050, lng: -117.1050, full: false, onBreak: false, image: "/assets/life-groups/jonpaul.png" },
   { id: 6,  name: "Mark's Group",          day: "Monday",    time: "6:00pm",  location: "Cardiff",              lat: 33.0214, lng: -117.2766, full: false, onBreak: false, image: "/assets/life-groups/mark.png" },
   { id: 7,  name: "Brett's Group",         day: "Monday",    time: "6:30pm",  location: "Church Campus",        lat: 32.8754, lng: -117.1425, full: false, onBreak: false, image: "/assets/life-groups/brett-wheeless.png" },
-  { id: 8,  name: "Jon's Group",           day: "Thursday",  time: "6:30pm",  location: "Clairemont",            lat: 32.7847, lng: -117.1963, full: false, onBreak: false, note: "2nd & 4th Thursday", image: "/assets/life-groups/jon.png" },
   { id: 9,  name: "Rob's Group",           day: "Wednesday", time: "5:00pm",  location: "Rancho Peñasquitos",   lat: 32.9595, lng: -117.1128, full: false, onBreak: false, image: "/assets/life-groups/rob.png" },
   { id: 11, name: "Connor's Group",        day: "Wednesday", time: "6:30pm",  location: "Santee",               lat: 32.8384, lng: -116.9739, full: false, onBreak: false, image: "/assets/life-groups/connor.png" },
   { id: 12, name: "Beau's Group",          day: "Wednesday", time: "6:30pm",  location: "University City",      lat: 32.8660, lng: -117.2100, full: false, onBreak: false, image: "/assets/life-groups/beau.png" },
@@ -35,6 +34,7 @@ const GROUPS: Group[] = [
   { id: 15, name: "Tyler's Group",         day: "Thursday",  time: "6:00pm",  location: "Church Campus",        lat: 32.8754, lng: -117.1425, full: false, onBreak: false, image: "/assets/life-groups/tyler.jpg" },
   { id: 16, name: "Robert's Group",        day: "Thursday",  time: "6:30pm",  location: "Del Cerro / SDSU",     lat: 32.7700, lng: -117.0600, full: false, onBreak: false, image: "/assets/life-groups/robert.png" },
   { id: 17, name: "Brandon's Group",       day: "Thursday",  time: "6:30pm",  location: "El Cajon",             lat: 32.7948, lng: -116.9625, full: false, onBreak: false, image: "/assets/life-groups/brandon.png" },
+  { id: 8,  name: "Jon's Group",           day: "Thursday",  time: "6:30pm",  location: "Clairemont",           lat: 32.7847, lng: -117.1963, full: false, onBreak: false, note: "2nd & 4th Thursday", image: "/assets/life-groups/jon.png" },
   { id: 18, name: "Jim's Group",           day: "Thursday",  time: "7:00pm",  location: "Clairemont",           lat: 32.8420, lng: -117.1950, full: false, onBreak: false, image: "/assets/life-groups/jim1.png" },
 ];
 
