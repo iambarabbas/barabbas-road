@@ -27,7 +27,6 @@ const GROUPS: Group[] = [
   { id: 5,  name: "Jon Paul's Group",      day: "Sunday",    time: "6:00pm",  location: "Scripps Ranch",        lat: 32.9050, lng: -117.1050, full: false, onBreak: false, image: "/assets/life-groups/jonpaul.png" },
   { id: 6,  name: "Mark's Group",          day: "Monday",    time: "6:00pm",  location: "Cardiff",              lat: 33.0214, lng: -117.2766, full: false, onBreak: false, image: "/assets/life-groups/mark.png" },
   { id: 7,  name: "Brett's Group",         day: "Monday",    time: "6:30pm",  location: "Church Campus",        lat: 32.8754, lng: -117.1425, full: false, onBreak: false, image: "/assets/life-groups/brett-wheeless.png" },
-  { id: 9,  name: "Rob's Group",           day: "Wednesday", time: "5:00pm",  location: "Rancho Peñasquitos",   lat: 32.9595, lng: -117.1128, full: false, onBreak: false, image: "/assets/life-groups/rob.png" },
   { id: 11, name: "Connor's Group",        day: "Wednesday", time: "6:30pm",  location: "Santee",               lat: 32.8384, lng: -116.9739, full: false, onBreak: false, image: "/assets/life-groups/connor.png" },
   { id: 12, name: "Beau's Group",          day: "Wednesday", time: "6:30pm",  location: "University City",      lat: 32.8660, lng: -117.2100, full: false, onBreak: false, image: "/assets/life-groups/beau.png" },
   { id: 13, name: "Garrett's Group",       day: "Wednesday", time: "6:00pm",  location: "La Mesa",              lat: 32.7678, lng: -117.0231, full: false, onBreak: false, image: "/assets/life-groups/garrett.png" },
