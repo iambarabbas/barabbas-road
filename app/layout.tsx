@@ -171,6 +171,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        {/* Google Analytics GA4 */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3FLVSC9XLT" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-3FLVSC9XLT');`,
+          }}
+        />
         {/* JSON-LD — Church + LocalBusiness + WebSite schema */}
         <script
           type="application/ld+json"

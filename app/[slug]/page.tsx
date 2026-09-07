@@ -32,14 +32,39 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = postMap.get(slug);
   if (!post) return { title: "Not Found" };
+  const SITE_URL = "https://barabbas.com";
+  const title = decodeHtmlEntities(post.title);
+  const description = post.excerpt || `A Bible teaching article from Barabbas Road Church in Miramar, San Diego.`;
   return {
-    title: post.title,
-    description: post.excerpt,
+    title,
+    description,
+    alternates: {
+      canonical: `${SITE_URL}/${post.slug}/`,
+    },
+    authors: [{ name: "Barabbas Road Church", url: SITE_URL }],
     openGraph: {
-      title: post.title,
-      description: post.excerpt,
+      title,
+      description,
       type: "article",
+      url: `${SITE_URL}/${post.slug}/`,
+      siteName: "Barabbas Road Church",
       publishedTime: post.date || undefined,
+      authors: ["Barabbas Road Church"],
+      section: post.category,
+      images: [
+        {
+          url: `/assets/og-default.jpg`,
+          width: 1200,
+          height: 630,
+          alt: `${title} — Barabbas Road Church`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/assets/og-default.jpg"],
     },
   };
 }
@@ -76,6 +101,96 @@ function formatDate(dateStr: string): string {
   }
 }
 
+function readingTime(text: string): number {
+  const words = text.trim().split(/\s+/).length;
+  return Math.max(1, Math.round(words / 200));
+}
+
+function buildArticleSchema(post: Post, title: string) {
+  const SITE_URL = "https://barabbas.com";
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${SITE_URL}/${post.slug}/`,
+    headline: title,
+    description: post.excerpt,
+    datePublished: post.date || undefined,
+    dateModified: post.date || undefined,
+    url: `${SITE_URL}/${post.slug}/`,
+    inLanguage: "en-US",
+    wordCount: post.content.trim().split(/\s+/).length,
+    author: {
+      "@type": "Organization",
+      name: "Barabbas Road Church",
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Barabbas Road Church",
+      url: SITE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/assets/logolock-black.png`,
+      },
+    },
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Barabbas Road Church",
+      url: `${SITE_URL}/`,
+    },
+    about: {
+      "@type": "Thing",
+      name: "Bible teaching",
+    },
+  };
+}
+
+// ── Smart plain-text renderer ────────────────────────────────────────────────
+
+type ContentSection = { type: "heading" | "body"; text: string };
+
+const SENTENCES_PER_PARA = 4;
+
+function processPlainContent(text: string): ContentSection[] {
+  const sentences = text
+    .split(/(?<=[.!?…])\s+/)
+    .map((s) => s.trim())
+    .filter((s) => s.length > 4);
+
+  const sections: ContentSection[] = [];
+  let buffer: string[] = [];
+  let currentType: "heading" | "body" = "body";
+
+  const flush = () => {
+    if (buffer.length > 0) {
+      sections.push({ type: currentType, text: buffer.join(" ") });
+      buffer = [];
+    }
+  };
+
+  for (const sentence of sentences) {
+    const upper = (sentence.match(/[A-Z]/g) || []).length;
+    const letters = (sentence.match(/[a-zA-Z]/g) || []).length;
+    const type: "heading" | "body" =
+      letters > 0 && upper / letters > 0.65 ? "heading" : "body";
+
+    if (type !== currentType) {
+      flush();
+      currentType = type;
+    }
+
+    buffer.push(sentence);
+
+    // Break body text into readable paragraphs
+    if (currentType === "body" && buffer.length >= SENTENCES_PER_PARA) {
+      flush();
+    }
+  }
+
+  flush();
+  return sections;
+}
+
 // ── Page ──────────────────────────────────────────────────────────────────────
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -86,12 +201,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const title = decodeHtmlEntities(post.title);
   const content = decodeHtmlEntities(post.content);
   const formattedDate = formatDate(post.date);
-
-  // Split content into paragraphs for clean rendering
-  const paragraphs = content
-    .split(/\n+/)
-    .map((p) => p.trim())
-    .filter((p) => p.length > 20);
+  const minutes = readingTime(post.content);
+  const articleSchema = buildArticleSchema(post, title);
 
   return (
     <div>
@@ -129,7 +240,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           >
             {title}
           </h1>
-          {formattedDate && (
+          {(formattedDate || minutes) && (
             <div
               style={{
                 fontFamily: "var(--font-semicond)",
@@ -138,11 +249,20 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                 textTransform: "uppercase",
                 letterSpacing: ".08em",
                 color: "rgba(255,255,255,.45)",
+                display: "flex",
+                gap: "20px",
+                flexWrap: "wrap",
               }}
             >
-              {formattedDate}
+              {formattedDate && <span>{formattedDate}</span>}
+              {minutes && <span>{minutes} min read</span>}
             </div>
           )}
+          {/* Article JSON-LD */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+          />
         </div>
       </section>
 
@@ -157,20 +277,20 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               className="post-body"
               dangerouslySetInnerHTML={{ __html: content }}
             />
-          ) : paragraphs.length > 0 ? (
-            paragraphs.map((para, i) => (
-              <p
-                key={i}
-                style={{
-                  fontSize: "var(--fs-lead)",
-                  lineHeight: "var(--lh-relaxed)",
-                  color: "var(--text-body)",
-                  marginBottom: "1.5em",
-                }}
-              >
-                {para}
-              </p>
-            ))
+          ) : content.trim().length > 20 ? (
+            <div className="post-plaintext">
+              {processPlainContent(content).map((section, i) =>
+                section.type === "heading" ? (
+                  <div key={i} className="post-section-label">
+                    {section.text}
+                  </div>
+                ) : (
+                  <p key={i} className="post-prose">
+                    {section.text}
+                  </p>
+                )
+              )}
+            </div>
           ) : (
             <p style={{ color: "var(--text-muted)", fontStyle: "italic" }}>
               Content not available. Visit the original post at{" "}

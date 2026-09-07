@@ -6,7 +6,7 @@ import Link from "next/link";
 const RHYTHMS = [
   { icon: "play",   t: "Sunday Gatherings", when: "Every Sunday · 10:00am",        where: "Main Auditorium" },
   { icon: "users",  t: "Life Groups",        when: "Throughout the week",            where: "Homes across San Diego" },
-  { icon: "heart",  t: "Prayer & Worship",   when: "First Friday monthly · 7:00pm", where: "Main Auditorium" },
+  { icon: "heart",  t: "Prayer & Inductive Class",   when: "Every Sunday · 8:30am", where: "Upstairs in Inductive Room" },
 ];
 
 export function EventsSection() {

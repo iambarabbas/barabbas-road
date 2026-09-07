@@ -62,7 +62,7 @@ const KIDS_FAQS: FaqItem[] = [
   },
   {
     q: "Are children allowed in the main service?",
-    a: "Yes. If you prefer to keep your kids with you, that's perfectly fine. We just ask that they stay quiet so others can hear. We also have a glassed-in area in the back for parents with little ones.",
+    a: "Yes. If you prefer to keep your kids with you, that's perfectly fine. We just ask that they stay quiet so others can hear. We also have an area in the back for parents with little ones that will have audio/video of the message.",
   },
   {
     q: "What ages is Children's Church for?",

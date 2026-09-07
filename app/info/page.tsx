@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 const LINKS = [
+  { label: "Welcome Dinner Registration", href: "https://barabbas.com/calendar/?sapurl=Lys0OTViL2xiL2V2LytucThwZDVzP2VtYmVkPXRydWUmcmVjZW50Um91dGU9YXBwLndlYi1hcHAubGlicmFyeS5jYWxlbmRhciZyZWNlbnRSb3V0ZVNsdWc9JTJCcW00MnF3Zw==", internal: false, featured: true },
   { label: "Life Group Signup",    href: "/life-groups",            internal: true  },
   { label: "Calendar",             href: "/calendar",               internal: true  },
   { label: "Baptism Signup",       href: "/life-groups",            internal: true  },
@@ -68,8 +69,26 @@ export default function InfoPage() {
 
         {/* ── Nav links ── */}
         <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: "12px", marginBottom: "40px" }}>
-          {LINKS.map(({ label, href, internal }) => {
-            const style: React.CSSProperties = {
+          {(LINKS as Array<{ label: string; href: string; internal: boolean; featured?: boolean }>).map(({ label, href, internal, featured }) => {
+            const style: React.CSSProperties = featured ? {
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "100%",
+              minHeight: "62px",
+              padding: "16px 24px",
+              borderRadius: "12px",
+              background: "var(--gold-400)",
+              border: "1px solid var(--gold-400)",
+              color: "var(--ink-900)",
+              fontFamily: "var(--font-display)",
+              fontWeight: 800,
+              fontSize: "17px",
+              letterSpacing: "0.03em",
+              textDecoration: "none",
+              textAlign: "center",
+              boxSizing: "border-box",
+            } : {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
