@@ -9,7 +9,7 @@ const LINKS = [
   { label: "What We Believe",    href: "/about/what-we-believe" },
   { label: "The Name Barabbas",  href: "/about/the-name-barabbas" },
   { label: "Church Government",  href: "/about/church-government" },
-  { label: "Elders",             href: "/about/elders" },
+  { label: "Elders & Staff",      href: "/about/elders" },
   { label: "Church History",     href: "/about/church-history" },
   { label: "Distinctives",       href: "/about/distinctives" },
   { label: "Missions",           href: "/missions" },
