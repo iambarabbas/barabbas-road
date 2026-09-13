@@ -173,46 +173,35 @@ export default function EldersPage() {
           {/* ── Staff ─────────────────────────────────────── */}
           {STAFF.length > 0 && (
             <div style={{ marginTop: "80px" }}>
+              {/* Staff section heading */}
               <div style={{
-                paddingBottom: "16px",
-                marginBottom: "48px",
+                paddingBottom: "20px",
+                marginBottom: "64px",
                 borderBottom: "3px solid var(--gold-400)",
+                display: "flex",
+                alignItems: "baseline",
+                gap: "14px",
+                flexWrap: "wrap",
               }}>
-                <span style={{
-                  fontFamily: "var(--font-semicond)",
-                  fontWeight: 700,
-                  textTransform: "uppercase",
-                  letterSpacing: ".1em",
-                  fontSize: "12px",
-                  color: "var(--gold-700)",
-                  display: "block",
-                  marginBottom: "8px",
-                }}>Barabbas Road Church</span>
                 <h2 style={{ fontSize: "clamp(1.8rem,1.4rem+1.5vw,2.4rem)", margin: 0, lineHeight: 1 }}>
                   Staff
                 </h2>
               </div>
 
-              <div style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-                gap: "48px",
-              }}>
-                {STAFF.map((member) => (
-                  <div key={member.name} style={{
-                    background: "var(--white)",
-                    borderRadius: "var(--radius-lg)",
-                    overflow: "hidden",
-                    boxShadow: "var(--shadow-md)",
-                  }}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={member.photo}
-                      alt={member.name}
-                      style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", display: "block" }}
-                    />
-                    <div style={{ padding: "24px" }}>
-                      <h3 style={{ fontSize: "1.25rem", margin: "0 0 4px", lineHeight: 1.2 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "80px" }}>
+                {STAFF.map((member, i) => (
+                  <div key={member.name}>
+                    {/* Name + title header */}
+                    <div style={{
+                      paddingBottom: "20px",
+                      marginBottom: "28px",
+                      borderBottom: "1px solid var(--border-subtle, #e5e2d9)",
+                      display: "flex",
+                      alignItems: "baseline",
+                      gap: "14px",
+                      flexWrap: "wrap",
+                    }}>
+                      <h3 style={{ fontSize: "clamp(1.5rem,1.2rem+1vw,2rem)", margin: 0, lineHeight: 1 }}>
                         {member.name}
                       </h3>
                       <span style={{
@@ -220,14 +209,43 @@ export default function EldersPage() {
                         fontWeight: 700,
                         textTransform: "uppercase",
                         letterSpacing: ".1em",
-                        fontSize: "11px",
+                        fontSize: "12px",
                         color: "var(--gold-700)",
-                        display: "block",
-                        marginBottom: "12px",
-                      }}>{member.title}</span>
-                      <p style={{ fontSize: "15px", lineHeight: 1.7, color: "var(--text-body)", margin: 0 }}>
-                        {member.bio}
-                      </p>
+                      }}>
+                        {member.title}
+                      </span>
+                    </div>
+
+                    {/* Bio + photo — alternating layout */}
+                    <div
+                      className="brc-welcome"
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "1fr 1fr",
+                        gap: "clamp(2rem,5vw,4rem)",
+                        alignItems: "start",
+                        direction: i % 2 === 1 ? "rtl" : "ltr",
+                      }}
+                    >
+                      <div style={{ direction: "ltr" }}>
+                        <p style={{ fontSize: "17px", lineHeight: 1.75, color: "var(--text-body)", margin: 0 }}>
+                          {member.bio}
+                        </p>
+                      </div>
+                      <div style={{ direction: "ltr" }}>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={member.photo}
+                          alt={member.name}
+                          style={{
+                            width: "100%",
+                            height: "auto",
+                            display: "block",
+                            borderRadius: "var(--radius-lg)",
+                            boxShadow: "var(--shadow-md)",
+                          }}
+                        />
+                      </div>
                     </div>
                   </div>
                 ))}
