@@ -30,6 +30,12 @@ const STAFF: { name: string; title: string; photo: string; bio: string }[] = [
     photo: `${BASE}/assets/kendra-britez-family.jpg`,
     bio: "Kendra grew up in San Diego. As a young adult she went to live in South America, and then stayed 16 years. There she met and married Luis, and together they served in church planting in rural Paraguay. For some of this time, she worked as the Co-Director of an orphanage where God molded her heart to care for children. Now Kendra and Luis, along with their two daughters, Jeruti and Sage, are living back in San Diego. When Kendra isn't teaching her girls at home, she's usually reading a book or taking strolls in nature.",
   },
+  {
+    name: "Carolyn Honeychurch",
+    title: "Counseling Coordinator",
+    photo: `${BASE}/assets/carolyn-honeychurch.jpg`,
+    bio: "Carolyn is a California native who grew up in Stockton and went on to study literature at UC Santa Cruz. She is married to Clint and is mom to Harrison and Marian. She received her biblical counseling certification through ACBC in 2024 and enjoys serving alongside the body of Christ and encouraging other women in their own walk with the Lord. When she isn't homeschooling or spending time with her family, she can usually be found reading, writing, making bad art, or swimming at the beach.",
+  },
 ];
 
 const ELDERS = [
