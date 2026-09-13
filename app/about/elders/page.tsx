@@ -65,7 +65,7 @@ const ELDERS = [
   },
   {
     name: "Paul Rochford",
-    title: "Elder & Missionary coming January 1, 2027",
+    title: "Elder & Missionary to Italy coming January 2027",
     email: "paul@barabbas.com",
     familyPhoto: `${BASE}/assets/paul-rochford-family.jpg`,
     familyCaption: "Paul with his wife Julia and their children Andrea and Isaiah.",
