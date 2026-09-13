@@ -28,6 +28,17 @@ export async function generateStaticParams() {
 
 // ── Metadata ──────────────────────────────────────────────────────────────────
 
+/** Extract the first <img src> from HTML content, returns absolute URL or null */
+function extractFirstImage(html: string, siteUrl: string): string | null {
+  const match = html.match(/<img[^>]+src="([^"]+)"/);
+  if (!match) return null;
+  const src = match[1];
+  // Already absolute
+  if (src.startsWith("http")) return src;
+  // Root-relative → prepend site URL
+  return `${siteUrl}${src}`;
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = postMap.get(slug);
@@ -35,6 +46,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const SITE_URL = "https://barabbas.com";
   const title = decodeHtmlEntities(post.title);
   const description = post.excerpt || `A Bible teaching article from Barabbas Road Church in Miramar, San Diego.`;
+  const ogImage = extractFirstImage(post.content, SITE_URL) ?? `${SITE_URL}/assets/og-default.jpg`;
   return {
     title,
     description,
@@ -53,9 +65,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       section: post.category,
       images: [
         {
-          url: `/assets/og-default.jpg`,
-          width: 1200,
-          height: 630,
+          url: ogImage,
           alt: `${title} — Barabbas Road Church`,
         },
       ],
@@ -64,7 +74,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       card: "summary_large_image",
       title,
       description,
-      images: ["/assets/og-default.jpg"],
+      images: [ogImage],
     },
   };
 }

@@ -11,6 +11,10 @@ export const metadata: Metadata = {
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
+const STAFF: { name: string; title: string; photo: string; bio: string }[] = [
+  // Staff members added as info arrives
+];
+
 const ELDERS = [
   {
     name: "Matt Smith",
@@ -142,6 +146,71 @@ export default function EldersPage() {
               </div>
             ))}
           </div>
+
+          {/* ── Staff ─────────────────────────────────────── */}
+          {STAFF.length > 0 && (
+            <div style={{ marginTop: "80px" }}>
+              <div style={{
+                paddingBottom: "16px",
+                marginBottom: "48px",
+                borderBottom: "3px solid var(--gold-400)",
+              }}>
+                <span style={{
+                  fontFamily: "var(--font-semicond)",
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: ".1em",
+                  fontSize: "12px",
+                  color: "var(--gold-700)",
+                  display: "block",
+                  marginBottom: "8px",
+                }}>Barabbas Road Church</span>
+                <h2 style={{ fontSize: "clamp(1.8rem,1.4rem+1.5vw,2.4rem)", margin: 0, lineHeight: 1 }}>
+                  Staff
+                </h2>
+              </div>
+
+              <div style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+                gap: "48px",
+              }}>
+                {STAFF.map((member) => (
+                  <div key={member.name} style={{
+                    background: "var(--white)",
+                    borderRadius: "var(--radius-lg)",
+                    overflow: "hidden",
+                    boxShadow: "var(--shadow-md)",
+                  }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={member.photo}
+                      alt={member.name}
+                      style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", display: "block" }}
+                    />
+                    <div style={{ padding: "24px" }}>
+                      <h3 style={{ fontSize: "1.25rem", margin: "0 0 4px", lineHeight: 1.2 }}>
+                        {member.name}
+                      </h3>
+                      <span style={{
+                        fontFamily: "var(--font-semicond)",
+                        fontWeight: 700,
+                        textTransform: "uppercase",
+                        letterSpacing: ".1em",
+                        fontSize: "11px",
+                        color: "var(--gold-700)",
+                        display: "block",
+                        marginBottom: "12px",
+                      }}>{member.title}</span>
+                      <p style={{ fontSize: "15px", lineHeight: 1.7, color: "var(--text-body)", margin: 0 }}>
+                        {member.bio}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
         </div>
       </section>

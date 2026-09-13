@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Eyebrow } from "@/components/core/Eyebrow";
 import { PaperCard } from "@/components/resources/PaperCard";
+import { BlogCard } from "@/components/resources/BlogCard";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -279,6 +280,61 @@ export default function ResourcesPage() {
               boxShadow: "var(--shadow-md)",
             }}
           />
+        </div>
+      </section>
+
+      {/* ── From the Blog ── */}
+      <section style={{ background: "var(--surface-page)", padding: "var(--section-y) 0", borderBottom: "1px solid var(--border-subtle)" }}>
+        <div className="brc-container">
+          {/* Header */}
+          <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: "16px", marginBottom: "36px" }}>
+            <div style={{ maxWidth: "520px" }}>
+              <Eyebrow color="var(--gold-700)" withRule>From the Blog</Eyebrow>
+              <h2 style={{ fontSize: "clamp(1.8rem,1.2rem+2vw,2.4rem)", margin: "12px 0 10px", lineHeight: 1.05, color: "var(--ink-900)" }}>
+                Recent Articles
+              </h2>
+              <p style={{ fontSize: "16px", color: "var(--text-muted)", margin: 0, lineHeight: 1.6 }}>
+                Theology, culture, and the Christian life — written from inside a church that still believes the Bible has something to say about everything.
+              </p>
+            </div>
+            <a
+              href="/blog"
+              style={{
+                fontFamily: "var(--font-semicond)",
+                fontWeight: 700,
+                fontSize: "14px",
+                textTransform: "uppercase",
+                letterSpacing: ".07em",
+                color: "var(--gold-700)",
+                textDecoration: "none",
+                whiteSpace: "nowrap",
+                paddingBottom: "2px",
+                borderBottom: "2px solid var(--gold-400)",
+              }}
+            >
+              View All Posts →
+            </a>
+          </div>
+
+          {/* Blog cards */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "28px" }}>
+            <BlogCard
+              href="/the-justice-of-god"
+              image="/assets/the-justice-of-god.jpg"
+              imageAlt="The Justice of God"
+              date="September 8, 2026"
+              title="The Justice of God"
+              excerpt="We want God's justice when we've been wronged. We grow considerably less enthusiastic when the scales turn toward us. What the Bible teaches about divine justice changes everything — especially at the cross."
+            />
+            <BlogCard
+              href="/chatgpt-ai-and-the-christian"
+              image="/assets/og-default.jpg"
+              imageAlt="ChatGPT, AI, and the Christian"
+              date="March 26, 2025"
+              title="ChatGPT, AI, and the Christian: A Biblical Take on Technology"
+              excerpt="Just like the internet once seemed like a novelty but quickly became indispensable, AI is on a similar trajectory. It's time for Christians to begin thinking biblically, wisely, and honestly about this."
+            />
+          </div>
         </div>
       </section>
 
