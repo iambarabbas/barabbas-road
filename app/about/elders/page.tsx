@@ -42,6 +42,12 @@ const STAFF: { name: string; title: string; photo: string; bio: string }[] = [
     photo: `${BASE}/assets/james-mayer.jpg`,
     bio: "James grew up in San Diego and has attended Barabbas Road Church with his family since 2021. He is married to his wife Isabel, and together they have three daughters, Effie, Eleanor, and Evelyn. Outside of BRC, James is a small business owner in San Diego. James is grateful to serve the church by helping the preaching of God's Word reach people beyond the room on Sunday morning.",
   },
+  {
+    name: "Bryant Hartwell",
+    title: "Director of Sound & Audio",
+    photo: `${BASE}/assets/bryant-hartwell.jpg`,
+    bio: "Bryant has been attending Barabbas since its inception and has enjoyed serving in many capacities throughout his tenure.",
+  },
 ];
 
 const ELDERS = [
