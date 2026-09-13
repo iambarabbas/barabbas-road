@@ -12,7 +12,12 @@ export const metadata: Metadata = {
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const STAFF: { name: string; title: string; photo: string; bio: string }[] = [
-  // Staff members added as info arrives
+  {
+    name: "Chris Tweedy",
+    title: "Director of Music",
+    photo: `${BASE}/assets/chris-tweedy-family.jpg`,
+    bio: "Chris and his wife, Katie, have attended Barabbas Road Church since 2012 and have two daughters, Isla and Gwendolyn. Chris grew up ministering through music with his family, traveling the country and singing in churches each summer from ages 8 to 19. He later earned a degree in music composition and has experience as a choral and instrumental arranger. Outside of BRC, Chris is a full-time entrepreneur and business owner. Katie studied vocal performance in college and has several years of experience directing children's choirs. Together, they have been grateful to watch God grow and strengthen Barabbas Road through the faithful preaching of His Word, and Chris is honored to serve the church as Director of Music.",
+  },
 ];
 
 const ELDERS = [
