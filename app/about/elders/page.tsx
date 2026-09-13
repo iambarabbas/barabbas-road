@@ -36,6 +36,12 @@ const STAFF: { name: string; title: string; photo: string; bio: string }[] = [
     photo: `${BASE}/assets/carolyn-honeychurch.jpg`,
     bio: "Carolyn is a California native who grew up in Stockton and went on to study literature at UC Santa Cruz. She is married to Clint and is mom to Harrison and Marian. She received her biblical counseling certification through ACBC in 2024 and enjoys serving alongside the body of Christ and encouraging other women in their own walk with the Lord. When she isn't homeschooling or spending time with her family, she can usually be found reading, writing, making bad art, or swimming at the beach.",
   },
+  {
+    name: "James Mayer",
+    title: "Director of Video Production",
+    photo: `${BASE}/assets/james-mayer.jpg`,
+    bio: "James grew up in San Diego and has attended Barabbas Road Church with his family since 2021. He is married to his wife Isabel, and together they have three daughters, Effie, Eleanor, and Evelyn. Outside of BRC, James is a small business owner in San Diego. James is grateful to serve the church by helping the preaching of God's Word reach people beyond the room on Sunday morning.",
+  },
 ];
 
 const ELDERS = [
