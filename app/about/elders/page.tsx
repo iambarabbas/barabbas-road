@@ -48,16 +48,8 @@ const ELDERS = [
     bio: "Matt Smith was born in San Diego, CA. He is married to his wife Rebecca and they have five beautiful children together. Matt has a passion for preaching the Word of God as well as for apologetics. He is the author of two books and a commentary on the book of Colossians. He is a black belt in Brazilian Jiu-Jitsu and holds the following degrees: B.A. in Psychology with a minor in Athletic Coaching from UC Santa Barbara; M.R.S., M.A. in Biblical Studies, Master of Divinity, and Masters of Theology from Southern California Seminary.",
   },
   {
-    name: "Paul Rochford",
-    title: "Pastor — Missions & Administration",
-    email: "paul@barabbas.com",
-    familyPhoto: `${BASE}/assets/paul-rochford-family.jpg`,
-    familyCaption: "Paul with his wife Julia and their children Andrea and Isaiah.",
-    bio: "Paul grew up in California where he also received most of his education. He received his Bachelors in Biblical Studies along with his Masters in Religion, Biblical Studies, Masters of Divinity and Masters of Theology from Southern California Seminary. He is also pursuing his PhD from Midwest Baptist Theological Seminary in Kansas City. He is married to his wife Julia and is father to their daughter Andrea and their son Isaiah. Paul oversees the missions and administration of the church.",
-  },
-  {
     name: "Brett Schoeneck",
-    title: "Pastor — Care & Discipleship",
+    title: "Executive Pastor",
     email: "brett@barabbas.com",
     familyPhoto: `${BASE}/assets/brett-schoeneck-family.jpg`,
     familyCaption: "Brett with his wife Kari and their three children River, Layla, and Silas.",
@@ -65,11 +57,19 @@ const ELDERS = [
   },
   {
     name: "Trace Trebilco",
-    title: "Family Pastor",
+    title: "Executive Pastor",
     email: "trace@barabbas.com",
     familyPhoto: `${BASE}/assets/trebilco-family.jpg`,
     familyCaption: "Trace with his wife Jordan and their four children Wyatt, Charlotte, Wesley, and Elliot.",
     bio: "Trace is originally from Chicago. Him and his wife, Jordan, moved to San Diego for a relocation for work, but ended up staying in SD for the church. He has served in the Children's Ministry since 2016. Trace has a heart for evangelism and discipleship within the church and specifically with families. Trace has four young children, Wyatt, Charlotte, Wesley and Elliot. He enjoys cars, reading, hiking, and surfing.",
+  },
+  {
+    name: "Paul Rochford",
+    title: "Elder & Missionary coming January 1, 2027",
+    email: "paul@barabbas.com",
+    familyPhoto: `${BASE}/assets/paul-rochford-family.jpg`,
+    familyCaption: "Paul with his wife Julia and their children Andrea and Isaiah.",
+    bio: "Paul grew up in California where he also received most of his education. He received his Bachelors in Biblical Studies along with his Masters in Religion, Biblical Studies, Masters of Divinity and Masters of Theology from Southern California Seminary. He is also pursuing his PhD from Midwest Baptist Theological Seminary in Kansas City. He is married to his wife Julia and is father to their daughter Andrea and their son Isaiah. Paul oversees the missions and administration of the church.",
   },
 ];
 
