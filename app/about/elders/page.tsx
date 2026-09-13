@@ -26,7 +26,7 @@ const STAFF: { name: string; title: string; photo: string; bio: string }[] = [
   },
   {
     name: "Kendra Britez",
-    title: "Director of Children's Church",
+    title: "Children's Church Coordinator",
     photo: `${BASE}/assets/kendra-britez-family.jpg`,
     bio: "Kendra grew up in San Diego. As a young adult she went to live in South America, and then stayed 16 years. There she met and married Luis, and together they served in church planting in rural Paraguay. For some of this time, she worked as the Co-Director of an orphanage where God molded her heart to care for children. Now Kendra and Luis, along with their two daughters, Jeruti and Sage, are living back in San Diego. When Kendra isn't teaching her girls at home, she's usually reading a book or taking strolls in nature.",
   },
