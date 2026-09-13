@@ -24,6 +24,12 @@ const STAFF: { name: string; title: string; photo: string; bio: string }[] = [
     photo: `${BASE}/assets/paige-ensley.jpg`,
     bio: "Paige has been married to her husband Brandon for 26 years, and together they have three children and a granddaughter. She works alongside Brandon in their family electrical contracting business and has served in women\u2019s ministry and church leadership for over 20 years. Paige is passionate about encouraging meaningful relationships in the body of Christ. She jokes that she is the self-proclaimed \u201cHospitality Director\u201d \u2014 so it is an honor for her to receive the official title.",
   },
+  {
+    name: "Kendra Britez",
+    title: "Director of Children's Church",
+    photo: `${BASE}/assets/kendra-britez-family.jpg`,
+    bio: "Kendra grew up in San Diego. As a young adult she went to live in South America, and then stayed 16 years. There she met and married Luis, and together they served in church planting in rural Paraguay. For some of this time, she worked as the Co-Director of an orphanage where God molded her heart to care for children. Now Kendra and Luis, along with their two daughters, Jeruti and Sage, are living back in San Diego. When Kendra isn't teaching her girls at home, she's usually reading a book or taking strolls in nature.",
+  },
 ];
 
 const ELDERS = [
