@@ -31,7 +31,6 @@ const GROUPS: Group[] = [
   { id: 12, name: "Beau's Group",          day: "Wednesday", time: "6:30pm",  location: "University City",      lat: 32.8660, lng: -117.2100, full: false, onBreak: false, image: "/assets/life-groups/beau.png" },
   { id: 13, name: "Garrett's Group",       day: "Wednesday", time: "6:00pm",  location: "La Mesa",              lat: 32.7678, lng: -117.0231, full: false, onBreak: false, image: "/assets/life-groups/garrett.png" },
   { id: 15, name: "Tyler's Group",         day: "Thursday",  time: "6:00pm",  location: "Church Campus",        lat: 32.8754, lng: -117.1425, full: false, onBreak: false, image: "/assets/life-groups/tyler.jpg" },
-  { id: 16, name: "Robert's Group",        day: "Thursday",  time: "6:30pm",  location: "Del Cerro / SDSU",     lat: 32.7700, lng: -117.0600, full: false, onBreak: false, image: "/assets/life-groups/robert.png" },
   { id: 17, name: "Brandon's Group",       day: "Thursday",  time: "6:30pm",  location: "El Cajon",             lat: 32.7948, lng: -116.9625, full: false, onBreak: false, image: "/assets/life-groups/brandon.png" },
   { id: 8,  name: "Jon's Group",           day: "Thursday",  time: "6:30pm",  location: "Clairemont",           lat: 32.7847, lng: -117.1963, full: false, onBreak: false, note: "2nd & 4th Thursday", image: "/assets/life-groups/jon.png" },
   { id: 18, name: "Jim's Group",           day: "Thursday",  time: "7:00pm",  location: "Clairemont",           lat: 32.8420, lng: -117.1950, full: false, onBreak: false, image: "/assets/life-groups/jim1.png" },
