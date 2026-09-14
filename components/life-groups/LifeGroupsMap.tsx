@@ -25,7 +25,7 @@ const GROUPS: Group[] = [
   { id: 3,  name: "Justin's Group",        day: "Sunday",    time: "2:00pm",  location: "Lemon Grove",          lat: 32.7425, lng: -117.0314, full: false, onBreak: false, image: "/assets/life-groups/justin.png" },
   { id: 4,  name: "Jeremy's Group",        day: "Sunday",    time: "6:00pm",  location: "Coronado",             lat: 32.6859, lng: -117.1831, full: false, onBreak: false, image: "/assets/life-groups/jeremy.png" },
   { id: 5,  name: "Jon Paul's Group",      day: "Sunday",    time: "6:00pm",  location: "Scripps Ranch",        lat: 32.9050, lng: -117.1050, full: false, onBreak: false, image: "/assets/life-groups/jonpaul.png" },
-  { id: 6,  name: "Mark's Group",          day: "Monday",    time: "6:00pm",  location: "Cardiff",              lat: 33.0214, lng: -117.2766, full: false, onBreak: false, image: "/assets/life-groups/mark.png" },
+  { id: 6,  name: "Mark's Group",          day: "Sunday",    time: "3:30pm",  location: "Ministry Center",      lat: 32.8754, lng: -117.1425, full: false, onBreak: false, image: "/assets/life-groups/mark.png" },
   { id: 7,  name: "Brett's Group",         day: "Monday",    time: "6:30pm",  location: "Church Campus",        lat: 32.8754, lng: -117.1425, full: false, onBreak: false, image: "/assets/life-groups/brett-wheeless.png" },
   { id: 11, name: "Connor's Group",        day: "Wednesday", time: "6:00pm",  location: "Santee",               lat: 32.8384, lng: -116.9739, full: false, onBreak: false, image: "/assets/life-groups/connor.png" },
   { id: 12, name: "Beau's Group",          day: "Wednesday", time: "6:30pm",  location: "University City",      lat: 32.8660, lng: -117.2100, full: false, onBreak: false, image: "/assets/life-groups/beau.png" },
