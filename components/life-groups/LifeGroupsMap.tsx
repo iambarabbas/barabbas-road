@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useEffect, useCallback, useRef } from 'react';
-import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from '@react-google-maps/api';
+import { useState, useEffect, useCallback } from 'react';
+import { MapContainer, TileLayer, CircleMarker, Popup, useMap } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
 
-// ─── Types & Data ────────────────────────────────────────────────────────────
+// ─── Types & Data ─────────────────────────────────────────────────────────────
 
 interface Group {
   id: number;
@@ -53,10 +54,10 @@ const DAY_TEXT: Record<string, string> = {
   Thursday:  '#ffffff',
 };
 
-// ─── Spread stacked markers into a small circle ─────────────────────────────
+// ─── Spread stacked markers into a small circle ───────────────────────────────
 
 function spreadMarkers(groups: Group[]): Array<Group & { displayLat: number; displayLng: number }> {
-  const RADIUS = 0.0025; // ~250m spread
+  const RADIUS = 0.0025;
   const buckets = new Map<string, Group[]>();
   groups.forEach(g => {
     const key = `${g.lat},${g.lng}`;
@@ -73,20 +74,6 @@ function spreadMarkers(groups: Group[]): Array<Group & { displayLat: number; dis
   });
 }
 
-const MAP_CONTAINER_STYLE = { height: '440px', width: '100%' };
-const MAP_CENTER = { lat: 32.83, lng: -117.10 };
-const MAP_STYLES = [
-  { featureType: 'poi',               stylers: [{ visibility: 'off' }] },
-  { featureType: 'transit',           stylers: [{ visibility: 'off' }] },
-  { elementType: 'geometry',          stylers: [{ color: '#f0ede8' }] },
-  { featureType: 'road',              elementType: 'geometry', stylers: [{ color: '#ffffff' }] },
-  { featureType: 'road.arterial',     elementType: 'geometry', stylers: [{ color: '#e4e0da' }] },
-  { featureType: 'road.highway',      elementType: 'geometry', stylers: [{ color: '#d5d0c9' }] },
-  { featureType: 'water',             elementType: 'geometry', stylers: [{ color: '#aecde0' }] },
-  { elementType: 'labels.text.fill',  stylers: [{ color: '#5a5046' }] },
-  { elementType: 'labels.text.stroke', stylers: [{ color: '#f9f8f2' }] },
-];
-
 // ─── Avatar with fallback ─────────────────────────────────────────────────────
 
 function Avatar({ src, name, size, style }: { src: string; name: string; size: number; style?: React.CSSProperties }) {
@@ -94,7 +81,6 @@ function Avatar({ src, name, size, style }: { src: string; name: string; size: n
   const initials = name.split("'")[0].trim().split(' ').map((w: string) => w[0]).join('').slice(0, 2).toUpperCase();
   const colors = ['#d97706','#2563eb','#dc2626','#16a34a','#7c3aed','#0891b2','#b45309','#be185d'];
   const color = colors[name.charCodeAt(0) % colors.length];
-
   if (failed) {
     return (
       <div style={{ width: size, height: size, borderRadius: '50%', background: color, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: size * 0.35, color: '#fff', ...style }}>
@@ -106,30 +92,29 @@ function Avatar({ src, name, size, style }: { src: string; name: string; size: n
   return <img src={src} alt={name} onError={() => setFailed(true)} style={{ width: size, height: size, borderRadius: '50%', objectFit: 'cover', flexShrink: 0, ...style }} />;
 }
 
+// ─── Imperative map pan/zoom from outside MapContainer ────────────────────────
+
+function MapController({ target }: { target: { lat: number; lng: number; seq: number } | null }) {
+  const map = useMap();
+  useEffect(() => {
+    if (target) {
+      map.panTo([target.lat, target.lng]);
+      map.setZoom(14);
+    }
+  }, [target, map]);
+  return null;
+}
+
 // ─── Main component ───────────────────────────────────────────────────────────
 
 export default function LifeGroupsMap() {
-  const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '',
-  });
-
-  const mapRef = useRef<google.maps.Map | null>(null);
   const [activeDay, setActiveDay] = useState<DayFilter>('All');
-  const [activeInfoWindow, setActiveInfoWindow] = useState<number | null>(null);
-  const [flyTarget, setFlyTarget] = useState<{ lat: number; lng: number } | null>(null);
+  const [flyTarget, setFlyTarget] = useState<{ lat: number; lng: number; seq: number } | null>(null);
   const [modalGroup, setModalGroup] = useState<Group | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const filtered = activeDay === 'All' ? GROUPS : GROUPS.filter(g => g.day === activeDay);
-
-  // Fly to marker when card is clicked
-  useEffect(() => {
-    if (flyTarget && mapRef.current) {
-      mapRef.current.panTo(flyTarget);
-      mapRef.current.setZoom(14);
-    }
-  }, [flyTarget]);
 
   const openModal = useCallback((g: Group) => {
     setModalGroup(g);
@@ -190,7 +175,6 @@ export default function LifeGroupsMap() {
             marginRight: '4px',
             whiteSpace: 'nowrap',
           }}>Day</span>
-
           {DAYS.map(day => {
             const active = activeDay === day;
             const bg      = active ? (day === 'All' ? 'var(--ink-900)' : DAY_BG[day]) : 'transparent';
@@ -199,7 +183,7 @@ export default function LifeGroupsMap() {
             return (
               <button
                 key={day}
-                onClick={() => { setActiveDay(day); setFlyTarget(null); setActiveInfoWindow(null); }}
+                onClick={() => { setActiveDay(day); setFlyTarget(null); }}
                 style={{
                   padding: '7px 16px',
                   border: `1.5px solid ${bdColor}`,
@@ -223,68 +207,56 @@ export default function LifeGroupsMap() {
       </div>
 
       {/* ── Map ───────────────────────────────────────────────────────────── */}
-      <div style={{ height: '440px', width: '100%' }}>
-        {!isLoaded ? (
-          <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f0ede8', color: '#5a5046', fontFamily: 'var(--font-sans)', fontSize: '15px' }}>
-            Loading map…
-          </div>
-        ) : (
-          <GoogleMap
-            mapContainerStyle={MAP_CONTAINER_STYLE}
-            center={MAP_CENTER}
-            zoom={11}
-            options={{
-              scrollwheel: true,
-              zoomControl: true,
-              mapTypeControl: false,
-              streetViewControl: false,
-              fullscreenControl: false,
-              styles: MAP_STYLES,
-            }}
-            onLoad={map => { mapRef.current = map; }}
-          >
-            {spreadMarkers(filtered).map(g => (
-              <Marker
-                key={g.id}
-                position={{ lat: g.displayLat, lng: g.displayLng }}
-                icon={{
-                  path: google.maps.SymbolPath.CIRCLE,
-                  scale: 11,
-                  fillColor: g.full ? '#b3ad9f' : (DAY_BG[g.day] ?? '#d3ab64'),
-                  fillOpacity: g.full ? 0.6 : 1,
-                  strokeColor: '#ffffff',
-                  strokeWeight: 2.5,
-                }}
-                onClick={() => setActiveInfoWindow(g.id)}
-              >
-                {activeInfoWindow === g.id && (
-                  <InfoWindow onCloseClick={() => setActiveInfoWindow(null)}>
-                    <div style={{ padding: '4px 2px', minWidth: '200px', fontFamily: 'system-ui, sans-serif' }}>
-                      <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', marginBottom: '10px' }}>
-                        <Avatar src={g.image} name={g.name} size={44} style={{ border: '2px solid #d3ab64' }} />
-                        <div>
-                          <div style={{ fontWeight: 800, fontSize: '16px', color: '#1e1d1b', lineHeight: 1.1 }}>{g.name}</div>
-                          <div style={{ fontSize: '13px', color: '#6c675c', marginTop: '3px' }}>{g.day}s · {g.time}</div>
-                          <div style={{ fontSize: '13px', color: '#6c675c' }}>📍 {g.location}</div>
-                          {g.note && <div style={{ fontSize: '12px', color: '#b8903b', marginTop: '2px' }}>{g.note}</div>}
-                        </div>
-                      </div>
-                      {g.full && <div style={{ fontSize: '12px', color: '#8a8477', fontWeight: 700, marginBottom: '8px' }}>Group is full</div>}
-                      {!g.full && (
-                        <button
-                          onClick={() => { setActiveInfoWindow(null); openModal(g); }}
-                          style={{ padding: '7px 16px', background: '#d3ab64', color: '#1e1d1b', border: 'none', borderRadius: '4px', fontWeight: 700, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '.05em', cursor: 'pointer' }}
-                        >
-                          Join Group
-                        </button>
-                      )}
+      <div style={{ height: '440px', width: '100%', position: 'relative' }}>
+        <MapContainer
+          center={[32.83, -117.10]}
+          zoom={11}
+          style={{ height: '100%', width: '100%' }}
+          scrollWheelZoom={true}
+          zoomControl={true}
+        >
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <MapController target={flyTarget} />
+          {spreadMarkers(filtered).map(g => (
+            <CircleMarker
+              key={g.id}
+              center={[g.displayLat, g.displayLng]}
+              radius={11}
+              pathOptions={{
+                fillColor: g.full ? '#b3ad9f' : (DAY_BG[g.day] ?? '#d3ab64'),
+                fillOpacity: g.full ? 0.6 : 1,
+                color: '#ffffff',
+                weight: 2.5,
+              }}
+            >
+              <Popup>
+                <div style={{ padding: '4px 2px', minWidth: '200px', fontFamily: 'system-ui, sans-serif' }}>
+                  <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', marginBottom: '10px' }}>
+                    <Avatar src={g.image} name={g.name} size={44} style={{ border: '2px solid #d3ab64' }} />
+                    <div>
+                      <div style={{ fontWeight: 800, fontSize: '16px', color: '#1e1d1b', lineHeight: 1.1 }}>{g.name}</div>
+                      <div style={{ fontSize: '13px', color: '#6c675c', marginTop: '3px' }}>{g.day}s · {g.time}</div>
+                      <div style={{ fontSize: '13px', color: '#6c675c' }}>📍 {g.location}</div>
+                      {g.note && <div style={{ fontSize: '12px', color: '#b8903b', marginTop: '2px' }}>{g.note}</div>}
                     </div>
-                  </InfoWindow>
-                )}
-              </Marker>
-            ))}
-          </GoogleMap>
-        )}
+                  </div>
+                  {g.full && <div style={{ fontSize: '12px', color: '#8a8477', fontWeight: 700, marginBottom: '8px' }}>Group is full</div>}
+                  {!g.full && (
+                    <button
+                      onClick={() => openModal(g)}
+                      style={{ padding: '7px 16px', background: '#d3ab64', color: '#1e1d1b', border: 'none', borderRadius: '4px', fontWeight: 700, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '.05em', cursor: 'pointer' }}
+                    >
+                      Join Group
+                    </button>
+                  )}
+                </div>
+              </Popup>
+            </CircleMarker>
+          ))}
+        </MapContainer>
       </div>
 
       {/* ── Group Cards ───────────────────────────────────────────────────── */}
@@ -308,14 +280,13 @@ export default function LifeGroupsMap() {
               }}>{activeDay}</span>
             )}
           </div>
-
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))', gap: '14px' }}>
             {filtered.map(g => (
               <div
                 key={g.id}
                 onClick={() => {
                   if (!g.full && !g.onBreak) openModal(g);
-                  else setFlyTarget({ lat: g.lat, lng: g.lng });
+                  else setFlyTarget({ lat: g.lat, lng: g.lng, seq: Date.now() });
                 }}
                 style={{
                   background: 'var(--white)',
@@ -372,7 +343,7 @@ export default function LifeGroupsMap() {
         </div>
       </div>
 
-      {/* ── Modal ─────────────────────────────────────────────────────────── */}
+      {/* ── Join Modal ────────────────────────────────────────────────────── */}
       {modalGroup && (
         <div
           onClick={e => { if (e.target === e.currentTarget) closeModal(); }}
