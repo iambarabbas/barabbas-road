@@ -17,6 +17,33 @@ interface Post {
   category: string;
 }
 
+// ── Author data ──────────────────────────────────────────────────────────────
+
+interface AuthorData {
+  key: string;
+  name: string;
+  title: string;
+  bio: string;
+  photo: string;
+  url: string;
+}
+
+const AUTHORS: Record<string, AuthorData> = {
+  brett: {
+    key: "brett",
+    name: "Brett Schoeneck",
+    title: "Executive Pastor, Barabbas Road Church",
+    bio: "Brett is a native of Wisconsin and has served in many capacities at Barabbas Road since the church's inception in 2007. He has a passion for one-another care and disciple-making, and loves shepherding the body of BRC. Brett is married to his wife Kari and is a loving father to their three children, River, Layla, and Silas.",
+    photo: "/assets/brett-schoeneck-headshot.jpg",
+    url: "/about/elders/",
+  },
+};
+
+// Maps post slugs to author keys
+const AUTHOR_BY_SLUG: Record<string, string> = {
+  "chatgpt-ai-and-the-christian": "brett",
+};
+
 const posts = (postsData as Post[]).filter((p) => !/^genesis\s/i.test(p.title));
 const postMap = new Map(posts.map((p) => [p.slug, p]));
 
@@ -47,13 +74,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const title = decodeHtmlEntities(post.title);
   const description = post.excerpt || `A Bible teaching article from Barabbas Road Church in Miramar, San Diego.`;
   const ogImage = extractFirstImage(post.content, SITE_URL) ?? `${SITE_URL}/assets/og-default.jpg`;
+  const authorKey = AUTHOR_BY_SLUG[slug];
+  const postAuthor = authorKey ? AUTHORS[authorKey] : undefined;
+
   return {
     title,
     description,
     alternates: {
       canonical: `${SITE_URL}/${post.slug}/`,
     },
-    authors: [{ name: "Barabbas Road Church", url: SITE_URL }],
+    authors: postAuthor
+      ? [{ name: postAuthor.name, url: `${SITE_URL}${postAuthor.url}` }]
+      : [{ name: "Barabbas Road Church", url: SITE_URL }],
     openGraph: {
       title,
       description,
@@ -61,7 +93,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       url: `${SITE_URL}/${post.slug}/`,
       siteName: "Barabbas Road Church",
       publishedTime: post.date || undefined,
-      authors: ["Barabbas Road Church"],
+      authors: postAuthor ? [postAuthor.name] : ["Barabbas Road Church"],
       section: post.category,
       images: [
         {
@@ -116,8 +148,28 @@ function readingTime(text: string): number {
   return Math.max(1, Math.round(words / 200));
 }
 
-function buildArticleSchema(post: Post, title: string) {
+function buildArticleSchema(post: Post, title: string, author?: AuthorData) {
   const SITE_URL = "https://barabbas.com";
+  const authorSchema = author
+    ? {
+        "@type": "Person",
+        "@id": `${SITE_URL}/about/elders/#${author.key}`,
+        name: author.name,
+        jobTitle: author.title,
+        url: `${SITE_URL}${author.url}`,
+        image: `${SITE_URL}${author.photo}`,
+        worksFor: {
+          "@type": "Church",
+          "@id": `${SITE_URL}/#church`,
+          name: "Barabbas Road Church",
+        },
+      }
+    : {
+        "@type": "Organization",
+        name: "Barabbas Road Church",
+        url: SITE_URL,
+      };
+
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -129,11 +181,7 @@ function buildArticleSchema(post: Post, title: string) {
     url: `${SITE_URL}/${post.slug}/`,
     inLanguage: "en-US",
     wordCount: post.content.trim().split(/\s+/).length,
-    author: {
-      "@type": "Organization",
-      name: "Barabbas Road Church",
-      url: SITE_URL,
-    },
+    author: authorSchema,
     publisher: {
       "@type": "Organization",
       name: "Barabbas Road Church",
@@ -152,6 +200,19 @@ function buildArticleSchema(post: Post, title: string) {
       "@type": "Thing",
       name: "Bible teaching",
     },
+  };
+}
+
+function buildBreadcrumbSchema(post: Post, title: string) {
+  const SITE_URL = "https://barabbas.com";
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog/` },
+      { "@type": "ListItem", position: 3, name: title, item: `${SITE_URL}/${post.slug}/` },
+    ],
   };
 }
 
@@ -212,7 +273,10 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const content = decodeHtmlEntities(post.content);
   const formattedDate = formatDate(post.date);
   const minutes = readingTime(post.content);
-  const articleSchema = buildArticleSchema(post, title);
+  const authorKey = AUTHOR_BY_SLUG[post.slug];
+  const authorData = authorKey ? AUTHORS[authorKey] : undefined;
+  const articleSchema = buildArticleSchema(post, title, authorData);
+  const breadcrumbSchema = buildBreadcrumbSchema(post, title);
 
   return (
     <div>
@@ -273,6 +337,11 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
           />
+          {/* Breadcrumb JSON-LD */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+          />
         </div>
       </section>
 
@@ -312,6 +381,93 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           )}
         </div>
       </article>
+
+      {/* Author bio */}
+      {authorData && (
+        <section style={{ background: "var(--surface-tint)", padding: "48px 0", borderTop: "1px solid var(--border-subtle)" }}>
+          <div className="brc-container" style={{ maxWidth: "720px" }}>
+            <Eyebrow color="var(--gold-700)" withRule>Written By</Eyebrow>
+            <div
+              style={{
+                display: "flex",
+                gap: "28px",
+                alignItems: "flex-start",
+                marginTop: "24px",
+                flexWrap: "wrap",
+              }}
+            >
+              <Link href={authorData.url} aria-label={`About ${authorData.name}`}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={authorData.photo}
+                  alt={authorData.name}
+                  style={{
+                    width: "88px",
+                    height: "88px",
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    objectPosition: "top",
+                    flexShrink: 0,
+                    border: "3px solid var(--gold-400)",
+                    display: "block",
+                  }}
+                />
+              </Link>
+              <div style={{ flex: 1, minWidth: "220px" }}>
+                <Link href={authorData.url} style={{ textDecoration: "none", color: "inherit" }}>
+                  <h3
+                    style={{
+                      margin: "0 0 4px",
+                      fontSize: "1.2rem",
+                      fontFamily: "var(--font-display)",
+                      color: "var(--ink-900)",
+                    }}
+                  >
+                    {authorData.name}
+                  </h3>
+                </Link>
+                <p
+                  style={{
+                    margin: "0 0 12px",
+                    fontFamily: "var(--font-semicond)",
+                    fontWeight: 700,
+                    fontSize: "11px",
+                    textTransform: "uppercase",
+                    letterSpacing: ".1em",
+                    color: "var(--gold-700)",
+                  }}
+                >
+                  {authorData.title}
+                </p>
+                <p
+                  style={{
+                    margin: "0 0 14px",
+                    fontSize: "15px",
+                    lineHeight: 1.7,
+                    color: "var(--text-body)",
+                  }}
+                >
+                  {authorData.bio}
+                </p>
+                <Link
+                  href={authorData.url}
+                  style={{
+                    fontFamily: "var(--font-semicond)",
+                    fontWeight: 700,
+                    fontSize: "12px",
+                    textTransform: "uppercase",
+                    letterSpacing: ".1em",
+                    color: "var(--gold-700)",
+                    textDecoration: "none",
+                  }}
+                >
+                  View Full Profile →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Related / CTA */}
       <section style={{ background: "var(--surface-card)", padding: "var(--section-y) 0", borderTop: "1px solid var(--border-subtle)" }}>

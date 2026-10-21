@@ -40,6 +40,20 @@ const FIELDS = [
       "Barabbas Road partners with missionaries working to make disciple-making disciples in the Philippines through church planting and theological training.",
     href: "https://disciplethenations.org/about/staff/david-adriana-petro/",
   },
+  {
+    name: "Papua New Guinea",
+    flag: "🇵🇬",
+    description:
+      "Justin and Alissa Armendariz are currently in training with Ethnos360 in preparation for church planting work in Papua New Guinea. Follow the link below to learn more about them and support their mission.",
+    href: "https://ethnos360.org/missionaries/justin-and-alissa-armendariz",
+  },
+  {
+    name: "Italy",
+    flag: "🇮🇹",
+    description:
+      "Only about 1% of Italy's population are evangelical Christians — making it one of the most spiritually needy nations in the Western world. Barabbas Road supports Paul and Julia Rochford, who are serving at Vicenza Bible Church with a heart to see the gospel take root in Italy.",
+    href: "https://disciplethenations.org/about/missionaries/paul-julia-rochford/",
+  },
 ];
 
 export default function MissionsPage() {

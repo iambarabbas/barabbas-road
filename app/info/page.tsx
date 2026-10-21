@@ -10,7 +10,6 @@ export const metadata: Metadata = {
 };
 
 const LINKS = [
-  { label: "Welcome Dinner Registration", href: "https://barabbas.com/calendar/?sapurl=Lys0OTViL2xiL2V2LytucThwZDVzP2VtYmVkPXRydWUmcmVjZW50Um91dGU9YXBwLndlYi1hcHAubGlicmFyeS5jYWxlbmRhciZyZWNlbnRSb3V0ZVNsdWc9JTJCcW00MnF3Zw==", internal: false, featured: true },
   { label: "Life Group Signup",    href: "/life-groups",            internal: true  },
   { label: "Calendar",             href: "/calendar",               internal: true  },
   { label: "Baptism Signup",       href: "/life-groups",            internal: true  },

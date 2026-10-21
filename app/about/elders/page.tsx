@@ -46,7 +46,7 @@ const STAFF: { name: string; title: string; photo: string; bio: string }[] = [
     name: "Bryant Hartwell",
     title: "Director of Sound & Audio",
     photo: `${BASE}/assets/bryant-hartwell.jpg`,
-    bio: "Bryant has been attending Barabbas since its inception and has enjoyed serving in many capacities throughout his tenure.",
+    bio: "Bryant has been born and raised in the Clairemont area of San Diego. He has served in churches since he was 8 years old helping out in the hearing of the Word as a sound technician. If he is not serving in the church or working his job as a commercial electrician, he can be found listening to or reading books, being in the community of the church family, or strolling the lanes of Costco.",
   },
 ];
 

@@ -2,8 +2,62 @@ import type { Metadata } from "next";
 import { Eyebrow } from "@/components/core/Eyebrow";
 import { PaperCard } from "@/components/resources/PaperCard";
 import { BlogCard } from "@/components/resources/BlogCard";
+import rawPosts from "@/data/posts.json";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const SITE_URL = "https://barabbas.com";
+
+// ── Recent posts helpers ──────────────────────────────────────────────────────
+
+function decodeEntities(str: string): string {
+  return str
+    .replace(/&#039;/g, "'")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#8217;/g, "\u2019")
+    .replace(/&#8216;/g, "\u2018")
+    .replace(/&#8220;/g, "\u201C")
+    .replace(/&#8221;/g, "\u201D")
+    .replace(/&#8211;/g, "\u2013")
+    .replace(/&#8212;/g, "\u2014")
+    .replace(/&nbsp;/g, " ");
+}
+
+function extractFirstImage(html: string): string {
+  const match = html.match(/<img[^>]+src="([^"]+)"/);
+  if (!match) return `${SITE_URL}/assets/og-default.jpg`;
+  const src = match[1];
+  return src.startsWith("http") ? src : `${SITE_URL}${src}`;
+}
+
+function formatDate(dateStr: string): string {
+  if (!dateStr) return "";
+  try {
+    return new Date(dateStr).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  } catch {
+    return dateStr;
+  }
+}
+
+const RECENT_POSTS = (rawPosts as { slug: string; title: string; date: string; excerpt: string; content: string; category: string }[])
+  .filter((p) => !/^genesis\s/i.test(p.title))
+  .filter((p) => p.date)
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .slice(0, 3)
+  .map((p) => ({
+    href: `/${p.slug}/`,
+    image: extractFirstImage(p.content),
+    imageAlt: decodeEntities(p.title),
+    date: formatDate(p.date),
+    title: decodeEntities(p.title),
+    excerpt: decodeEntities(p.excerpt || ""),
+  }));
 
 export const metadata: Metadata = {
   title: "Resources",
@@ -316,24 +370,11 @@ export default function ResourcesPage() {
             </a>
           </div>
 
-          {/* Blog cards */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "28px" }}>
-            <BlogCard
-              href="/the-justice-of-god"
-              image="/assets/the-justice-of-god.jpg"
-              imageAlt="The Justice of God"
-              date="September 8, 2026"
-              title="The Justice of God"
-              excerpt="We want God's justice when we've been wronged. We grow considerably less enthusiastic when the scales turn toward us. What the Bible teaches about divine justice changes everything — especially at the cross."
-            />
-            <BlogCard
-              href="/chatgpt-ai-and-the-christian"
-              image="/assets/og-default.jpg"
-              imageAlt="ChatGPT, AI, and the Christian"
-              date="March 26, 2025"
-              title="ChatGPT, AI, and the Christian: A Biblical Take on Technology"
-              excerpt="Just like the internet once seemed like a novelty but quickly became indispensable, AI is on a similar trajectory. It's time for Christians to begin thinking biblically, wisely, and honestly about this."
-            />
+          {/* Blog cards — top 3 most recent, auto-updated at build time */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "28px" }}>
+            {RECENT_POSTS.map((post) => (
+              <BlogCard key={post.href} {...post} />
+            ))}
           </div>
         </div>
       </section>

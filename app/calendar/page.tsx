@@ -1,36 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
 import { Eyebrow } from "@/components/core/Eyebrow";
-
-function CalendarEmbed() {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const target = document.getElementById("subsplash-embed-qm42qwg");
-      if (!target || target.dataset.loaded) return;
-      target.dataset.loaded = "1";
-      const script = document.createElement("script");
-      script.type = "text/javascript";
-      script.onload = function () {
-        (window as any).subsplashEmbed(
-          "+495b/lb/ca/+qm42qwg?embed",
-          "https://subsplash.com/",
-          "subsplash-embed-qm42qwg"
-        );
-      };
-      script.src =
-        "https://dashboard.static.subsplash.com/production/web-client/external/embed-1.1.0.js";
-      target.parentElement!.insertBefore(script, target);
-    }, 50);
-    return () => clearTimeout(timer);
-  }, []);
-
-  return (
-    <div style={{ minHeight: "600px", width: "100%" }}>
-      <div id="subsplash-embed-qm42qwg" />
-    </div>
-  );
-}
+import BrcCalendar from "@/components/BrcCalendar";
 
 export default function CalendarPage() {
   return (
@@ -56,7 +27,7 @@ export default function CalendarPage() {
 
       <section style={{ padding: "var(--section-y) 0", background: "var(--surface-page)" }}>
         <div className="brc-container">
-          <CalendarEmbed />
+          <BrcCalendar />
         </div>
       </section>
     </div>
