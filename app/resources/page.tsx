@@ -254,6 +254,69 @@ export default function ResourcesPage() {
         </div>
       </section>
 
+      {/* ── Calendar CTA ── */}
+      <section style={{ background: "var(--gold-400)", padding: "40px 0" }}>
+        <div
+          className="brc-container"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: "24px",
+          }}
+        >
+          <div>
+            <p
+              style={{
+                fontFamily: "var(--font-semicond)",
+                fontWeight: 700,
+                fontSize: "12px",
+                textTransform: "uppercase",
+                letterSpacing: "0.14em",
+                color: "var(--ink-900)",
+                opacity: 0.6,
+                margin: "0 0 6px",
+              }}
+            >
+              What&apos;s Coming Up
+            </p>
+            <h2
+              style={{
+                fontSize: "clamp(1.5rem,1rem+2vw,2rem)",
+                margin: "0 0 6px",
+                lineHeight: 1.05,
+                color: "var(--ink-900)",
+              }}
+            >
+              Church Calendar
+            </h2>
+            <p style={{ fontSize: "16px", color: "var(--ink-900)", opacity: 0.7, margin: 0, lineHeight: 1.6 }}>
+              Services, classes, events, and everything happening at Barabbas Road — all in one place.
+            </p>
+          </div>
+          <a
+            href="/calendar/"
+            style={{
+              display: "inline-block",
+              background: "var(--ink-900)",
+              color: "var(--white)",
+              fontFamily: "var(--font-display)",
+              fontWeight: 800,
+              fontSize: "15px",
+              letterSpacing: "0.06em",
+              textTransform: "uppercase",
+              padding: "14px 32px",
+              borderRadius: "var(--radius-sm)",
+              textDecoration: "none",
+              flexShrink: 0,
+            }}
+          >
+            View the Calendar
+          </a>
+        </div>
+      </section>
+
       {/* ── Featured Book ── */}
       <section style={{ background: "var(--surface-page)", padding: "var(--section-y) 0", borderBottom: "1px solid var(--border-subtle)" }}>
         <div

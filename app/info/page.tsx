@@ -13,6 +13,7 @@ const LINKS = [
   { label: "Life Group Signup",    href: "/life-groups",            internal: true  },
   { label: "Calendar",             href: "/calendar",               internal: true  },
   { label: "Baptism Signup",       href: "/life-groups",            internal: true  },
+  { label: "Want to Serve?",        href: "/serve",                  internal: true  },
   { label: "Give",                 href: "/give",                   internal: true  },
   { label: "Download Our App",     href: "/app-download",           internal: true  },
   { label: "Doctrinal Statement",  href: "/about/what-we-believe",  internal: true  },
