@@ -193,36 +193,6 @@ export default function GroupDiscussionQuestionsPage() {
               </h2>
             </div>
 
-            {/* Individual section gets a resource link */}
-            {section.id === "individual" && (
-              <div
-                style={{
-                  background: "var(--white)",
-                  border: "1px solid var(--border-subtle)",
-                  borderLeft: "4px solid var(--gold-400)",
-                  borderRadius: "var(--radius-sm)",
-                  padding: "16px 20px",
-                  marginBottom: "28px",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "14px",
-                  flexWrap: "wrap",
-                }}
-              >
-                <span style={{ fontSize: "14px", color: "var(--text-muted)", fontFamily: "var(--font-semicond)", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".06em" }}>
-                  Resource
-                </span>
-                <a
-                  href="http://www.bbschurch.org/podcast/apps/Tools_Week_2.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ fontSize: "15px", color: "var(--gold-700, #9a7530)", textDecoration: "underline", wordBreak: "break-all" }}
-                >
-                  Tools Week 2 — Individual Application Guide (PDF)
-                </a>
-              </div>
-            )}
-
             <QuestionList questions={section.questions} />
           </div>
         </section>
